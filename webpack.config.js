@@ -73,6 +73,10 @@ module.exports = {
         ],
         exclude: /\.module\.s?css$/,
       },
+      {
+        test: /\.(woff2)$/,
+        type: 'asset/resource',
+      },
     ],
   },
   resolve: {
