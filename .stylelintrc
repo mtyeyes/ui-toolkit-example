@@ -1,6 +1,7 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-sass-guidelines"],
   "rules": {
+    "selector-class-pattern": null,
     "color-hex-case": "upper",
     "declaration-no-important": true,
     "indentation": [

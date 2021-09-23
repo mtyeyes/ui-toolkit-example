@@ -11,3 +11,6 @@ export { default as Subtitle } from './components/subtitle/subtitle';
 
 export type { OtherTextProps } from './components/other-text/other-text';
 export { default as OtherText } from './components/other-text/other-text';
+
+export type { ButtonProps } from './components/button/button';
+export { default as Button } from './components/button/button';

@@ -70,4 +70,18 @@
   --elevation-bottom-3: drop-shadow(0 -4px 6px -2px rgba(0, 0, 0, 0.1)), drop-shadow(0 -8px 12px -2px rgba(0, 0, 0, 0.08)), drop-shadow(0 -16px 24px -2px rgba(0, 0, 0, 0.06));
   --elevation-bottom-4: drop-shadow(0 -8px 12px -3px rgba(0, 0, 0, 0.1)), drop-shadow(0 -16px 24px -3px rgba(0, 0, 0, 0.08)), drop-shadow(0 -32px 48px -3px rgba(0, 0, 0, 0.06));
   --elevation-bottom-5: drop-shadow(0 -16px 24px -4px rgba(0, 0, 0, 0.1)), drop-shadow(0 -32px 48px -4px rgba(0, 0, 0, 0.08)), drop-shadow(0 -64px 96px -4px rgba(0, 0, 0, 0.06));
+  // animation variables
+  --animation-speed: 0.3s;
+  --animation-timing: cubic-bezier(0.42, 0, 0.58, 1);
+  --endless-rotation: linear 5s infinite running endlessrotation;
+}
+
+@keyframes endlessrotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
