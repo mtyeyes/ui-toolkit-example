@@ -1,7 +1,8 @@
-import React, { HTMLAttributes } from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
-export type HeadlineProps = (DefaultProps | HeroProps) & HTMLAttributes<HTMLHeadingElement>;
+export type HeadlineProps = (DefaultProps | HeroProps) &
+  DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
 
 interface DefaultProps {
   type?: 'headline';

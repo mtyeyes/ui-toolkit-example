@@ -1,7 +1,7 @@
-import React, { HTMLAttributes } from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
-export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
+export interface ParagraphProps extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
   level?: 1 | 2;
   weight?: 'normal' | 'bold';
 }

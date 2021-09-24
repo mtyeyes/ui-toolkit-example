@@ -1,7 +1,8 @@
-import React, { HTMLAttributes } from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
-export type OtherTextProps = (NumericProps | DefaultProps) & HTMLAttributes<HTMLHeadingElement>;
+export type OtherTextProps = (NumericProps | DefaultProps) &
+  DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>;
 
 interface DefaultProps {
   type: 'button' | 'caption' | 'overline';
