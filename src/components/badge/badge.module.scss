@@ -1,0 +1,24 @@
+@import '../../styles/mixins.scss';
+
+.badge {
+  @include text-overline;
+
+  border-radius: 4px;
+  padding: 4px 12px;
+}
+
+.accent {
+  background-color: var(--color-accent-30);
+}
+
+.primary {
+  background-color: var(--color-primary-30);
+}
+
+.secondary {
+  background-color: var(--color-secondary-30);
+}
+
+.muted {
+  background-color: var(--color-gray-30);
+}

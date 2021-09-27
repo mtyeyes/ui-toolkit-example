@@ -1,0 +1,16 @@
+.starWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 24px;
+  justify-content: space-between;
+  padding: 5px 1px;
+  width: 88px;
+}
+
+.star {
+  fill: var(--color-black-12);
+}
+
+.starFilled {
+  fill: var(--color-primary-60);
+}
