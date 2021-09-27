@@ -1,3 +1,5 @@
+@import '../../styles/mixins.scss';
+
 .btnResetDefault {
   background: none;
   color: inherit;
@@ -17,23 +19,23 @@
   transition: var(--animation-speed) var(--animation-timing);
 }
 
-.btnSize48dp {
+.mediumSize {
   border-radius: 12px;
   padding: 10px 14px;
 }
 
-.btnSize36dp {
+.smallSize {
   border-radius: 8px;
   padding: 4px 6px;
 }
 
-.btnIconOnly.btnSize48dp,
-.btnLoading.btnSize48dp {
+.btnIconOnly.mediumSize,
+.btnLoading.mediumSize {
   padding: 10px;
 }
 
-.btnIconOnly.btnSize36dp,
-.btnLoading.btnSize36dp {
+.btnIconOnly.smallSize,
+.btnLoading.smallSize {
   padding: 4px;
 }
 
@@ -48,6 +50,8 @@
 }
 
 .text {
+  @include text-button;
+
   order: 2;
   user-select: none;
 }
@@ -71,476 +75,456 @@
   cursor: default;
 }
 
-.onLightHigh {
-  & {
-    background-color: var(--primary-80);
-  }
+.onLightThemeHighImpact {
+  background-color: var(--color-primary-80);
 
-  &:focus-visible {
-    background-color: var(--primary-80);
-    border: 2px solid var(--black-100);
+  &:focus {
+    background-color: var(--color-primary-80);
+    border: 2px solid var(--color-black-100);
   }
 
   &:hover {
-    background-color: var(--primary-70);
+    background-color: var(--color-primary-70);
   }
 
   & .text {
-    color: var(--primary-10);
+    color: var(--color-primary-10);
   }
 
   & .icon {
-    stroke: var(--primary-10);
+    stroke: var(--color-primary-10);
   }
 
   &.btnLoading {
-    background-color: var(--primary-80);
+    background-color: var(--color-primary-80);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible {
-    background-color: var(--gray-20);
+  &.btnDisabled:focus {
+    background-color: var(--color-gray-20);
   }
 
   &.btnDisabled .text {
-    color: var(--gray-70);
+    color: var(--color-gray-70);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--gray-70);
+    stroke: var(--color-gray-70);
   }
 
   &.btnLoading .icon {
-    stroke: var(--white-48);
+    stroke: var(--color-white-48);
   }
 }
 
-.onLightMedium {
-  & {
-    background-color: var(--primary-20);
-  }
+.onLightThemeMediumImpact {
+  background-color: var(--color-primary-20);
 
-  &:focus-visible {
-    background-color: var(--primary-20);
-    border: 2px solid var(--black-100);
+  &:focus {
+    background-color: var(--color-primary-20);
+    border: 2px solid var(--color-black-100);
   }
 
   &:hover {
-    background-color: var(--primary-30);
+    background-color: var(--color-primary-30);
   }
 
   & .text {
-    color: var(--primary-80);
+    color: var(--color-primary-80);
   }
 
   & .icon {
-    stroke: var(--primary-80);
+    stroke: var(--color-primary-80);
   }
 
   &.btnLoading {
-    background-color: var(--primary-20);
+    background-color: var(--color-primary-20);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible {
-    background-color: var(--gray-20);
+  &.btnDisabled:focus {
+    background-color: var(--color-gray-20);
   }
 
   &.btnDisabled .text {
-    color: var(--black-56);
+    color: var(--color-black-56);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--black-56);
+    stroke: var(--color-black-56);
   }
 
   &.btnLoading .icon {
-    stroke: var(--black-56);
+    stroke: var(--color-black-56);
   }
 }
 
-.onLightLow {
-  & {
-    background: none;
-    border: 2px solid var(--black-12);
-  }
+.onLightThemeLowImpact {
+  background: none;
+  border: 2px solid var(--color-black-12);
 
-  &:focus-visible {
+  &:focus {
     background: none;
-    border: 2px solid var(--black-100);
+    border: 2px solid var(--color-black-100);
   }
 
   &:hover {
-    background-color: var(--black-12);
+    background-color: var(--color-black-12);
   }
 
   & .text {
-    color: var(--grey-100);
+    color: var(--color-gray-100);
   }
 
   & .icon {
-    stroke: var(--grey-100);
+    stroke: var(--color-gray-100);
   }
 
   &.btnLoading {
     background: none;
-    border: 2px solid var(--black-12);
+    border: 2px solid var(--color-black-12);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible {
+  &.btnDisabled:focus {
     background: none;
-    border: 2px solid var(--black-12);
+    border: 2px solid var(--color-black-12);
   }
 
   &.btnDisabled .text {
-    color: var(--black-56);
+    color: var(--color-black-56);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--black-56);
+    stroke: var(--color-black-56);
   }
 
   &.btnLoading .icon {
-    stroke: var(--black-56);
+    stroke: var(--color-black-56);
   }
 }
 
-.onLightNone {
-  & {
-    background: none;
-  }
+.onLightThemeNoneImpact {
+  background: none;
 
-  &:focus-visible {
+  &:focus {
     background: none;
-    border: 2px solid var(--black-100);
+    border: 2px solid var(--color-black-100);
   }
 
   &:hover {
-    background-color: var(--black-12);
+    background-color: var(--color-black-12);
   }
 
   & .text {
-    color: var(--grey-100);
+    color: var(--color-gray-100);
   }
 
   & .icon {
-    stroke: var(--grey-100);
+    stroke: var(--color-gray-100);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible,
+  &.btnDisabled:focus,
   &.btnLoading,
   &.btnLoading:hover,
-  &.btnLoading:focus-visible {
+  &.btnLoading:focus {
     background: none;
     border: 2px solid transparent;
   }
 
   &.btnDisabled .text {
-    color: var(--black-56);
+    color: var(--color-black-56);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--black-56);
+    stroke: var(--color-black-56);
   }
 
   &.btnLoading .icon {
-    stroke: var(--black-56);
+    stroke: var(--color-black-56);
   }
 }
 
-.onLightDestructive {
-  & {
-    background-color: var(--attention);
-  }
+.onLightThemeDestructiveImpact {
+  background-color: var(--color-attention);
 
-  &:focus-visible {
-    background-color: var(--attention);
-    border: 2px solid var(--black-100);
+  &:focus {
+    background-color: var(--color-attention);
+    border: 2px solid var(--color-black-100);
   }
 
   &:hover {
-    background-color: var(--attention-substrate);
+    background-color: var(--color-attention-substrate);
   }
 
   & .text {
-    color: var(--attention-substrate);
+    color: var(--color-attention-substrate);
   }
 
   & .icon {
-    stroke: var(--attention-substrate);
+    stroke: var(--color-attention-substrate);
   }
 
   &:hover:not(.btnDisabled):not(.btnLoading) .text {
-    color: var(--attention);
+    color: var(--color-attention);
   }
 
   &:hover:not(.btnDisabled):not(.btnLoading) .icon {
-    stroke: var(--attention);
+    stroke: var(--color-attention);
   }
 
   &.btnLoading {
-    background-color: var(--attention);
+    background-color: var(--color-attention);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible {
-    background-color: 2px solid var(--gray-20);
+  &.btnDisabled:focus {
+    background-color: 2px solid var(--color-gray-20);
     border: 2px solid transparent;
   }
 
   &.btnDisabled .text {
-    color: var(--gray-70);
+    color: var(--color-gray-70);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--gray-70);
+    stroke: var(--color-gray-70);
   }
 
   &.btnLoading .icon {
-    stroke: var(--black-56);
+    stroke: var(--color-black-56);
   }
 }
 
-.onDarkHigh {
-  & {
-    background-color: var(--accent-30);
-  }
+.onDarkThemeHighImpact {
+  background-color: var(--color-accent-30);
 
-  &:focus-visible {
-    background-color: var(--accent-30);
-    border: 2px solid var(--black-100);
+  &:focus {
+    background-color: var(--color-accent-30);
+    border: 2px solid var(--color-black-100);
   }
 
   &:hover {
-    background-color: var(--accent-40);
+    background-color: var(--color-accent-40);
   }
 
   & .text {
-    color: var(--accent-90);
+    color: var(--color-accent-90);
   }
 
   & .icon {
-    stroke: var(--accent-90);
+    stroke: var(--color-accent-90);
   }
 
   &.btnLoading {
-    background-color: var(--accent-30);
+    background-color: var(--color-accent-30);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible {
-    background-color: var(--gray-30);
+  &.btnDisabled:focus {
+    background-color: var(--color-gray-30);
   }
 
   &.btnDisabled .text {
-    color: var(--gray-70);
+    color: var(--color-gray-70);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--gray-70);
+    stroke: var(--color-gray-70);
   }
 
   &.btnLoading .icon {
-    stroke: var(--black-56);
+    stroke: var(--color-black-56);
   }
 }
 
-.onDarkMedium {
-  & {
-    background-color: var(--accent-80);
-  }
+.onDarkThemeMediumImpact {
+  background-color: var(--color-accent-80);
 
-  &:focus-visible {
-    background-color: var(--accent-80);
-    border: 2px solid var(--black-100);
+  &:focus {
+    background-color: var(--color-accent-80);
+    border: 2px solid var(--color-black-100);
   }
 
   &:hover {
-    background-color: var(--accent-70);
+    background-color: var(--color-accent-70);
   }
 
   & .text {
-    color: var(--accent-10);
+    color: var(--color-accent-10);
   }
 
   & .icon {
-    stroke: var(--accent-10);
+    stroke: var(--color-accent-10);
   }
 
   &.btnLoading {
-    background-color: var(--accent-80);
+    background-color: var(--color-accent-80);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible {
-    background-color: var(--gray-30);
+  &.btnDisabled:focus {
+    background-color: var(--color-gray-30);
   }
 
   &.btnDisabled .text {
-    color: var(--gray-70);
+    color: var(--color-gray-70);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--gray-70);
+    stroke: var(--color-gray-70);
   }
 
   &.btnLoading .icon {
-    stroke: var(--white-48);
+    stroke: var(--color-white-48);
   }
 }
 
-.onDarkLow {
-  & {
-    background: none;
-    border: 2px solid var(--white-16);
-  }
+.onDarkThemeLowImpact {
+  background: none;
+  border: 2px solid var(--color-white-16);
 
-  &:focus-visible {
+  &:focus {
     background: none;
-    border: 2px solid var(--white-100);
+    border: 2px solid var(--color-white-100);
   }
 
   &:hover {
-    background-color: var(--white-16);
+    background-color: var(--color-white-16);
   }
 
   & .text {
-    color: var(--white-100);
+    color: var(--color-white-100);
   }
 
   & .icon {
-    stroke: var(--white-100);
+    stroke: var(--color-white-100);
   }
 
   &.btnLoading {
     background: none;
-    border: 2px solid var(--white-16);
+    border: 2px solid var(--color-white-16);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible {
+  &.btnDisabled:focus {
     background: none;
-    border: 2px solid var(--white-16);
+    border: 2px solid var(--color-white-16);
   }
 
   &.btnDisabled .text {
-    color: var(--white-48);
+    color: var(--color-white-48);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--white-48);
+    stroke: var(--color-white-48);
   }
 
   &.btnLoading .icon {
-    stroke: var(--white-48);
+    stroke: var(--color-white-48);
   }
 }
 
-.onDarkNone {
-  & {
-    background: none;
-  }
+.onDarkThemeNoneImpact {
+  background: none;
 
-  &:focus-visible {
+  &:focus {
     background: none;
-    border: 2px solid var(--white-100);
+    border: 2px solid var(--color-white-100);
   }
 
   &:hover {
-    background-color: var(--white-16);
+    background-color: var(--color-white-16);
   }
 
   & .text {
-    color: var(--white-100);
+    color: var(--color-white-100);
   }
 
   & .icon {
-    stroke: var(--white-100);
+    stroke: var(--color-white-100);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible,
+  &.btnDisabled:focus,
   &.btnLoading,
   &.btnLoading:hover,
-  &.btnLoading:focus-visible {
+  &.btnLoading:focus {
     background: none;
     border: 2px solid transparent;
   }
 
   &.btnDisabled .text {
-    color: var(--white-48);
+    color: var(--color-white-48);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--white-48);
+    stroke: var(--color-white-48);
   }
 
   &.btnLoading .icon {
-    stroke: var(--white-48);
+    stroke: var(--color-white-48);
   }
 }
 
-.onDarkDestructive {
-  & {
-    background-color: var(--attention-substrate);
-  }
+.onDarkThemeDestructiveImpact {
+  background-color: var(--color-attention-substrate);
 
-  &:focus-visible {
-    background-color: var(--attention-substrate);
-    border: 2px solid var(--black-100);
+  &:focus {
+    background-color: var(--color-attention-substrate);
+    border: 2px solid var(--color-black-100);
   }
 
   &:hover {
-    background-color: var(--attention);
+    background-color: var(--color-attention);
   }
 
   & .text {
-    color: var(--attention);
+    color: var(--color-attention);
   }
 
   & .icon {
-    stroke: var(--attention);
+    stroke: var(--color-attention);
   }
 
   &:hover:not(.btnDisabled):not(.btnLoading) .text {
-    color: var(--attention-substrate);
+    color: var(--color-attention-substrate);
   }
 
   &:hover:not(.btnDisabled):not(.btnLoading) .icon {
-    stroke: var(--attention-substrate);
+    stroke: var(--color-attention-substrate);
   }
 
   &.btnLoading {
-    background-color: var(--attention-substrate);
+    background-color: var(--color-attention-substrate);
   }
 
   &.btnDisabled,
   &.btnDisabled:hover,
-  &.btnDisabled:focus-visible {
-    background-color: var(--gray-30);
+  &.btnDisabled:focus {
+    background-color: var(--color-gray-30);
     border: 2px solid transparent;
   }
 
   &.btnDisabled .text {
-    color: var(--gray-70);
+    color: var(--color-gray-70);
   }
 
   &.btnDisabled .icon {
-    stroke: var(--gray-70);
+    stroke: var(--color-gray-70);
   }
 
   &.btnLoading .icon {
-    stroke: var(--black-56);
+    stroke: var(--color-black-56);
   }
 }

@@ -1,0 +1,272 @@
+@mixin media-size($size) {
+  @if $size == tablet {
+    @media (min-width: 720px) { @content; }
+  }
+
+  @else if $size == small-desktop {
+    @media (min-width: 1200px) { @content; }
+  }
+}
+
+@mixin text-primary-font {
+  color: var(--color-gray-100);
+  font-family: '***REMOVED*** display', 'Open Sans', sans-serif;
+}
+
+@mixin text-secondary-font {
+  color: var(--color-gray-100);
+  font-family: 'inter', sans-serif;
+}
+
+@mixin style-hero-1 {
+  font-size: 108px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 108px;
+}
+
+@mixin style-hero-2 {
+  font-size: 88px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 92px;
+}
+
+@mixin style-hero-3 {
+  font-size: 68px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 76px;
+}
+
+@mixin style-headline-1 {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 64px;
+}
+
+@mixin style-headline-2 {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 56px;
+}
+
+@mixin style-headline-3 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 44px;
+}
+
+@mixin style-headline-4 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 36px;
+}
+
+@mixin style-headline-5 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 32px;
+}
+
+@mixin style-headline-6 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+}
+
+@mixin text-hero-1 {
+  @include text-primary-font;
+  @include style-hero-3;
+
+  @include media-size(tablet) {
+    @include style-hero-2;
+  }
+
+  @include media-size(small-desktop) {
+    @include style-hero-1;
+  }
+}
+
+@mixin text-hero-2 {
+  @include text-primary-font;
+  @include style-headline-1;
+
+  @include media-size(tablet) {
+    @include style-hero-3;
+  }
+
+  @include media-size(small-desktop) {
+    @include style-hero-2;
+  }
+}
+
+@mixin text-hero-3 {
+  @include text-primary-font;
+  @include style-headline-2;
+
+  @include media-size(tablet) {
+    @include style-headline-1;
+  }
+
+  @include media-size(small-desktop) {
+    @include style-hero-3;
+  }
+}
+
+@mixin text-headline-1 {
+  @include text-primary-font;
+  @include style-headline-3;
+
+  @include media-size(tablet) {
+    @include style-headline-2;
+  }
+
+  @include media-size(small-desktop) {
+    @include style-headline-1;
+  }
+}
+
+@mixin text-headline-2 {
+  @include text-primary-font;
+  @include style-headline-4;
+
+  @include media-size(tablet) {
+    @include style-headline-3;
+  }
+
+  @include media-size(small-desktop) {
+    @include style-headline-2;
+  }
+}
+
+@mixin text-headline-3 {
+  @include text-primary-font;
+  @include style-headline-5;
+
+  @include media-size(tablet) {
+    @include style-headline-4;
+  }
+
+  @include media-size(small-desktop) {
+    @include style-headline-3;
+  }
+}
+
+@mixin text-headline-4 {
+  @include text-primary-font;
+  @include style-headline-6;
+
+  @include media-size(tablet) {
+    @include style-headline-5;
+  }
+
+  @include media-size(small-desktop) {
+    @include style-headline-4;
+  }
+}
+
+@mixin text-headline-5 {
+  @include text-primary-font;
+  @include style-headline-6;
+
+  @include media-size(small-desktop) {
+    @include style-headline-5;
+  }
+}
+
+@mixin text-headline-6 {
+  @include text-primary-font;
+  @include style-headline-6;
+}
+
+@mixin text-paragraph-1 {
+  @include text-secondary-font;
+
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 36px;
+}
+
+@mixin text-paragraph-2 {
+  @include text-secondary-font;
+
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 32px;
+}
+
+@mixin text-subtitle-1 {
+  @include text-secondary-font;
+
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  line-height: 32px;
+}
+
+@mixin text-subtitle-2 {
+  @include text-secondary-font;
+
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  line-height: 24px;
+}
+
+@mixin text-numeric-large {
+  @include text-secondary-font;
+
+  font-feature-settings: 'tnum', 'lnum';
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  line-height: 24px;
+}
+
+@mixin text-numeric-small {
+  @include text-secondary-font;
+
+  font-feature-settings: 'tnum', 'lnum';
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+@mixin text-caption {
+  @include text-secondary-font;
+
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 16px;
+}
+
+@mixin text-button {
+  @include text-secondary-font;
+
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  line-height: 16px;
+}
+
+@mixin text-overline {
+  @include text-secondary-font;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  line-height: 16px;
+  text-transform: uppercase;
+}

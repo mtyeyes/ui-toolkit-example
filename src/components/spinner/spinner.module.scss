@@ -1,0 +1,13 @@
+.spinner {
+  animation: linear 5s infinite running endless-rotation;
+}
+
+@keyframes endless-rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

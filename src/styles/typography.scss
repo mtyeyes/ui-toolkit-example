@@ -1,3 +1,77 @@
-@use './typography/fonts.scss';
-@use './typography/headings.scss';
-@use './typography/independent-styles.scss';
+@import './mixins.scss';
+
+.text-hero-1 {
+  @include text-hero-1;
+}
+
+.text-hero-2 {
+  @include text-hero-2;
+}
+
+.text-hero-3 {
+  @include text-hero-3;
+}
+
+.text-headline-1 {
+  @include text-headline-1;
+}
+
+.text-headline-2 {
+  @include text-headline-2;
+}
+
+.text-headline-3 {
+  @include text-headline-3;
+}
+
+.text-headline-4 {
+  @include text-headline-4;
+}
+
+.text-headline-5 {
+  @include text-headline-5;
+}
+
+.text-headline-6 {
+  @include text-headline-6;
+}
+
+.text-paragraph-1 {
+  @include text-paragraph-1;
+}
+
+.text-paragraph-2 {
+  @include text-paragraph-2;
+}
+
+.text-subtitle-1 {
+  @include text-subtitle-1;
+}
+
+.text-subtitle-2 {
+  @include text-subtitle-2;
+}
+
+.text-numeric-small {
+  @include text-numeric-small;
+}
+
+.text-numeric-large {
+  @include text-numeric-large;
+}
+
+.text-caption {
+  @include text-caption;
+}
+
+.text-button {
+  @include text-button;
+}
+
+.text-overline {
+  @include text-overline;
+}
+
+.text-bold {
+  font-weight: 700;
+}

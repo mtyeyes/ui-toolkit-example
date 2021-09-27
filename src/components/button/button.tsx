@@ -2,8 +2,7 @@ import React, { FC, SVGAttributes, ButtonHTMLAttributes, DetailedHTMLProps } fro
 import styles from './button.module.scss';
 import cn from 'classnames';
 import capitalize from '../../utils/capitalizeFirstLetter';
-
-import loadingIcon from '../../resources/icons/circle.svg';
+import { Spinner } from '../../';
 
 export type ButtonProps = ButtonPropsWithIcon | ButtonPropsWithoutIcon;
 
@@ -20,61 +19,57 @@ interface GenericButtonProps
   extends Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, ButtonAttributesToOmit> {
   theme?: 'onDark' | 'onLight';
   impact?: 'high' | 'medium' | 'low' | 'none' | 'destructive';
-  size?: '36dp' | '48dp';
-  state?: 'default' | 'loading' | 'disabled';
+  size?: 'small' | 'medium';
+  isLoading?: boolean;
+  isDisabled?: boolean;
   children?: string;
 }
 
-type ButtonAttributesToOmit = 'aria-label' | 'aria-labelledby' | 'tabIndex' | 'children';
+type ButtonAttributesToOmit = 'aria-label' | 'aria-labelledby' | 'children';
 
-const Button = ({
+export const Button = ({
   theme = 'onLight',
   impact = 'high',
   icon = 'none',
-  size = '48dp',
-  state = 'default',
+  size = 'medium',
+  isLoading = false,
+  isDisabled = false,
   className,
   children,
   ...props
 }: ButtonProps) => {
   const buttonClassName = cn(
     {
-      [styles.btnLoading]: state === 'loading',
-      [styles.btnDisabled]: state === 'disabled',
+      [styles.btnLoading]: isLoading,
+      [styles.btnDisabled]: isDisabled,
     },
-    styles[`btnSize${size}`],
+    styles[`${size}Size`],
     styles[`btnIcon${capitalize(icon)}`],
-    styles[`${theme}${capitalize(impact)}`],
+    styles[`${theme}Theme${capitalize(impact)}Impact`],
     styles.btn,
     styles.btnResetDefault,
     className,
   );
-  const textClassName = cn(styles.text, 'text-button');
-  const iconWrapperClassName = cn(styles.iconWrapper);
-  const iconClassName = cn(styles.icon);
 
-  const isBtnLoading = state === 'loading';
   const isBtnWithIcon = icon !== 'none';
-  const isTextDisplayed = !isBtnLoading && icon !== 'only';
-  const isIconDisplayed = isBtnLoading || isBtnWithIcon;
-  const IconComponent = isBtnWithIcon && !isBtnLoading ? (props as ButtonPropsWithIcon)['iconSrc'] : loadingIcon;
+  const isTextDisplayed = !isLoading && icon !== 'only';
+  const isIconDisplayed = isLoading || isBtnWithIcon;
+  const IconComponent = isBtnWithIcon && !isLoading ? (props as ButtonPropsWithIcon)['iconSrc'] : Spinner;
 
   return (
     <button
       aria-label={icon === 'only' && children ? children : undefined}
-      tabIndex={state === 'disabled' || isBtnLoading ? -1 : 0}
+      disabled={isDisabled || isLoading}
       className={buttonClassName}
       type="button"
       {...props}
     >
       {isIconDisplayed && (
-        <div className={iconWrapperClassName}>
-          <IconComponent className={iconClassName} />
+        <div className={styles.iconWrapper}>
+          <IconComponent className={styles.icon} />
         </div>
       )}
-      {isTextDisplayed && <span className={textClassName}>{children}</span>}
+      {isTextDisplayed && <span className={styles.text}>{children}</span>}
     </button>
   );
 };
-
-export default Button;

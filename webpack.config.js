@@ -52,7 +52,6 @@ module.exports = {
               modules: true,
             },
           },
-          'postcss-loader',
           {
             loader: 'sass-loader',
             options: { implementation: require('sass') },
@@ -65,7 +64,6 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'postcss-loader',
           {
             loader: 'sass-loader',
             options: { implementation: require('sass') },
