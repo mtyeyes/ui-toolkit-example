@@ -11,5 +11,3 @@ export interface SpinnerProps {
 export const Spinner = ({ className }: SpinnerProps) => {
   return <LoadingIcon className={cn(styles.spinner, className)} />;
 };
-
-export default Spinner;

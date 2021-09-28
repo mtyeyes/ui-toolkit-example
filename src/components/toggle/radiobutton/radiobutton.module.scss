@@ -1,0 +1,21 @@
+// css variables comes from the parent component
+
+.box {
+  background-color: var(--toggle-background-color);
+  border: var(--toggle-border);
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: grid;
+  height: 24px;
+  place-items: center;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 24px;
+}
+
+.shape {
+  background-color: var(--toggle-icon-color);
+  border-radius: 50%;
+  height: 12px;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 12px;
+}
