@@ -1,0 +1,33 @@
+@import '../../styles/mixins.scss';
+
+.separator {
+  background-clip: content-box;
+  background-color: var(--color-black-12);
+  box-sizing: content-box;
+  height: 1px;
+  width: 100%;
+}
+
+.microOffset {
+  padding: 4px 0;
+
+  @include media-size(small-desktop) {
+    padding: 8px 0;
+  }
+}
+
+.smallOffset {
+  padding: 12px 0;
+
+  @include media-size(small-desktop) {
+    padding: 24px 0;
+  }
+}
+
+.mediumOffset {
+  padding: 24px 0;
+
+  @include media-size(small-desktop) {
+    padding: 48px 0;
+  }
+}

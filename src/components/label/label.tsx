@@ -4,18 +4,30 @@ import cn from 'classnames';
 
 import FlagRequired from '../../resources/icons/required.svg';
 
-export interface LabelProps extends DefaultLabelProps {
+export type LabelProps = LabelAsLabelProps | LabelAsLegend;
+
+interface LabelAsLabelProps extends DefaultLabelProps {
+  tag?: 'label';
   isRequired?: boolean;
 }
 
 type DefaultLabelProps = DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>;
 
-export const Label = ({ isRequired = false, className, children, ...props }: LabelProps) => {
+interface LabelAsLegend {
+  isRequired?: boolean;
+  tag: 'legend';
+  className?: string;
+  children?: string;
+}
+
+export const Label = ({ isRequired = false, className, tag = 'label', children, ...props }: LabelProps) => {
+  const Tag = tag as keyof JSX.IntrinsicElements;
+
   return (
     <div className={styles.labelWrapper}>
-      <label className={cn(styles.label, className)} {...props}>
+      <Tag className={cn(styles.label, className)} {...(props as any)}>
         {children}
-      </label>
+      </Tag>
       {isRequired && <FlagRequired className={styles.icon} />}
     </div>
   );

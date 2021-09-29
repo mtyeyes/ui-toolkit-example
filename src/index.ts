@@ -15,8 +15,14 @@ export { Label } from './components/label/label';
 export type { RatingProps } from './components/rating/rating';
 export { Rating } from './components/rating/rating';
 
+export type { SeparatorProps } from './components/separator/separator';
+export { Separator } from './components/separator/separator';
+
 export type { SpinnerProps } from './components/spinner/spinner';
 export { Spinner } from './components/spinner/spinner';
 
 export type { ToggleProps } from './components/toggle/toggle';
 export { Toggle } from './components/toggle/toggle';
+
+export type { ToggleGroupProps } from './components/toggle-group/toggle-group';
+export { ToggleGroup } from './components/toggle-group/toggle-group';
