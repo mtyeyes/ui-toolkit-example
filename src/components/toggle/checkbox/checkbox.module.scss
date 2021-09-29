@@ -1,6 +1,6 @@
 // css variables comes from the parent component
 
-.box {
+.field {
   background-color: var(--toggle-background-color);
   border: var(--toggle-border);
   border-radius: 4px;
@@ -12,7 +12,7 @@
   width: 24px;
 }
 
-.box .icon {
+.field .icon {
   stroke: var(--toggle-icon-color);
   transition: var(--transition-speed) var(--transition-timing);
 }

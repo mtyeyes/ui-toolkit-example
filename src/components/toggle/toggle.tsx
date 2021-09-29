@@ -14,13 +14,12 @@ export interface ToggleProps {
   isChecked: IsChecked;
   setIsChecked: SetIsChecked;
   isIntermidiate?: boolean;
-  state?: State;
+  isDisabled?: boolean;
+  isInvalid?: boolean;
   isRequired?: boolean;
   isFilled?: boolean;
   children?: string;
 }
-
-export type State = 'disabled' | 'invalid';
 
 type IsChecked = boolean;
 
@@ -32,7 +31,8 @@ export const Toggle = ({
   name,
   isChecked,
   setIsChecked,
-  state,
+  isDisabled = false,
+  isInvalid = false,
   isIntermidiate = false,
   isRequired = false,
   isFilled = false,
@@ -45,8 +45,8 @@ export const Toggle = ({
   const wrapperClassName = cn(
     {
       [styles.checked]: isChecked,
-      [styles.disabled]: state === 'disabled',
-      [styles.invalid]: state === 'invalid',
+      [styles.disabled]: isDisabled,
+      [styles.invalid]: isInvalid,
       [styles.filled]: isFilled,
     },
     styles.wrapper,
@@ -54,21 +54,22 @@ export const Toggle = ({
 
   const labelClassName = cn(
     {
-      [styles.labelDisabled]: state === 'disabled',
+      [styles.labelDisabled]: isDisabled,
       [styles.labelOfSwitch]: type === 'switch',
     },
     styles.label,
   );
 
-  const renderInputBox = () => {
+  const renderInputField = () => {
     if (type === 'radiobutton') return <Radiobutton />;
-    if (type === 'switch') return <Switch isChecked={isChecked} state={state} isFilled={isFilled} />;
+    if (type === 'switch')
+      return <Switch isChecked={isChecked} isDisabled={isDisabled} isInvalid={isInvalid} isFilled={isFilled} />;
     return <Checkbox isIntermidiate={isIntermidiate} />;
   };
 
   return (
     <div className={wrapperClassName}>
-      {renderInputBox()}
+      {renderInputField()}
       <Label htmlFor={id} isRequired={isRequired} className={labelClassName}>
         {children}
       </Label>
@@ -79,7 +80,7 @@ export const Toggle = ({
         checked={isChecked}
         onChange={handleChange}
         required={isRequired}
-        disabled={state === 'disabled'}
+        disabled={isDisabled}
         type={type === 'radiobutton' ? 'radio' : 'checkbox'}
       />
     </div>

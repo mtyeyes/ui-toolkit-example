@@ -6,6 +6,9 @@ export { Badge } from './components/badge/badge';
 export type { ButtonProps } from './components/button/button';
 export { Button } from './components/button/button';
 
+export type { ChipProps } from './components/chip/chip';
+export { Chip } from './components/chip/chip';
+
 export type { LabelProps } from './components/label/label';
 export { Label } from './components/label/label';
 

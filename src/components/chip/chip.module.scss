@@ -1,0 +1,87 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  align-content: center;
+  background-color: var(--color-gray-20);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.text {
+  @include text-caption;
+
+  padding: 4px 8px;
+}
+
+.wrapper:hover {
+  background-color: var(--color-gray-30);
+}
+
+.wrapper:focus-within {
+  border: 2px solid var(--color-gray-100);
+}
+
+.btn {
+  all: unset;
+  cursor: pointer;
+  height: 24px;
+  stroke: var(--color-gray-80);
+  width: 24px;
+}
+
+.accent {
+  &.wrapper {
+    background-color: var(--color-primary-20);
+  }
+
+  &.wrapper:hover {
+    background-color: var(--color-primary-30);
+  }
+
+  .text {
+    color: var(--color-primary-80);
+  }
+
+  .btn {
+    stroke: var(--color-primary-80);
+  }
+}
+
+.dark {
+  &.wrapper {
+    background-color: var(--color-gray-80);
+  }
+
+  &.wrapper:hover {
+    background-color: var(--color-gray-100);
+  }
+
+  .text {
+    color: var(--color-white-100);
+  }
+
+  .btn {
+    stroke: var(--color-gray-20);
+  }
+}
+
+.disabled {
+  &.wrapper,
+  &.wrapper:hover {
+    background-color: var(--color-gray-10);
+  }
+
+  .text {
+    color: var(--color-gray-60);
+  }
+
+  .btn {
+    cursor: default;
+    stroke: var(--color-gray-40);
+  }
+}

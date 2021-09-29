@@ -1,6 +1,6 @@
 // css variables comes from the parent component
 
-.box {
+.field {
   border: var(--toggle-border);
   border-radius: 80px;
   box-sizing: border-box;
@@ -29,7 +29,7 @@
   transition: var(--transition-speed) var(--transition-timing);
 }
 
-.box.checked {
+.field.checked {
   .shapeWrapper {
     background-color: var(--toggle-icon-color);
     left: 18px;
@@ -40,13 +40,13 @@
   }
 }
 
-.box.invalid {
+.field.invalid {
   .shapeWrapper {
     background-color: var(--color-attention);
   }
 }
 
-.box.disabled {
+.field.disabled {
   background-color: none;
 
   .shapeWrapper {
@@ -58,7 +58,7 @@
   }
 }
 
-.box.filled {
+.field.filled {
   background-color: var(--toggle-background-color);
 
   &.invalid .shapeWrapper,

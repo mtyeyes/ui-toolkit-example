@@ -3,28 +3,27 @@ import styles from './switch.module.scss';
 import cn from 'classnames';
 
 import Checkmark from '../../../resources/icons/checkmark-small.svg';
-import { State } from '../toggle';
 
 export interface SwitchProps {
   isChecked: boolean;
-  state?: State;
+  isDisabled?: boolean;
+  isInvalid?: boolean;
   isFilled?: boolean;
-  isIntermidiate?: boolean;
 }
 
-export const Switch = ({ isChecked, state, isFilled }: SwitchProps) => {
-  const boxClassname = cn(
+export const Switch = ({ isChecked, isDisabled = false, isInvalid = false, isFilled = false }: SwitchProps) => {
+  const fieldClassname = cn(
     {
       [styles.checked]: isChecked,
-      [styles.disabled]: state === 'disabled',
-      [styles.invalid]: state === 'invalid',
+      [styles.disabled]: isDisabled,
+      [styles.invalid]: isInvalid,
       [styles.filled]: isFilled,
     },
-    styles.box,
+    styles.field,
   );
 
   return (
-    <div className={boxClassname}>
+    <div className={fieldClassname}>
       <div className={styles.shapeWrapper}>
         <Checkmark className={styles.shape} />
       </div>
