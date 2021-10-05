@@ -1,54 +1,8 @@
-@import '../../styles/mixins.scss';
-
-.fieldset {
-  border: 0;
-  box-sizing: border-box;
-  padding: 4px 24px;
-  width: 100%;
-}
-
-.label {
-  font-weight: 700;
-}
-
-.container {
+.group {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
   justify-content: flex-start;
   margin: 16px 0;
-}
-
-.helperWrapper {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  margin: 4px;
-  min-height: 16px;
-}
-
-.helperText,
-.helperCounter {
-  @include text-caption;
-
-  color: var(--color-gray-60);
-}
-
-.helperText {
-  flex-grow: 1;
-  margin: 0;
-}
-
-.helperCounter {
-  flex-grow: 0;
-  margin-left: 20px;
-}
-
-.invalid {
-  .helperText,
-  .helperCounter {
-    color: var(--color-attention);
-  }
 }

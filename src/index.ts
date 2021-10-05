@@ -9,6 +9,15 @@ export { Button } from './components/button/button';
 export type { ChipProps } from './components/chip/chip';
 export { Chip } from './components/chip/chip';
 
+export type { DropdownProps } from './components/dropdown/dropdown';
+export { Dropdown } from './components/dropdown/dropdown';
+
+export type { FormWrapperProps } from './components/form-wrapper/form-wrapper';
+export { FormWrapper } from './components/form-wrapper/form-wrapper';
+
+export type { InputProps } from './components/input/input';
+export { Input } from './components/input/input';
+
 export type { LabelProps } from './components/label/label';
 export { Label } from './components/label/label';
 
@@ -24,5 +33,4 @@ export { Spinner } from './components/spinner/spinner';
 export type { ToggleProps } from './components/toggle/toggle';
 export { Toggle } from './components/toggle/toggle';
 
-export type { ToggleGroupProps } from './components/toggle-group/toggle-group';
 export { ToggleGroup } from './components/toggle-group/toggle-group';

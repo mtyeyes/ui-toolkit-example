@@ -1,0 +1,21 @@
+// css variables comes from the parent component
+@import '../../../../styles/mixins.scss';
+
+.btn {
+  @include btn-style-reset;
+
+  cursor: pointer;
+  display: grid;
+  height: 32px;
+  overflow: hidden;
+  place-items: center;
+  width: 32px;
+}
+
+.icon {
+  stroke: var(--input-secondary-color);
+}
+
+.btn:disabled {
+  cursor: default;
+}

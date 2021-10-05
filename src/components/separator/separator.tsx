@@ -4,8 +4,9 @@ import cn from 'classnames';
 
 export interface SeparatorProps {
   offsetSize?: 'micro' | 'small' | 'medium';
+  isShrinked?: boolean;
 }
 
-export const Separator = ({ offsetSize = 'micro' }: SeparatorProps) => {
-  return <div className={cn(styles.separator, styles[`${offsetSize}Offset`])} />;
+export const Separator = ({ offsetSize = 'micro', isShrinked = false }: SeparatorProps) => {
+  return <div className={cn({ [styles.shrinked]: isShrinked }, styles[`${offsetSize}Offset`], styles.separator)} />;
 };

@@ -1,0 +1,62 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  background-color: var(--color-white-100);
+  border-radius: 8px;
+  box-shadow: var(--elevation-middle-4);
+  min-width: 240px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: calc(100% + 2px);
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 100%;
+}
+
+.wrapper.left {
+  left: 0;
+}
+
+.wrapper.right {
+  right: 0;
+}
+
+.listsWrapper {
+  margin: 0;
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.wrapper.expanded .listsWrapper {
+  margin: 8px 0;
+}
+
+.list {
+  @include list-style-reset;
+
+  max-height: 0;
+  overflow: hidden;
+  text-align: left;
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.wrapper.expanded .list {
+  max-height: 360px;
+}
+
+.wrapper.scrollable .list {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.wrapper:not(.expanded) .searchContainer {
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.wrapper.expanded .searchContainer {
+  margin: 8px 8px 16px;
+  max-height: 250px;
+  overflow: visible;
+}

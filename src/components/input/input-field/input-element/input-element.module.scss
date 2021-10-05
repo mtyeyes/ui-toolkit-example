@@ -1,0 +1,15 @@
+// css variables comes from the parent component
+@import '../../../../styles/mixins.scss';
+
+.input {
+  @include input-style-reset;
+  @include text-subtitle-2;
+
+  box-sizing: border-box;
+  color: var(--input-text-color);
+  margin: 4px;
+}
+
+.input::placeholder {
+  color: var(--input-secondary-color);
+}

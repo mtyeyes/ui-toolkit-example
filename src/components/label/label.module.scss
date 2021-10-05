@@ -1,13 +1,15 @@
 @import '../../styles/mixins.scss';
 
 .labelWrapper {
+  display: inline-block;
   position: relative;
 }
 
 .label {
   @include text-subtitle-2;
 
-  display: block;
+  display: inline-block;
+  font-weight: 700;
   padding-right: 12px;
 }
 

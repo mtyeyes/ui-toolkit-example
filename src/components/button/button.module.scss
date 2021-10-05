@@ -1,14 +1,8 @@
 @import '../../styles/mixins.scss';
 
-.btnResetDefault {
-  background: none;
-  color: inherit;
-  font: inherit;
-  outline: none;
-  padding: 0;
-}
-
 .btn {
+  @include btn-style-reset;
+
   align-items: center;
   border: 2px solid transparent;
   box-sizing: border-box;

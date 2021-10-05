@@ -1,0 +1,99 @@
+@import '../../../styles/mixins.scss';
+
+.container {
+  --input-text-color: var(--color-gray-100);
+  --input-secondary-color: var(--color-gray-60);
+
+  align-items: center;
+  border: 2px solid var(--color-black-12);
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: flex-start;
+  padding: 10px;
+  position: relative;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 100%;
+}
+
+.container.condensed {
+  padding: 6px;
+}
+
+.container:hover {
+  border: 2px solid var(--color-black-32);
+}
+
+.container:focus-within {
+  border: 2px solid transparent;
+  outline: 2px solid var(--color-gray-100);
+}
+
+.container.disabled {
+  --input-text-color: var(--color-gray-60);
+  --input-secondary-color: var(--color-gray-40);
+
+  border: 2px dashed var(--color-black-12);
+}
+
+.container.readOnly {
+  border: 2px solid var(--color-black-12);
+}
+
+.container.invalid {
+  border: 2px solid var(--color-attention);
+}
+
+.container.disabled:focus-within,
+.container.readOnly:focus-within {
+  outline: none;
+}
+
+.container.invalid:focus-within {
+  border: 2px solid transparent;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.iconLocked {
+  fill: var(--color-gray-60);
+  position: absolute;
+  right: 5px;
+  top: -12px;
+}
+
+.container.disabled .iconLocked {
+  fill: var(--color-gray-40);
+}
+
+.container.filled {
+  background-color: var(--color-gray-10);
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: var(--color-gray-20);
+  }
+
+  &.readOnly,
+  &.readOnly:hover {
+    background-color: var(--color-gray-10);
+    border: 2px solid transparent;
+  }
+
+  &.disabled {
+    background: transparent;
+    border: 2px dashed var(--color-black-12);
+  }
+
+  &.invalid {
+    border: 2px solid var(--color-attention);
+  }
+
+  &.invalid:focus-within {
+    border: 2px solid transparent;
+  }
+}

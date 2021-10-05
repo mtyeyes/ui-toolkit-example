@@ -47,7 +47,6 @@ export const Button = ({
     styles[`btnIcon${capitalize(icon)}`],
     styles[`${theme}Theme${capitalize(impact)}Impact`],
     styles.btn,
-    styles.btnResetDefault,
     className,
   );
 

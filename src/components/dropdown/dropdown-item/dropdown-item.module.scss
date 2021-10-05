@@ -1,0 +1,72 @@
+@import '../../../styles/mixins.scss';
+
+.item {
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 10px 14px;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 100%;
+}
+
+.item.current {
+  background-color: var(--color-primary-20);
+}
+
+.item:hover,
+.item.current:hover {
+  background-color: var(--color-black-12);
+}
+
+.item:focus-within {
+  border: 2px solid var(--color-black-100);
+}
+
+.btn {
+  @include btn-style-reset;
+  @include text-subtitle-2;
+
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: nowrap;
+  height: auto;
+  justify-content: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.icon {
+  stroke: var(--color-gray-100);
+}
+
+.item.current .btn {
+  color: var(--color-primary-80);
+}
+
+.item.current .icon {
+  stroke: var(--color-primary-80);
+}
+
+.item.current:hover .btn {
+  color: var(--color-gray-100);
+}
+
+.text {
+  order: 2;
+}
+
+.icon.left {
+  margin-right: 24px;
+  order: 1;
+}
+
+.icon.right {
+  margin-left: auto;
+  order: 3;
+}

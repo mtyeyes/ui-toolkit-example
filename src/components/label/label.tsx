@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import FlagRequired from '../../resources/icons/required.svg';
 
-export type LabelProps = LabelAsLabelProps | LabelAsLegend;
+export type LabelProps = LabelAsLabelProps | LabelAsLegendProps;
 
 interface LabelAsLabelProps extends DefaultLabelProps {
   tag?: 'label';
@@ -13,7 +13,7 @@ interface LabelAsLabelProps extends DefaultLabelProps {
 
 type DefaultLabelProps = DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>;
 
-interface LabelAsLegend {
+interface LabelAsLegendProps {
   isRequired?: boolean;
   tag: 'legend';
   className?: string;
