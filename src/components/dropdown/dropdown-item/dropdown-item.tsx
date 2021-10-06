@@ -6,9 +6,7 @@ import { ToggleProps, Toggle } from '../../../index';
 
 export type DropdownItemProps = DropDownToggleItem | DropDownIconItem | DropDownLabelItem;
 
-interface DropDownToggleItem extends Omit<ToggleProps, 'type'>, ItemWithKey {
-  type: 'checkbox';
-}
+type DropDownToggleItem = ToggleProps & ItemWithKey;
 
 interface DropDownIconItem extends LabelWithIcon, ItemWithKey {
   type: 'icon';
@@ -34,11 +32,17 @@ interface ItemWithKey {
 }
 
 export const DropdownItem = (props: DropdownItemProps) => {
-  const itemClassName = cn({ [styles.current]: 'isCurrent' in props && props.isCurrent === true }, styles.item);
+  const itemClassName = cn(
+    {
+      [styles.current]: 'isCurrent' in props && props.isCurrent === true,
+      [styles.borderInset]: props.type !== 'icon' && props.type !== 'label',
+    },
+    styles.item,
+  );
 
   return (
     <li className={itemClassName}>
-      {props.type === 'checkbox' ? (
+      {props.type !== 'icon' && props.type !== 'label' ? (
         <Toggle {...props} />
       ) : (
         <button className={styles.btn} onClick={props.onClick}>

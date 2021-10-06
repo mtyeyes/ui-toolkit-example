@@ -12,8 +12,8 @@ export const Checkbox = ({ isIntermidiate = false }: CheckboxProps) => {
   const IconToDisplay = isIntermidiate ? Dash : Checkmark;
 
   return (
-    <div className={styles.field}>
+    <span className={styles.field}>
       <IconToDisplay className={styles.icon} />
-    </div>
+    </span>
   );
 };

@@ -4,6 +4,7 @@
   border: var(--toggle-border);
   border-radius: 80px;
   box-sizing: border-box;
+  display: block;
   height: 24px;
   position: relative;
   transition: var(--transition-speed) var(--transition-timing);
@@ -13,6 +14,7 @@
 .shapeWrapper {
   background-color: var(--color-gray-60);
   border-radius: 50%;
+  display: block;
   height: 16px;
   left: 2px;
   position: absolute;

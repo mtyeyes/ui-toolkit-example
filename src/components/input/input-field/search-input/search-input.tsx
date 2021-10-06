@@ -3,6 +3,9 @@ import React, { ChangeEvent, useRef } from 'react';
 import { InputControl } from '../input-controls/input-control';
 import { InputELement, InputELementProps } from '../input-element/input-element';
 
+import SearchIcon from '../../../../resources/icons/search.svg';
+import CrossIcon from '../../../../resources/icons/cross.svg';
+
 export interface SearchInputProps extends Omit<InputELementProps, 'onChange' | 'disabled'> {
   id: string;
   value: string;
@@ -28,7 +31,9 @@ export const SearchInput = ({ id, value, setValue, isDisabled, isReadOnly, ...pr
 
   return (
     <>
-      <InputControl isDisabled={isDisabled || isReadOnly} type="search" onClick={focusOnSearchField} />
+      <InputControl isDisabled={isDisabled || isReadOnly} onClick={focusOnSearchField}>
+        {SearchIcon}
+      </InputControl>
       <InputELement
         disabled={isDisabled || isReadOnly}
         ref={inputRef}
@@ -38,7 +43,11 @@ export const SearchInput = ({ id, value, setValue, isDisabled, isReadOnly, ...pr
         onChange={handleChange}
         {...props}
       />
-      {value !== '' && <InputControl isDisabled={isDisabled || isReadOnly} type="cross" onClick={clearSearchField} />}
+      {value !== '' && (
+        <InputControl isDisabled={isDisabled || isReadOnly} onClick={clearSearchField}>
+          {CrossIcon}
+        </InputControl>
+      )}
     </>
   );
 };

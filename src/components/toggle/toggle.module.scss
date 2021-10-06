@@ -1,12 +1,20 @@
-.wrapper {
+@import '../../styles/mixins.scss';
+
+.label {
   --toggle-border: 2px solid var(--color-black-12);
   --toggle-background-color: none;
   --toggle-icon-color: transparent;
 
   align-items: center;
+  cursor: pointer;
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  padding: 12px;
+}
+
+.label.disabled {
+  cursor: default;
 }
 
 .input {
@@ -14,142 +22,134 @@
   outline: none;
 }
 
-.label {
-  cursor: pointer;
+.text {
+  @include text-subtitle-2;
+
   font-weight: 400;
   padding-left: 16px;
   position: relative;
 }
 
-.labelDisabled {
-  cursor: default;
-}
-
-.label::before {
-  content: '';
-  height: 24px;
-  left: -24px;
+.icon {
+  fill: var(--color-attention);
+  height: 8px;
   position: absolute;
-  top: calc(50% - 12px);
-  width: 24px;
+  right: -12px;
+  top: 0;
+  width: 8px;
 }
 
-.labelOfSwitch::before {
-  left: -40px;
-  width: 40px;
-}
-
-.wrapper:hover {
+.label:hover {
   --toggle-border: 2px solid var(--color-black-32);
 }
 
-.wrapper:focus-within {
+.label:focus-within {
   --toggle-border: 2px solid var(--color-gray-100);
 }
 
-.wrapper.checked {
+.label.checked {
   --toggle-border: 2px solid var(--color-primary-80);
   --toggle-icon-color: var(--color-primary-80);
 }
 
-.wrapper.checked:hover {
+.label.checked:hover {
   --toggle-border: 2px solid var(--color-primary-70);
   --toggle-icon-color: var(--color-primary-70);
 }
 
-.wrapper.checked:focus-within {
+.label.checked:focus-within {
   --toggle-border: 2px solid var(--color-gray-100);
   --toggle-icon-color: var(--color-primary-80);
 }
 
-.wrapper.invalid,
-.wrapper.invalid:hover {
+.label.invalid,
+.label.invalid:hover {
   --toggle-border: 2px solid var(--color-attention);
 }
 
-.wrapper.invalid:focus-within {
+.label.invalid:focus-within {
   --toggle-border: 2px solid var(--color-gray-100);
 }
 
-.wrapper.invalid.checked {
+.label.invalid.checked {
   --toggle-icon-color: var(--color-attention);
 }
 
-.wrapper.disabled {
+.label.disabled {
   --toggle-background-color: transparent;
   --toggle-border: 2px dashed var(--color-black-12);
 }
 
-.wrapper.disabled.checked {
+.label.disabled.checked {
   --toggle-background-color: transparent;
   --toggle-border: 2px dashed var(--color-black-12);
   --toggle-icon-color: var(--color-gray-40);
 }
 
-.wrapper.disabled .label {
+.label.disabled .text {
   color: var(--color-gray-60);
 }
 
 .filled {
-  &.wrapper {
+  &.label {
     --toggle-background-color: var(--color-gray-20);
     --toggle-border: 2px solid transparent;
     --toggle-icon-color: transparent;
   }
 
-  &.wrapper:hover {
+  &.label:hover {
     --toggle-background-color: var(--color-gray-30);
   }
 
-  &.wrapper:focus-within {
+  &.label:focus-within {
     --toggle-background-color: var(--color-gray-20);
     --toggle-border: 2px solid var(--color-gray-100);
   }
 
-  &.wrapper.checked {
+  &.label.checked {
     --toggle-background-color: var(--color-primary-80);
     --toggle-icon-color: var(--color-primary-10);
   }
 
-  &.wrapper.checked:hover {
+  &.label.checked:hover {
     --toggle-border: 2px solid transparent;
     --toggle-icon-color: var(--color-primary-10);
     --toggle-background-color: var(--color-primary-70);
   }
 
-  &.wrapper.checked:focus-within {
+  &.label.checked:focus-within {
     --toggle-border: 2px solid var(--color-gray-100);
     --toggle-icon-color: var(--color-primary-10);
     --toggle-background-color: var(--color-primary-80);
   }
 
-  &.wrapper.invalid,
-  &.wrapper.invalid:hover, {
+  &.label.invalid,
+  &.label.invalid:hover, {
     --toggle-background-color: var(--color-attention);
     --toggle-border: 2px solid transparent;
   }
 
-  &.wrapper.invalid:focus-within {
+  &.label.invalid:focus-within {
     --toggle-border: 2px solid var(--color-gray-100);
   }
 
-  &.wrapper.invalid.checked,
-  &.wrapper.invalid.checked:hover,
-  &.wrapper.invalid.checked:focus-within {
+  &.label.invalid.checked,
+  &.label.invalid.checked:hover,
+  &.label.invalid.checked:focus-within {
     --toggle-icon-color: var(--color-white-100);
     --toggle-background-color: var(--color-attention);
   }
 
-  &.wrapper.disabled,
-  &.wrapper.disabled:hover,
-  &.wrapper.disabled:focus-within {
+  &.label.disabled,
+  &.label.disabled:hover,
+  &.label.disabled:focus-within {
     --toggle-background-color: transparent;
     --toggle-border: 2px dashed var(--color-black-12);
   }
 
-  &.wrapper.disabled.checked,
-  &.wrapper.disabled.checked:hover,
-  &.wrapper.disabled.checked:focus-within {
+  &.label.disabled.checked,
+  &.label.disabled.checked:hover,
+  &.label.disabled.checked:focus-within {
     --toggle-icon-color: var(--color-gray-40);
   }
 }

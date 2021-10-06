@@ -23,10 +23,10 @@ export const Switch = ({ isChecked, isDisabled = false, isInvalid = false, isFil
   );
 
   return (
-    <div className={fieldClassname}>
-      <div className={styles.shapeWrapper}>
+    <span className={fieldClassname}>
+      <span className={styles.shapeWrapper}>
         <Checkmark className={styles.shape} />
-      </div>
-    </div>
+      </span>
+    </span>
   );
 };

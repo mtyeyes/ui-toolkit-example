@@ -85,6 +85,19 @@
     stroke: var(--color-primary-10);
   }
 
+  &:active {
+    background-color: var(--color-primary-80);
+    border: 2px solid transparent;
+  }
+
+  &:active .text {
+    color: var(--color-white-48);
+  }
+
+  &:active .icon {
+    stroke: var(--color-white-48);
+  }
+
   &.btnLoading {
     background-color: var(--color-primary-80);
   }
@@ -126,6 +139,19 @@
 
   & .icon {
     stroke: var(--color-primary-80);
+  }
+
+  &:active {
+    background-color: var(--color-primary-20);
+    border: 2px solid transparent;
+  }
+
+  &:active .text {
+    color: var(--color-black-56);
+  }
+
+  &:active .icon {
+    stroke: var(--color-black-56);
   }
 
   &.btnLoading {
@@ -172,6 +198,19 @@
     stroke: var(--color-gray-100);
   }
 
+  &:active {
+    background-color: none;
+    border: 2px solid --color-black-12;
+  }
+
+  &:active .text {
+    color: var(--color-black-56);
+  }
+
+  &:active .icon {
+    stroke: var(--color-black-56);
+  }
+
   &.btnLoading {
     background: none;
     border: 2px solid var(--color-black-12);
@@ -215,6 +254,19 @@
 
   & .icon {
     stroke: var(--color-gray-100);
+  }
+
+  &:active {
+    background-color: none;
+    border: 2px solid transparent;
+  }
+
+  &:active .text {
+    color: var(--color-black-56);
+  }
+
+  &:active .icon {
+    stroke: var(--color-black-56);
   }
 
   &.btnDisabled,
@@ -268,6 +320,19 @@
     stroke: var(--color-attention);
   }
 
+  &:active {
+    background-color: var(--color-primary-80);
+    border: 2px solid transparent;
+  }
+
+  &:active .text {
+    color: var(--color-white-48);
+  }
+
+  &:active .icon {
+    stroke: var(--color-white-48);
+  }
+
   &.btnLoading {
     background-color: var(--color-attention);
   }
@@ -312,6 +377,19 @@
     stroke: var(--color-accent-90);
   }
 
+  &:active {
+    background-color: var(--color-primary-20);
+    border: 2px solid transparent;
+  }
+
+  &:active .text {
+    color: var(--color-black-56);
+  }
+
+  &:active .icon {
+    stroke: var(--color-black-56);
+  }
+
   &.btnLoading {
     background-color: var(--color-accent-30);
   }
@@ -353,6 +431,19 @@
 
   & .icon {
     stroke: var(--color-accent-10);
+  }
+
+  &:active {
+    background-color: var(--color-primary-80);
+    border: 2px solid transparent;
+  }
+
+  &:active .text {
+    color: var(--color-white-48);
+  }
+
+  &:active .icon {
+    stroke: var(--color-white-48);
   }
 
   &.btnLoading {
@@ -399,6 +490,19 @@
     stroke: var(--color-white-100);
   }
 
+  &:active {
+    background-color: none;
+    border: 2px solid var(--color-black-12);
+  }
+
+  &:active .text {
+    color: var(--color-black-56);
+  }
+
+  &:active .icon {
+    stroke: var(--color-black-56);
+  }
+
   &.btnLoading {
     background: none;
     border: 2px solid var(--color-white-16);
@@ -442,6 +546,19 @@
 
   & .icon {
     stroke: var(--color-white-100);
+  }
+
+  &:active {
+    background-color: none;
+    border: 2px solid transparent;
+  }
+
+  &:active .text {
+    color: var(--color-black-56);
+  }
+
+  &:active .icon {
+    stroke: var(--color-black-56);
   }
 
   &.btnDisabled,
@@ -493,6 +610,19 @@
 
   &:hover:not(.btnDisabled):not(.btnLoading) .icon {
     stroke: var(--color-attention-substrate);
+  }
+
+  &:active {
+    background-color: var(--color-primary-80);
+    border: 2px solid transparent;
+  }
+
+  &:active .text {
+    color: var(--color-white-48);
+  }
+
+  &:active .icon {
+    stroke: var(--color-white-48);
   }
 
   &.btnLoading {

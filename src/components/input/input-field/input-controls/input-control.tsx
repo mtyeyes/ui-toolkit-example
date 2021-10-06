@@ -2,20 +2,15 @@ import React from 'react';
 import styles from './input-control.module.scss';
 import cn from 'classnames';
 
-import search from '../../../../resources/icons/search.svg';
-import cross from '../../../../resources/icons/cross.svg';
-
-const iconsMap = { search, cross };
-
 export interface InputControlProps {
-  type: 'search' | 'cross';
   onClick: () => void;
   className?: string;
   isDisabled?: boolean;
+  children: React.FunctionComponent<React.SVGAttributes<SVGAElement>>;
 }
 
-export const InputControl = ({ type, isDisabled = false, className, onClick }: InputControlProps) => {
-  const Icon = iconsMap[type];
+export const InputControl = ({ isDisabled = false, className, onClick, children }: InputControlProps) => {
+  const Icon = children;
 
   return (
     <button className={cn(styles.btn, className)} disabled={isDisabled} type="button" onClick={onClick}>

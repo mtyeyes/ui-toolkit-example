@@ -2,13 +2,14 @@ import React, { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import styles from './toggle.module.scss';
 import cn from 'classnames';
 
-import { Label } from '../../index';
 import { Checkbox } from './checkbox/checkbox';
 import { Radiobutton } from './radiobutton/radiobutton';
 import { Switch } from './switch/switch';
 
+import FlagRequired from '../../resources/icons/required.svg';
+
 export interface ToggleProps {
-  type?: 'checkbox' | 'radiobutton' | 'switch';
+  type: 'checkbox' | 'radiobutton' | 'switch';
   id: string;
   name?: string;
   isChecked: IsChecked;
@@ -42,20 +43,12 @@ export const Toggle = ({
     setIsChecked(e.currentTarget.checked);
   };
 
-  const wrapperClassName = cn(
+  const labelClassName = cn(
     {
       [styles.checked]: isChecked,
       [styles.disabled]: isDisabled,
       [styles.invalid]: isInvalid,
       [styles.filled]: isFilled,
-    },
-    styles.wrapper,
-  );
-
-  const labelClassName = cn(
-    {
-      [styles.labelDisabled]: isDisabled,
-      [styles.labelOfSwitch]: type === 'switch',
     },
     styles.label,
   );
@@ -68,11 +61,12 @@ export const Toggle = ({
   };
 
   return (
-    <div className={wrapperClassName}>
+    <label className={labelClassName} htmlFor={id}>
       {renderInputField()}
-      <Label htmlFor={id} isRequired={isRequired} className={labelClassName}>
+      <span className={cn({ [styles.disabled]: isDisabled }, styles.text)}>
         {children}
-      </Label>
+        {isRequired && <FlagRequired className={styles.icon} />}
+      </span>
       <input
         id={id}
         name={name}
@@ -83,6 +77,6 @@ export const Toggle = ({
         disabled={isDisabled}
         type={type === 'radiobutton' ? 'radio' : 'checkbox'}
       />
-    </div>
+    </label>
   );
 };

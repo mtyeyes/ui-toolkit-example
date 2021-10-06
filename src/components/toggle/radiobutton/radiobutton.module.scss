@@ -15,6 +15,7 @@
 .shape {
   background-color: var(--toggle-icon-color);
   border-radius: 50%;
+  display: block;
   height: 12px;
   transition: var(--transition-speed) var(--transition-timing);
   width: 12px;
