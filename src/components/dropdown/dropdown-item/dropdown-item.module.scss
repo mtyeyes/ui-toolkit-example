@@ -84,6 +84,10 @@
   color: var(--color-gray-100);
 }
 
+.item.current:hover .icon {
+  stroke: var(--color-gray-100);
+}
+
 .text {
   order: 2;
 }

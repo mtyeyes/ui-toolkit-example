@@ -8,6 +8,10 @@
   box-sizing: border-box;
   color: var(--input-text-color);
   margin: 4px;
+  min-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .input::placeholder {

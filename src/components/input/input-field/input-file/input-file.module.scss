@@ -1,0 +1,41 @@
+// css variables comes from the parent component
+@import '../../../../styles/mixins.scss';
+
+.input {
+  height: 0.1px;
+  left: -9999;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: -9999;
+  width: 0.1px;
+  z-index: -1;
+}
+
+.label {
+  @include text-subtitle-2;
+
+  color: var(--input-secondary-color);
+  cursor: pointer;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.label.disabled {
+  cursor: default;
+}
+
+.text {
+  align-self: middle;
+  margin: 4px 0 4px 12px;
+}
+
+.icon {
+  height: 32px;
+  stroke: var(--input-secondary-color);
+  width: 32px;
+}

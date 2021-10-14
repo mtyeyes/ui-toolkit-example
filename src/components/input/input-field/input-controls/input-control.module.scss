@@ -6,6 +6,8 @@
 
   cursor: pointer;
   display: grid;
+  flex-grow: 0;
+  flex-shrink: 0;
   height: 32px;
   overflow: hidden;
   place-items: center;

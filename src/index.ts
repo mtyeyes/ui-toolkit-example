@@ -12,6 +12,8 @@ export { Chip } from './components/chip/chip';
 export type { DropdownProps } from './components/dropdown/dropdown';
 export { Dropdown } from './components/dropdown/dropdown';
 
+export type { DropdownItemProps } from './components/dropdown/dropdown-item/dropdown-item';
+
 export type { FormWrapperProps } from './components/form-wrapper/form-wrapper';
 export { FormWrapper } from './components/form-wrapper/form-wrapper';
 

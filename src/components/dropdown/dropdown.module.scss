@@ -8,9 +8,10 @@
   overflow: hidden;
   padding: 0;
   position: absolute;
-  top: calc(100% + 2px);
+  top: calc(100% + 6px);
   transition: var(--transition-speed) var(--transition-timing);
   width: 100%;
+  z-index: 1;
 }
 
 .wrapper.left {
@@ -40,7 +41,7 @@
 }
 
 .wrapper.expanded .list {
-  max-height: 360px;
+  max-height: 240px;
 }
 
 .wrapper.scrollable .list {

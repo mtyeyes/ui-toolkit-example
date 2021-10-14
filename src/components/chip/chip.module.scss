@@ -1,21 +1,29 @@
 @import '../../styles/mixins.scss';
 
 .wrapper {
+  @include btn-style-reset;
+
   align-content: center;
   background-color: var(--color-gray-20);
-  border: 2px solid transparent;
   border-radius: 8px;
   box-sizing: border-box;
+  cursor: pointer;
   display: flex;
   justify-content: center;
-  padding: 2px;
+  max-width: 110px;
+  padding: 4px;
   transition: var(--transition-speed) var(--transition-timing);
 }
 
 .text {
   @include text-caption;
 
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: hidden;
   padding: 4px 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .wrapper:hover {
@@ -23,12 +31,16 @@
 }
 
 .wrapper:focus-within {
-  border: 2px solid var(--color-gray-100);
+  outline: 2px solid var(--color-gray-100);
 }
 
-.btn {
-  all: unset;
-  cursor: pointer;
+.wrapper:active {
+  background-color: var(--color-gray-20);
+}
+
+.icon {
+  flex-grow: 0;
+  flex-shrink: 0;
   height: 24px;
   stroke: var(--color-gray-80);
   width: 24px;
@@ -43,11 +55,15 @@
     background-color: var(--color-primary-30);
   }
 
+  &.wrapper:active {
+    background-color: var(--color-primary-20);
+  }
+
   .text {
     color: var(--color-primary-80);
   }
 
-  .btn {
+  .icon {
     stroke: var(--color-primary-80);
   }
 }
@@ -61,18 +77,24 @@
     background-color: var(--color-gray-100);
   }
 
+  &.wrapper:active {
+    background-color: var(--color-gray-80);
+  }
+
   .text {
     color: var(--color-white-100);
   }
 
-  .btn {
+  .icon {
     stroke: var(--color-gray-20);
   }
 }
 
-.disabled {
-  &.wrapper,
-  &.wrapper:hover {
+.wrapper:disabled {
+  background-color: var(--color-gray-10);
+  cursor: default;
+
+  &:hover {
     background-color: var(--color-gray-10);
   }
 
@@ -80,8 +102,7 @@
     color: var(--color-gray-60);
   }
 
-  .btn {
-    cursor: default;
+  .icon {
     stroke: var(--color-gray-40);
   }
 }

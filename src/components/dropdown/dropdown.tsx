@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import styles from './dropdown.module.scss';
 import cn from 'classnames';
 
@@ -21,19 +21,30 @@ interface NotSearchableDropdownProps extends BasicDropdownProps {
 
 interface BasicDropdownProps {
   isExpanded: boolean;
-  isScrollable?: boolean;
   alignToSide?: 'left' | 'right';
+  tabIndex?: number;
   children: { [key: string]: DropdownItemProps[] };
 }
 
 export const Dropdown = ({
   isExpanded,
-  isScrollable = false,
   isSearchable = false,
   alignToSide = 'left',
   children,
+  tabIndex,
   ...props
 }: DropdownProps) => {
+  const [isScrollable, setisScrollable] = useState(false);
+
+  useEffect(() => {
+    let isScrollRequired = false;
+
+    Object.keys(children).forEach((list) => {
+      if (children[list].length > 5) isScrollRequired = true;
+    });
+    setisScrollable(isScrollRequired);
+  }, [JSON.stringify(children)]);
+
   const wrapperClassName = cn(
     { [styles.expanded]: isExpanded, [styles.scrollable]: isScrollable },
     styles[alignToSide],
@@ -42,7 +53,7 @@ export const Dropdown = ({
 
   const mapItemsCallback = (itemProps: DropdownItemProps) => {
     const { key, ...otherProps } = itemProps;
-    return <DropdownItem key={key} {...otherProps} />;
+    return <DropdownItem tabIndex={tabIndex} key={key} {...otherProps} />;
   };
 
   const mapListsCallback = (listName: string, i: number, array: string[]) => {
@@ -58,7 +69,7 @@ export const Dropdown = ({
         {isPreviousArrayNotEmpty && <Separator offsetSize="micro" isShrinked={!isExpanded} />}
 
         <ul className={styles.list} key={i}>
-          {isScrollable ? listData.map(mapItemsCallback) : listData.slice(0, 5).map(mapItemsCallback)}
+          {listData.map(mapItemsCallback)}
         </ul>
       </Fragment>
     );
@@ -70,10 +81,10 @@ export const Dropdown = ({
         <div className={styles.searchContainer}>
           <Input
             type="search"
+            tabIndex={tabIndex}
             id={(props as SearchableDropdownProps).id}
-            name="search"
             value={(props as SearchableDropdownProps).searchQuery}
-            setValue={(value) => (props as SearchableDropdownProps).setSearchQuery(value)}
+            setValue={(value: string) => (props as SearchableDropdownProps).setSearchQuery(value)}
             placeholder={(props as SearchableDropdownProps).placeholder}
             isCondensed
           />

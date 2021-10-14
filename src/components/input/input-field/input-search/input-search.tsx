@@ -4,17 +4,16 @@ import { InputControl } from '../input-controls/input-control';
 import { InputELement, InputELementProps } from '../input-element/input-element';
 
 import SearchIcon from '../../../../resources/icons/search.svg';
-import CrossIcon from '../../../../resources/icons/cross.svg';
+import ResetIcon from '../../../../resources/icons/reset.svg';
 
-export interface SearchInputProps extends Omit<InputELementProps, 'onChange' | 'disabled'> {
+export interface InputSearchProps extends Omit<InputELementProps, 'onChange' | 'disabled' | 'name'> {
   id: string;
   value: string;
   isDisabled?: boolean;
-  isReadOnly?: boolean;
   setValue: (value: string) => void;
 }
 
-export const SearchInput = ({ id, value, setValue, isDisabled, isReadOnly, ...props }: SearchInputProps) => {
+export const InputSearch = ({ id, value, setValue, isDisabled, ...props }: InputSearchProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,21 +30,22 @@ export const SearchInput = ({ id, value, setValue, isDisabled, isReadOnly, ...pr
 
   return (
     <>
-      <InputControl isDisabled={isDisabled || isReadOnly} onClick={focusOnSearchField}>
+      <InputControl tabIndex={-1} isDisabled={isDisabled} onClick={focusOnSearchField}>
         {SearchIcon}
       </InputControl>
       <InputELement
-        disabled={isDisabled || isReadOnly}
+        disabled={isDisabled}
         ref={inputRef}
         type="search"
         id={id}
+        name={id}
         value={value}
         onChange={handleChange}
         {...props}
       />
       {value !== '' && (
-        <InputControl isDisabled={isDisabled || isReadOnly} onClick={clearSearchField}>
-          {CrossIcon}
+        <InputControl isDisabled={isDisabled} onClick={clearSearchField}>
+          {ResetIcon}
         </InputControl>
       )}
     </>

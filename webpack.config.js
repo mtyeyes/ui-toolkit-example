@@ -13,6 +13,7 @@ module.exports = {
     libraryTarget: 'umd',
     globalObject: 'this',
     umdNamedDefine: true,
+    assetModuleFilename: '[name][ext]',
   },
   watchOptions: {
     aggregateTimeout: 600,

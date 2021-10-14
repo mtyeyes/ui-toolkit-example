@@ -6,21 +6,19 @@ import CloseIcon from '../../resources/icons/x-circle.svg';
 
 export interface ChipProps {
   theme?: 'light' | 'dark' | 'accent';
-  handleDissmiss?: () => void;
+  onClick?: () => void;
+  withIcon?: boolean;
   isDisabled?: boolean;
   children: string;
 }
 
-export const Chip = ({ theme = 'light', handleDissmiss, isDisabled = false, children }: ChipProps) => {
-  const wrapperClassName = cn({ [styles.disabled]: isDisabled }, styles[theme], styles.wrapper);
+export const Chip = ({ theme = 'light', onClick, withIcon = false, isDisabled = false, children }: ChipProps) => {
+  const wrapperClassName = cn(styles[theme], styles.wrapper);
+
   return (
-    <div className={wrapperClassName}>
+    <button type="button" disabled={isDisabled} onClick={onClick} className={wrapperClassName}>
       <span className={styles.text}>{children}</span>
-      {handleDissmiss !== undefined && (
-        <button className={styles.btn} disabled={isDisabled} onClick={handleDissmiss} aria-label="закрыть">
-          <CloseIcon />
-        </button>
-      )}
-    </div>
+      {withIcon && <CloseIcon className={styles.icon} />}
+    </button>
   );
 };

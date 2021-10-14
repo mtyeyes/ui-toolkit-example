@@ -1,0 +1,28 @@
+@import '../../../../styles/mixins.scss';
+
+.input {
+  @include text-subtitle-2;
+
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  color: var(--input-text-color);
+  min-height: 96px;
+  outline: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  resize: vertical;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--input-secondary-color);
+}
+
+.icon {
+  bottom: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  stroke: var(--input-secondary-color);
+}

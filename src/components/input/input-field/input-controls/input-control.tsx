@@ -5,15 +5,22 @@ import cn from 'classnames';
 export interface InputControlProps {
   onClick: () => void;
   className?: string;
+  tabIndex?: number;
   isDisabled?: boolean;
   children: React.FunctionComponent<React.SVGAttributes<SVGAElement>>;
 }
 
-export const InputControl = ({ isDisabled = false, className, onClick, children }: InputControlProps) => {
+export const InputControl = ({ isDisabled = false, className, tabIndex, onClick, children }: InputControlProps) => {
   const Icon = children;
 
   return (
-    <button className={cn(styles.btn, className)} disabled={isDisabled} type="button" onClick={onClick}>
+    <button
+      type="button"
+      tabIndex={tabIndex}
+      className={cn(styles.btn, className)}
+      disabled={isDisabled}
+      onClick={onClick}
+    >
       <Icon className={styles.icon} />
     </button>
   );

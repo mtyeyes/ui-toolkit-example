@@ -1,0 +1,7 @@
+.icon {
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.icon.toggled {
+  transform: rotate(180deg);
+}

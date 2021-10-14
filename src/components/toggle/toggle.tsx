@@ -19,6 +19,7 @@ export interface ToggleProps {
   isInvalid?: boolean;
   isRequired?: boolean;
   isFilled?: boolean;
+  tabIndex?: number;
   children?: string;
 }
 
@@ -37,6 +38,7 @@ export const Toggle = ({
   isIntermidiate = false,
   isRequired = false,
   isFilled = false,
+  tabIndex,
   children,
 }: ToggleProps) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -75,6 +77,7 @@ export const Toggle = ({
         onChange={handleChange}
         required={isRequired}
         disabled={isDisabled}
+        tabIndex={tabIndex}
         type={type === 'radiobutton' ? 'radio' : 'checkbox'}
       />
     </label>

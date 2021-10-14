@@ -23,6 +23,7 @@ interface LabelWithIcon extends LabelWithoutIcon {
 
 interface LabelWithoutIcon {
   isCurrent?: boolean;
+  tabIndex?: number;
   onClick: () => void;
   children: string;
 }
@@ -45,7 +46,7 @@ export const DropdownItem = (props: DropdownItemProps) => {
       {props.type !== 'icon' && props.type !== 'label' ? (
         <Toggle {...props} />
       ) : (
-        <button className={styles.btn} onClick={props.onClick}>
+        <button type="button" tabIndex={props.tabIndex} className={styles.btn} onClick={props.onClick}>
           {props.type === 'icon' && <props.icon className={cn(styles[`${props.iconAlignment}`], styles.icon)} />}
           <span className={styles.text}>{props.children}</span>
         </button>
