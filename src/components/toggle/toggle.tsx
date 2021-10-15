@@ -11,7 +11,6 @@ import FlagRequired from '../../resources/icons/required.svg';
 export interface ToggleProps {
   type: 'checkbox' | 'radiobutton' | 'switch';
   id: string;
-  name?: string;
   isChecked: IsChecked;
   setIsChecked: SetIsChecked;
   isIntermidiate?: boolean;
@@ -30,7 +29,6 @@ type SetIsChecked = (IsChecked: IsChecked) => void | Dispatch<SetStateAction<boo
 export const Toggle = ({
   type = 'checkbox',
   id,
-  name,
   isChecked,
   setIsChecked,
   isDisabled = false,
@@ -67,11 +65,11 @@ export const Toggle = ({
       {renderInputField()}
       <span className={cn({ [styles.disabled]: isDisabled }, styles.text)}>
         {children}
-        {isRequired && <FlagRequired className={styles.icon} />}
+        {isRequired && children && <FlagRequired className={styles.icon} />}
       </span>
       <input
         id={id}
-        name={name}
+        name={id}
         className={styles.input}
         checked={isChecked}
         onChange={handleChange}

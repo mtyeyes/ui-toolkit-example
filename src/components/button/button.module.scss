@@ -60,6 +60,11 @@
   order: 3;
 }
 
+.btnLoading.btnIconLeft .iconWrapper,
+.btnLoading.btnIconRight .iconWrapper {
+  margin: 0;
+}
+
 .btn.btnLoading,
 .btn.btnDisabled {
   cursor: default;
