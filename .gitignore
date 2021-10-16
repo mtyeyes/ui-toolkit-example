@@ -1,6 +1,6 @@
-/node_modules
-/dist
-/storybook-static
+node_modules
+dist
+storybook-*
 .DS_Store
 *.pem
 Thumbs.db

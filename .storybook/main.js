@@ -1,13 +1,34 @@
 const path = require('path');
+const sass = require('sass');
 const pathToIcons = path.resolve(__dirname, '../src/resources/icons');
 
 module.exports = {
+  core: {
+    builder: 'webpack5',
+  },
   webpackFinal: async (config) => {
     const rules = config.module.rules;
 
     rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader?modules&importLoaders', 'sass-loader'],
+      use: [
+        {
+          loader: 'style-loader',
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            importLoaders: 1,
+          },
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            implementation: sass,
+          },
+        },
+      ],
       include: path.resolve(__dirname, '../'),
     });
 

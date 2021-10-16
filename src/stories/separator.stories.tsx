@@ -7,13 +7,11 @@ export default {
   component: Separator,
 } as ComponentMeta<typeof Separator>;
 
-const boundsStyle = { backgroundColor: '#E66' };
-
 const Template: ComponentStory<typeof Separator> = (args) => (
   <>
-    <div style={boundsStyle}>External bounds</div>
     <Separator {...args} />
-    <div style={boundsStyle}>External bounds</div>
+    <Separator {...args} />
+    <Separator {...args} />
   </>
 );
 
