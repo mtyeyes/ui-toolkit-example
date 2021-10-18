@@ -1,0 +1,88 @@
+@import '../../styles/mixins.scss';
+
+.btn {
+  @include btn-style-reset;
+
+  border-radius: 50%;
+  box-shadow: var(--elevation-bottom-4);
+  cursor: pointer;
+  display: grid;
+  height: 56px;
+  place-items: center;
+  position: relative;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 56px;
+}
+
+.btn.small {
+  height: 48px;
+  width: 48px;
+}
+
+.highImpact.btn {
+  background-color: var(--color-primary-80);
+  stroke: var(--color-primary-10);
+
+  &:hover {
+    background-color: var(--color-primary-70);
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-black-100);
+  }
+
+  &:active,
+  &.loading,
+  &.loading:hover,
+  &.loading:focus,
+  &.loading:active {
+    background-color: var(--color-primary-80);
+    outline: none;
+    stroke: var(--color-white-48);
+  }
+}
+
+.mediumImpact.btn {
+  background-color: var(--color-primary-20);
+  stroke: var(--color-primary-80);
+
+  &:hover {
+    background-color: var(--color-primary-30);
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-black-100);
+  }
+
+  &:active,
+  &.loading,
+  &.loading:hover,
+  &.loading:focus,
+  &.loading:active {
+    background-color: var(--color-primary-20);
+    outline: none;
+    stroke: var(--color-black-56);
+  }
+}
+
+.lowImpact.btn {
+  background-color: var(--color-white-100);
+  stroke: var(--color-gray-100);
+
+  &:hover {
+    stroke: var(--color-primary-80);
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-black-100);
+  }
+
+  &:active,
+  &.loading,
+  &.loading:hover,
+  &.loading:focus,
+  &.loading:active {
+    outline: none;
+    stroke: var(--color-black-56);
+  }
+}

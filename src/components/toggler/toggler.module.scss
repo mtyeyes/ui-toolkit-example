@@ -1,0 +1,35 @@
+@import '../../styles/mixins.scss';
+
+.btn {
+  @include btn-style-reset;
+
+  cursor: pointer;
+  height: 36px;
+  position: relative;
+  width: 36px;
+}
+
+.icon {
+  height: 24px;
+  left: calc(50% - 12px);
+  position: absolute;
+  top: calc(50% - 12px);
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 24px;
+}
+
+.icon.stroke {
+  stroke: var(--color-gray-100);
+}
+
+.icon.fill {
+  fill: transparent;
+}
+
+.icon.toggled.stroke {
+  stroke: transparent;
+}
+
+.icon.toggled.fill {
+  fill: var(--color-primary-60);
+}

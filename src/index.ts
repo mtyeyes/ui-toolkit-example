@@ -14,6 +14,9 @@ export { Dropdown } from './components/dropdown/dropdown';
 
 export type { DropdownItemProps } from './components/dropdown/dropdown-item/dropdown-item';
 
+export type { FabProps } from './components/fab/fab';
+export { Fab } from './components/fab/fab';
+
 export type { FormWrapperProps } from './components/form-wrapper/form-wrapper';
 export { FormWrapper } from './components/form-wrapper/form-wrapper';
 
@@ -36,3 +39,6 @@ export type { ToggleProps } from './components/toggle/toggle';
 export { Toggle } from './components/toggle/toggle';
 
 export { ToggleGroup } from './components/toggle-group/toggle-group';
+
+export type { TogglerProps } from './components/toggler/toggler';
+export { Toggler } from './components/toggler/toggler';
