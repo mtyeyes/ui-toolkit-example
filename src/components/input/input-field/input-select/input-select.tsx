@@ -122,7 +122,7 @@ export const InputSelect = ({
       >
         {DropdownIcon}
       </InputControl>
-      <Dropdown isExpanded={dropdownExpanded} id={`${id}-dropdown`} tabIndex={dropdownExpanded ? 0 : -1}>
+      <Dropdown isExpanded={dropdownExpanded} id={`${id}-dropdown`}>
         {{
           menu:
             filteredSelectableValues.length !== 0

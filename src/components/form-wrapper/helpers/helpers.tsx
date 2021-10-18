@@ -4,6 +4,7 @@ import cn from 'classnames';
 
 export interface HelpersProps {
   isInvalid?: boolean;
+  isDisabled?: boolean;
   helperText?: string;
   counter?: Counter;
   className?: string;
@@ -14,9 +15,9 @@ export interface Counter {
   currentCount: number;
 }
 
-export const Helpers = ({ isInvalid = false, helperText, counter }: HelpersProps) => {
+export const Helpers = ({ isInvalid = false, isDisabled = false, helperText, counter }: HelpersProps) => {
   return (
-    <div className={cn({ [styles.invalid]: isInvalid }, styles.helperWrapper)}>
+    <div className={cn({ [styles.invalid]: isInvalid, [styles.disabled]: isDisabled }, styles.helperWrapper)}>
       {helperText && <p className={styles.text}>{helperText}</p>}
       {counter && <span className={styles.counter}>{`${counter.currentCount}/${counter.maxCount}`}</span>}
     </div>

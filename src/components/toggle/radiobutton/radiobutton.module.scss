@@ -6,6 +6,7 @@
   border-radius: 50%;
   box-sizing: border-box;
   display: grid;
+  flex-shrink: 0;
   height: 24px;
   place-items: center;
   transition: var(--transition-speed) var(--transition-timing);

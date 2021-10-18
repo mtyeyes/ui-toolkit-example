@@ -20,6 +20,7 @@ interface CommonFormWrapperProps {
   label: string;
   isRequired?: boolean;
   isInvalid?: boolean;
+  isDisabled?: boolean;
   children: ReactNode;
   helperText?: string;
   helperCounter?: Counter;
@@ -30,6 +31,7 @@ export const FormWrapper = ({
   tag = 'fieldset',
   isRequired,
   isInvalid,
+  isDisabled,
   helperText,
   helperCounter,
   children,
@@ -49,7 +51,13 @@ export const FormWrapper = ({
         {label}
       </Label>
       {children}
-      <Helpers className={styles.helpers} isInvalid={isInvalid} helperText={helperText} counter={helperCounter} />
+      <Helpers
+        className={styles.helpers}
+        isInvalid={isInvalid}
+        isDisabled={isDisabled}
+        helperText={helperText}
+        counter={helperCounter}
+      />
     </FieldTag>
   );
 };

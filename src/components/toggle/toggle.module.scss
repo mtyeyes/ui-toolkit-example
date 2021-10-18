@@ -6,15 +6,13 @@
   --toggle-icon-color: transparent;
 
   align-items: center;
+  box-sizing: border-box;
   cursor: pointer;
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  max-width: 100%;
   padding: 12px;
-}
-
-.label.disabled {
-  cursor: default;
 }
 
 .input {
@@ -25,9 +23,14 @@
 .text {
   @include text-subtitle-2;
 
+  flex-grow: 1;
+  flex-shrink: 1;
   font-weight: 400;
+  overflow: hidden;
   padding-left: 16px;
   position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .icon {
@@ -78,6 +81,8 @@
 .label.disabled {
   --toggle-background-color: transparent;
   --toggle-border: 2px dashed var(--color-black-12);
+
+  cursor: default;
 }
 
 .label.disabled.checked {

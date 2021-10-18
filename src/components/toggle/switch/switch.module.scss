@@ -5,6 +5,7 @@
   border-radius: 80px;
   box-sizing: border-box;
   display: block;
+  flex-shrink: 0;
   height: 24px;
   position: relative;
   transition: var(--transition-speed) var(--transition-timing);

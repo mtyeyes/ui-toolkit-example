@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ToggleGroup, Toggle, ToggleProps } from '../index';
+import { ToggleGroup, Toggle } from '../index';
 
 export default {
-  title: 'ToggleGroup',
+  title: 'Toggle Group',
   component: ToggleGroup,
   argTypes: {
     typeOfToggles: {

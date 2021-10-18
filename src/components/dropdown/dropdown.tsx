@@ -22,7 +22,6 @@ interface NotSearchableDropdownProps extends BasicDropdownProps {
 interface BasicDropdownProps {
   isExpanded: boolean;
   alignToSide?: 'left' | 'right';
-  tabIndex?: number;
   children: { [key: string]: DropdownItemProps[] };
 }
 
@@ -31,7 +30,6 @@ export const Dropdown = ({
   isSearchable = false,
   alignToSide = 'left',
   children,
-  tabIndex,
   ...props
 }: DropdownProps) => {
   const [isScrollable, setisScrollable] = useState(false);
@@ -53,7 +51,7 @@ export const Dropdown = ({
 
   const mapItemsCallback = (itemProps: DropdownItemProps) => {
     const { key, ...otherProps } = itemProps;
-    return <DropdownItem tabIndex={tabIndex} key={key} {...otherProps} />;
+    return <DropdownItem tabIndex={isExpanded ? 0 : -1} key={key} {...otherProps} />;
   };
 
   const mapListsCallback = (listName: string, i: number, array: string[]) => {
@@ -81,7 +79,7 @@ export const Dropdown = ({
         <div className={styles.searchContainer}>
           <Input
             type="search"
-            tabIndex={tabIndex}
+            tabIndex={isExpanded ? 0 : -1}
             id={(props as SearchableDropdownProps).id}
             value={(props as SearchableDropdownProps).searchQuery}
             setValue={(value: string) => (props as SearchableDropdownProps).setSearchQuery(value)}

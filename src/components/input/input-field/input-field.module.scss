@@ -43,15 +43,15 @@
   border: 2px solid transparent;
 }
 
+.container.readOnly {
+  border: 2px solid var(--color-black-12);
+}
+
 .container.disabled {
   --input-text-color: var(--color-gray-60);
   --input-secondary-color: var(--color-gray-40);
 
   border: 2px dashed var(--color-black-12);
-}
-
-.container.readOnly {
-  border: 2px solid var(--color-black-12);
 }
 
 .container.disabled:focus-within,

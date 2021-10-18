@@ -59,16 +59,16 @@
   cursor: pointer;
   display: flex;
   flex-wrap: nowrap;
+  gap: 24px;
   height: auto;
   justify-content: flex-start;
-  overflow: hidden;
   padding: 10px 14px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   width: 100%;
 }
 
 .icon {
+  flex-grow: 0;
+  flex-shrink: 0;
   stroke: var(--color-gray-100);
 }
 
@@ -89,15 +89,19 @@
 }
 
 .text {
+  flex-grow: 1;
+  flex-shrink: 1;
   order: 2;
+  overflow: hidden;
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .icon.left {
-  margin-right: 24px;
   order: 1;
 }
 
 .icon.right {
-  margin-left: auto;
   order: 3;
 }

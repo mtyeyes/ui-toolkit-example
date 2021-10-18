@@ -60,7 +60,7 @@ interface InputSelectFieldProps extends CommonFieldProps, InputSelectProps {
 }
 
 interface InputMultiselectFieldProps extends CommonFieldProps, InputMultiselectProps {
-  type: 'select';
+  type: 'multiselect';
 }
 
 interface InputTelFieldProps extends CommonFieldProps, InputTelProps {

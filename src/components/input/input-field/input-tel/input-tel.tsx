@@ -23,8 +23,6 @@ export const InputTel = ({ id, value, setValue, isDisabled, ...props }: InputTel
   };
 
   const formatPhoneNumber = (value: string) => {
-    if (value === undefined || value === '') return undefined;
-
     let result = '';
 
     if (value.length > 0) result = `${value.slice(0, 1)}`;
@@ -51,7 +49,7 @@ export const InputTel = ({ id, value, setValue, isDisabled, ...props }: InputTel
         type="tel"
         id={id}
         name={id}
-        value={formatPhoneNumber(value)}
+        value={formatPhoneNumber(value) || ''}
         disabled={isDisabled}
         onChange={handleChange}
         ref={inputRef}

@@ -32,3 +32,10 @@
     color: var(--color-attention);
   }
 }
+
+.disabled {
+  .text,
+  .counter {
+    color: var(--color-gray-60);
+  }
+}
