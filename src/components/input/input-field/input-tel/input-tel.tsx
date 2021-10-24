@@ -1,6 +1,6 @@
-import React, { ChangeEvent, useRef } from 'react';
+import React, { ChangeEvent } from 'react';
 
-import { InputControl } from '../input-controls/input-control';
+import { InputIcon } from '../input-icon/input-icon';
 import { Units } from '../units/units';
 import { InputELement, InputELementProps } from '../input-element/input-element';
 
@@ -14,8 +14,6 @@ export interface InputTelProps extends Omit<InputELementProps, 'onChange' | 'dis
 }
 
 export const InputTel = ({ id, value, setValue, isDisabled, ...props }: InputTelProps) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     let value: string = unformatePhoneNumber(e.currentTarget.value);
     if (value.length > 11) value = value.slice(0, 11);
@@ -38,10 +36,6 @@ export const InputTel = ({ id, value, setValue, isDisabled, ...props }: InputTel
     return value.replaceAll(/\D/g, '');
   };
 
-  const focusOnInputField = () => {
-    inputRef?.current?.focus();
-  };
-
   return (
     <>
       <Units>+</Units>
@@ -52,13 +46,10 @@ export const InputTel = ({ id, value, setValue, isDisabled, ...props }: InputTel
         value={formatPhoneNumber(value) || ''}
         disabled={isDisabled}
         onChange={handleChange}
-        ref={inputRef}
         placeholder="• (•••) ••• •• ••"
         {...props}
       />
-      <InputControl tabIndex={-1} onClick={focusOnInputField} isDisabled={isDisabled}>
-        {PhoneIcon}
-      </InputControl>
+      <InputIcon>{PhoneIcon}</InputIcon>
     </>
   );
 };

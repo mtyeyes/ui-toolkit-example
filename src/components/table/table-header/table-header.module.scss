@@ -1,0 +1,19 @@
+.header {
+  align-items: bottom;
+  background-color: var(--color-white-100);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 16px;
+  justify-content: start;
+  padding: 24px;
+  width: 100%;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.header.condensed {
+  gap: 8px;
+  padding: 16px;
+}

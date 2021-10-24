@@ -185,7 +185,6 @@ export const inputMultiselect = TemplateInputMultiselect.bind({});
 inputMultiselect.args = {
   id: 'unique',
   placeholder: 'Placeholder',
-  selectableValues: ['lorem', 'ipsum', 'fuu', 'bar', 'baz', 'boom'],
   isDisabled: false,
   isCondensed: false,
   isInvalid: false,

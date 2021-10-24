@@ -7,12 +7,15 @@
   background-color: var(--color-gray-20);
   border-radius: 8px;
   box-sizing: border-box;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   max-width: 110px;
   padding: 4px;
   transition: var(--transition-speed) var(--transition-timing);
+}
+
+.wrapper.clickable {
+  cursor: pointer;
 }
 
 .text {
@@ -26,15 +29,15 @@
   white-space: nowrap;
 }
 
-.wrapper:hover {
+.wrapper.clickable:hover {
   background-color: var(--color-gray-30);
 }
 
-.wrapper:focus-within {
+.wrapper.clickable:focus-within {
   outline: 2px solid var(--color-gray-100);
 }
 
-.wrapper:active {
+.wrapper.clickable:active {
   background-color: var(--color-gray-20);
 }
 
@@ -51,11 +54,11 @@
     background-color: var(--color-primary-20);
   }
 
-  &.wrapper:hover {
+  &.wrapper.clickable:hover {
     background-color: var(--color-primary-30);
   }
 
-  &.wrapper:active {
+  &.wrapper.clickable:active {
     background-color: var(--color-primary-20);
   }
 
@@ -73,11 +76,11 @@
     background-color: var(--color-gray-80);
   }
 
-  &.wrapper:hover {
+  &.wrapper.clickable:hover {
     background-color: var(--color-gray-100);
   }
 
-  &.wrapper:active {
+  &.wrapper.clickable:active {
     background-color: var(--color-gray-80);
   }
 
@@ -94,7 +97,7 @@
   background-color: var(--color-gray-10);
   cursor: default;
 
-  &:hover {
+  &.clickable:hover {
     background-color: var(--color-gray-10);
   }
 

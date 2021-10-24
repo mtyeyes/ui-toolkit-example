@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import styles from './input-multiselect.module.scss';
 import cn from 'classnames';
 
-import { InputControl } from '../input-controls/input-control';
+import { InputIcon } from '../input-icon/input-icon';
 import { InputELement } from '../input-element/input-element';
 import { Dropdown, DropdownItemProps } from '../../../../index';
 import { Chip } from '../../../../index';
@@ -85,10 +85,6 @@ export const InputMultiselect = ({
     setSelectedValues([]);
   };
 
-  const handleDropdownIconClick = () => {
-    setDropdownExpanded((prevState) => !prevState);
-  };
-
   const filteredValuesMapCallback = (valueName: string): DropdownItemProps => {
     const isCurrent = selectedValues.includes(valueName);
 
@@ -110,14 +106,7 @@ export const InputMultiselect = ({
 
   return (
     <>
-      {selectedValues.length > 0 && (
-        <Chip
-          isDisabled={isDisabled}
-          onClick={() => {
-            setDropdownExpanded(true);
-          }}
-        >{`Выбрано: ${selectedValues.length}`}</Chip>
-      )}
+      {selectedValues.length > 0 && <Chip isDisabled={isDisabled}>{`Выбрано: ${selectedValues.length}`}</Chip>}
       <InputELement
         disabled={isDisabled}
         type="text"
@@ -134,17 +123,11 @@ export const InputMultiselect = ({
         ref={inputRef}
       />
       {selectedValues.length > 0 ? (
-        <InputControl className={styles.icon} isDisabled={isDisabled} onClick={handleResetIconClick}>
+        <InputIcon className={styles.icon} onClick={handleResetIconClick}>
           {ResetIcon}
-        </InputControl>
+        </InputIcon>
       ) : (
-        <InputControl
-          className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}
-          isDisabled={isDisabled}
-          onClick={handleDropdownIconClick}
-        >
-          {DropdownIcon}
-        </InputControl>
+        <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>{DropdownIcon}</InputIcon>
       )}
 
       <Dropdown isExpanded={dropdownExpanded} id={`${id}-dropdown`}>

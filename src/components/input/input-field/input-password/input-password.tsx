@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 
-import { InputControl } from '../input-controls/input-control';
+import { InputIcon } from '../input-icon/input-icon';
 import { InputELement, InputELementProps } from '../input-element/input-element';
 
 import PasswordVisibleIcon from '../../../../resources/icons/password-visible.svg';
@@ -31,9 +31,9 @@ export const InputPassword = ({ id, value, setValue, isDisabled, ...props }: Inp
         onChange={handleChange}
         {...props}
       />
-      <InputControl isDisabled={isDisabled} onClick={() => setPasswordVisibility((prevState) => !prevState)}>
+      <InputIcon onClick={() => setPasswordVisibility((prevState) => !prevState)}>
         {passwordVisibility ? PasswordVisibleIcon : PasswordHiddenIcon}
-      </InputControl>
+      </InputIcon>
     </>
   );
 };

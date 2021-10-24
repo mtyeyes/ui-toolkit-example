@@ -1,0 +1,47 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-items: start;
+  width: 100%;
+}
+
+.textContainer {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.wrapper .textContainer:not(.withDescription),
+.wrapper.small .textContainer {
+  gap: 0;
+}
+
+.name {
+  @include text-subtitle-2;
+
+  font-weight: 700;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description {
+  @include text-caption;
+
+  color: var(--color-gray-60);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

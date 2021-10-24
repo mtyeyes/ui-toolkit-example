@@ -1,0 +1,21 @@
+@import '../../../../styles/mixins.scss';
+
+.paginationWrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.btnWrapper {
+  display: flex;
+  gap: 4px;
+}
+
+.caption {
+  @include text-caption;
+  flex-shrink: 0;
+  flex-grow: 0;
+}

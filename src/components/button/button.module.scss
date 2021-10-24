@@ -90,6 +90,10 @@
     stroke: var(--color-primary-10);
   }
 
+  &.fill .icon {
+    fill: var(--color-primary-10);
+  }
+
   &:active {
     background-color: var(--color-primary-80);
     border: 2px solid transparent;
@@ -101,6 +105,10 @@
 
   &:active .icon {
     stroke: var(--color-white-48);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-white-48);
   }
 
   &.btnLoading {
@@ -121,8 +129,16 @@
     stroke: var(--color-gray-70);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-gray-70);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-white-48);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-white-48);
   }
 }
 
@@ -146,6 +162,10 @@
     stroke: var(--color-primary-80);
   }
 
+  &.fill .icon {
+    fill: var(--color-primary-80);
+  }
+
   &:active {
     background-color: var(--color-primary-20);
     border: 2px solid transparent;
@@ -157,6 +177,10 @@
 
   &:active .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-black-56);
   }
 
   &.btnLoading {
@@ -177,8 +201,16 @@
     stroke: var(--color-black-56);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-black-56);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-black-56);
   }
 }
 
@@ -203,6 +235,10 @@
     stroke: var(--color-gray-100);
   }
 
+  &.fill .icon {
+    fill: var(--color-gray-100);
+  }
+
   &:active {
     background-color: none;
     border: 2px solid --color-black-12;
@@ -214,6 +250,10 @@
 
   &:active .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-black-56);
   }
 
   &.btnLoading {
@@ -236,8 +276,16 @@
     stroke: var(--color-black-56);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-black-56);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-black-56);
   }
 }
 
@@ -261,6 +309,10 @@
     stroke: var(--color-gray-100);
   }
 
+  &.fill .icon {
+    fill: var(--color-gray-100);
+  }
+
   &:active {
     background-color: none;
     border: 2px solid transparent;
@@ -272,6 +324,10 @@
 
   &:active .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-black-56);
   }
 
   &.btnDisabled,
@@ -292,8 +348,16 @@
     stroke: var(--color-black-56);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-black-56);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-black-56);
   }
 }
 
@@ -317,12 +381,20 @@
     stroke: var(--color-attention-substrate);
   }
 
+  &.fill .icon {
+    fill: var(--color-attention-substrate);
+  }
+
   &:hover:not(.btnDisabled):not(.btnLoading) .text {
     color: var(--color-attention);
   }
 
   &:hover:not(.btnDisabled):not(.btnLoading) .icon {
     stroke: var(--color-attention);
+  }
+
+  &.fill:hover:not(.btnDisabled):not(.btnLoading) .icon {
+    fill: var(--color-attention);
   }
 
   &:active {
@@ -336,6 +408,10 @@
 
   &:active .icon {
     stroke: var(--color-white-48);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-white-48);
   }
 
   &.btnLoading {
@@ -357,8 +433,16 @@
     stroke: var(--color-gray-70);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-gray-70);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-black-56);
   }
 }
 
@@ -382,6 +466,10 @@
     stroke: var(--color-accent-90);
   }
 
+  &.fill .icon {
+    fill: var(--color-accent-90);
+  }
+
   &:active {
     background-color: var(--color-primary-20);
     border: 2px solid transparent;
@@ -393,6 +481,10 @@
 
   &:active .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-black-56);
   }
 
   &.btnLoading {
@@ -413,8 +505,16 @@
     stroke: var(--color-gray-70);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-gray-70);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-black-56);
   }
 }
 
@@ -438,6 +538,10 @@
     stroke: var(--color-accent-10);
   }
 
+  &.fill .icon {
+    fill: var(--color-accent-10);
+  }
+
   &:active {
     background-color: var(--color-primary-80);
     border: 2px solid transparent;
@@ -449,6 +553,10 @@
 
   &:active .icon {
     stroke: var(--color-white-48);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-white-48);
   }
 
   &.btnLoading {
@@ -469,8 +577,16 @@
     stroke: var(--color-gray-70);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-gray-70);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-white-48);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-white-48);
   }
 }
 
@@ -495,6 +611,10 @@
     stroke: var(--color-white-100);
   }
 
+  &.fill .icon {
+    fill: var(--color-white-100);
+  }
+
   &:active {
     background-color: none;
     border: 2px solid var(--color-black-12);
@@ -506,6 +626,10 @@
 
   &:active .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-black-56);
   }
 
   &.btnLoading {
@@ -528,8 +652,16 @@
     stroke: var(--color-white-48);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-white-48);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-white-48);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-white-48);
   }
 }
 
@@ -553,6 +685,10 @@
     stroke: var(--color-white-100);
   }
 
+  &.fill .icon {
+    fill: var(--color-white-100);
+  }
+
   &:active {
     background-color: none;
     border: 2px solid transparent;
@@ -564,6 +700,10 @@
 
   &:active .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-black-56);
   }
 
   &.btnDisabled,
@@ -584,8 +724,16 @@
     stroke: var(--color-white-48);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-white-48);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-white-48);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-white-48);
   }
 }
 
@@ -609,12 +757,20 @@
     stroke: var(--color-attention);
   }
 
+  &.fill .icon {
+    fill: var(--color-attention);
+  }
+
   &:hover:not(.btnDisabled):not(.btnLoading) .text {
     color: var(--color-attention-substrate);
   }
 
   &:hover:not(.btnDisabled):not(.btnLoading) .icon {
     stroke: var(--color-attention-substrate);
+  }
+
+  &.fill:hover:not(.btnDisabled):not(.btnLoading) .icon {
+    fill: var(--color-attention-substrate);
   }
 
   &:active {
@@ -628,6 +784,10 @@
 
   &:active .icon {
     stroke: var(--color-white-48);
+  }
+
+  &.fill:active .icon {
+    fill: var(--color-white-48);
   }
 
   &.btnLoading {
@@ -649,7 +809,15 @@
     stroke: var(--color-gray-70);
   }
 
+  &.fill.btnDisabled .icon {
+    fill: var(--color-gray-70);
+  }
+
   &.btnLoading .icon {
     stroke: var(--color-black-56);
+  }
+
+  &.fill.btnLoading .icon {
+    fill: var(--color-black-56);
   }
 }

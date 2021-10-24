@@ -1,5 +1,8 @@
 import './styles/index.scss';
 
+export type { AvatarProps } from './components/avatar/avatar';
+export { Avatar } from './components/avatar/avatar';
+
 export type { BadgeProps } from './components/badge/badge';
 export { Badge } from './components/badge/badge';
 
@@ -35,6 +38,9 @@ export { Separator } from './components/separator/separator';
 export type { SpinnerProps } from './components/spinner/spinner';
 export { Spinner } from './components/spinner/spinner';
 
+export type { TableProps } from './components/table/table';
+export { Table } from './components/table/table';
+
 export type { ToggleProps } from './components/toggle/toggle';
 export { Toggle } from './components/toggle/toggle';
 
@@ -42,3 +48,6 @@ export { ToggleGroup } from './components/toggle-group/toggle-group';
 
 export type { TogglerProps } from './components/toggler/toggler';
 export { Toggler } from './components/toggler/toggler';
+
+export type { UserCardProps } from './components/user-card/user-card';
+export { UserCard } from './components/user-card/user-card';

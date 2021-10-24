@@ -13,7 +13,7 @@ export interface ChipProps {
 }
 
 export const Chip = ({ theme = 'light', onClick, withIcon = false, isDisabled = false, children }: ChipProps) => {
-  const wrapperClassName = cn(styles[theme], styles.wrapper);
+  const wrapperClassName = cn({ [styles.clickable]: onClick !== undefined }, styles[theme], styles.wrapper);
 
   return (
     <button type="button" disabled={isDisabled} onClick={onClick} className={wrapperClassName}>

@@ -3,7 +3,7 @@ import styles from './input-counter.module.scss';
 import cn from 'classnames';
 
 import { InputELement, InputELementProps } from '../input-element/input-element';
-import { InputControl } from '../input-controls/input-control';
+import { InputIcon } from '../input-icon/input-icon';
 import { Units } from '../units/units';
 
 import PlusIcon from '../../../../resources/icons/plus.svg';
@@ -49,12 +49,8 @@ export const InputCounter = ({
         className={cn(styles.input, className)}
         {...props}
       />
-      <InputControl isDisabled={isDisabled} onClick={decrement}>
-        {MinusIcon}
-      </InputControl>
-      <InputControl isDisabled={isDisabled} onClick={increment}>
-        {PlusIcon}
-      </InputControl>
+      <InputIcon onClick={decrement}>{MinusIcon}</InputIcon>
+      <InputIcon onClick={increment}>{PlusIcon}</InputIcon>
     </>
   );
 };

@@ -1,0 +1,115 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  position: relative;
+}
+
+.overflowContainer {
+  align-items: center;
+  background-color: var(--color-gray-20);
+  box-sizing: content-box;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  outline: 2px solid var(--color-white-100);
+  overflow: hidden;
+  width: 100%;
+}
+
+.img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.wrapper.tiny {
+  height: 24px;
+  width: 24px;
+}
+
+.overflowContainer.tiny {
+  border-radius: 4px;
+}
+
+.wrapper.small {
+  height: 36px;
+  width: 36px;
+}
+
+.overflowContainer.small {
+  border-radius: 4px;
+}
+
+.wrapper.medium {
+  height: 48px;
+  width: 48px;
+}
+
+.overflowContainer.medium {
+  border-radius: 8px;
+}
+
+.wrapper.large {
+  height: 80px;
+  width: 80px;
+}
+
+.overflowContainer.large {
+  border-radius: 12px;
+}
+
+.wrapper.huge {
+  height: 160px;
+  width: 160px;
+}
+
+.overflowContainer.huge {
+  border-radius: 12px;
+}
+
+.overflowContainer.initials {
+  background: radial-gradient(23.53% 50% at 0% 50%, var(--color-primary-30) 0%, var(--color-primary-30-opacity-0) 100%), radial-gradient(23.53% 50% at 100% 50%, var(--color-primary-30) 0%, var(--color-primary-30-opacity-0) 100%), linear-gradient(180deg, var(--color-primary-20) 0%, var(--color-primary-30) 100%);
+}
+
+.overflowContainer.initials .letters {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.overflowContainer.initials.tiny .letters {
+  @include text-overline;
+
+  color: var(--color-primary-70);
+}
+
+.overflowContainer.initials.small .letters {
+  @include text-button;
+
+  color: var(--color-primary-70);
+}
+
+.overflowContainer.initials.medium .letters {
+  @include text-headline-6;
+
+  color: var(--color-primary-70);
+}
+
+.overflowContainer.initials.large .letters {
+  @include text-primary-font;
+  @include style-headline-4;
+
+  color: var(--color-primary-70);
+}
+
+.overflowContainer.initials.huge .letters {
+  @include text-primary-font;
+  @include style-headline-1;
+
+  color: var(--color-primary-70);
+}
+
+.icon {
+  fill: var(--color-gray-40);
+  stroke: var(--color-gray-40);
+}

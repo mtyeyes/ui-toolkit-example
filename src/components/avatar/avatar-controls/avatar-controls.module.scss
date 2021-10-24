@@ -1,0 +1,29 @@
+.icon {
+  background-color: var(--color-gray-20);
+  border-radius: 50%;
+  bottom: 0;
+  height: 8px;
+  outline: 2px solid var(--color-white-100);
+  position: absolute;
+  right: 0;
+  width: 8px;
+}
+
+.icon.online {
+  background-color: var(--color-online);
+}
+
+.icon.tiny {
+  height: 4px;
+  width: 4px;
+}
+
+.icon.large {
+  bottom: 8px;
+  right: 8px;
+}
+
+.icon.huge {
+  bottom: 12px;
+  right: 12px;
+}

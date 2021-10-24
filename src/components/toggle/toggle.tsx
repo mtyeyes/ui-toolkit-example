@@ -63,10 +63,12 @@ export const Toggle = ({
   return (
     <label className={labelClassName} htmlFor={id}>
       {renderInputField()}
-      <span className={cn({ [styles.disabled]: isDisabled }, styles.text)}>
-        {children}
-        {isRequired && children && <FlagRequired className={styles.icon} />}
-      </span>
+      {children && (
+        <span className={cn({ [styles.disabled]: isDisabled }, styles.text)}>
+          {children}
+          {isRequired && <FlagRequired className={styles.icon} />}
+        </span>
+      )}
       <input
         id={id}
         name={id}

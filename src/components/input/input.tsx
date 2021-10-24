@@ -3,14 +3,15 @@ import React from 'react';
 import { FormWrapper, FormWrapperProps } from '../../index';
 import { InputField, InputFieldProps } from './input-field/input-field';
 
-export type InputProps = InputFieldProps | (InputWithWrapperProps & InputFieldProps);
+export type InputProps = InputWithoutWrapperProps | InputWithWrapperProps;
 
-interface InputWithWrapperProps extends Omit<FormWrapperProps, 'children' | 'htmlfor' | 'tag'> {
-  isWrapped: true;
-}
+type InputWithoutWrapperProps = { isWrapped?: false } & InputFieldProps;
+
+type InputWithWrapperProps = { isWrapped: true } & InputFieldProps &
+  Omit<FormWrapperProps, 'children' | 'htmlfor' | 'tag'>;
 
 export const Input = (props: InputProps) => {
-  if ('isWrapped' in props) {
+  if (props.isWrapped) {
     const { isWrapped, label, helperCounter, helperText, ...inputProps } = props;
 
     return (
@@ -28,6 +29,7 @@ export const Input = (props: InputProps) => {
       </FormWrapper>
     );
   }
+  const { isWrapped, ...inputProps } = props;
 
-  return <InputField {...props} />;
+  return <InputField {...inputProps} />;
 };

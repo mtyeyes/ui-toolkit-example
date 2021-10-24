@@ -1,0 +1,50 @@
+// css variables comes from the parent table-body component
+@import '../../../../styles/mixins.scss';
+
+.cell {
+  max-width:100%;
+  padding: var(--table-padding);
+}
+
+.cell:first-child {
+  padding-left: 0;
+}
+
+.cell:last-child {
+  padding-right: 0;
+}
+
+.cell.toggle {
+  width: 1%;
+  padding: 0 12px;
+}
+
+.cell.toggle.condensed {
+  padding: 0;
+}
+
+.cell.menuBtn {
+  width: 1%;
+  padding: 0 18px;
+}
+
+.cell.menuBtn.condensed {
+  padding: 0 10px;
+}
+
+.cell.header {
+  @include text-overline;
+
+  text-align: start;
+  color: var(--table-header-color);
+}
+
+.cell.data {
+  @include text-subtitle-2;
+
+  background-color: var(--table-cell-background);
+}
+
+.cell.numeric {
+  @include text-numeric-large;
+}

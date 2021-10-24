@@ -3,6 +3,7 @@ import styles from './input-file.module.scss';
 import cn from 'classnames';
 
 import { Chip } from '../../../../index';
+import { InputIcon } from '../input-icon/input-icon';
 
 import BrowseIcon from '../../../../resources/icons/browse.svg';
 
@@ -57,10 +58,12 @@ export const InputFile = ({ id, placeholder, setValue, isDisabled }: InputFilePr
         onChange={handleChange}
         className={styles.input}
       />
-      <label className={labelClassName} htmlFor={id}>
-        {<BrowseIcon className={styles.icon} />}
-        {filesNames.length === 0 && <span className={styles.text}>{placeholder}</span>}
-      </label>
+      <InputIcon>{BrowseIcon}</InputIcon>
+      {filesNames.length === 0 && (
+        <label className={cn(labelClassName, styles.text)} htmlFor={id}>
+          {placeholder}
+        </label>
+      )}
       {filesNames.map((name: string) => {
         const nameWithoutExtension = name.split('.').slice(0, -1).join('.');
 

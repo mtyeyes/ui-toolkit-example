@@ -9,6 +9,7 @@ export type ButtonProps = ButtonPropsWithIcon | ButtonPropsWithoutIcon;
 interface ButtonPropsWithIcon extends GenericButtonProps {
   icon: 'left' | 'right' | 'only';
   iconSrc: FC<SVGAttributes<SVGAElement>>;
+  iconFillColored?: boolean;
 }
 
 interface ButtonPropsWithoutIcon extends GenericButtonProps {
@@ -42,6 +43,7 @@ export const Button = ({
     {
       [styles.btnLoading]: isLoading,
       [styles.btnDisabled]: isDisabled,
+      [styles.fill]: 'iconFillColored' in props && props.iconFillColored,
     },
     styles[`${size}Size`],
     styles[`btnIcon${capitalize(icon)}`],

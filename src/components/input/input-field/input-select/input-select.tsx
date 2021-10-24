@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import styles from './input-select.module.scss';
 import cn from 'classnames';
 
-import { InputControl } from '../input-controls/input-control';
+import { InputIcon } from '../input-icon/input-icon';
 import { InputELement } from '../input-element/input-element';
 import { Dropdown, DropdownItemProps } from '../../../../index';
 import useCloseModal from '../../../../utils/hooks/use-close-modal';
@@ -11,7 +11,7 @@ import DropdownIcon from '../../../../resources/icons/dropdown.svg';
 
 export interface InputSelectProps {
   id: string;
-  value: string;
+  value: string | null;
   placeholder?: string;
   className?: string;
   setValue: (value: string | null) => void;
@@ -28,8 +28,8 @@ export const InputSelect = ({
   selectableValues,
   isDisabled,
 }: InputSelectProps) => {
-  const [inputValue, setInputValue] = useState('');
-  const [displayedValue, setDisplayedValue] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string | null>(null);
+  const [displayedValue, setDisplayedValue] = useState<string | null>(null);
   const [filteredSelectableValues, setFilteredSelectableValues] = useState<string[]>([]);
   const [dropdownExpanded, setDropdownExpanded] = useState(false);
 
@@ -48,7 +48,10 @@ export const InputSelect = ({
   }, [isDisabled]);
 
   useEffect(() => {
-    const filteredValues = selectableValues.filter((valueName) => valueName.includes(inputValue));
+    const filteredValues = selectableValues.filter((valueName) => {
+      if (!inputValue) return true;
+      return valueName.includes(inputValue);
+    });
 
     setFilteredSelectableValues(filteredValues);
   }, [inputValue, selectableValues]);
@@ -68,15 +71,11 @@ export const InputSelect = ({
   }, [value, inputValue, dropdownExpanded]);
 
   useEffect(() => {
-    setInputValue('');
+    setInputValue(null);
   }, [dropdownExpanded]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.currentTarget.value);
-  };
-
-  const handleIconClick = () => {
-    setDropdownExpanded((prevState) => !prevState);
   };
 
   const filteredValuesMapCallback = (valueName: string): DropdownItemProps => {
@@ -105,7 +104,7 @@ export const InputSelect = ({
         type="text"
         name={`${id}-input`}
         id={`${id}-input`}
-        value={displayedValue}
+        value={displayedValue || ''}
         onChange={handleChange}
         onFocus={() => {
           setDropdownExpanded(true);
@@ -115,13 +114,7 @@ export const InputSelect = ({
         className={className}
         ref={inputRef}
       />
-      <InputControl
-        className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}
-        isDisabled={isDisabled}
-        onClick={handleIconClick}
-      >
-        {DropdownIcon}
-      </InputControl>
+      <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>{DropdownIcon}</InputIcon>
       <Dropdown isExpanded={dropdownExpanded} id={`${id}-dropdown`}>
         {{
           menu:
@@ -133,7 +126,7 @@ export const InputSelect = ({
                     key: 'novalues',
                     children: 'Совпадений не найдено. Сбросить фильтр?',
                     onClick: () => {
-                      setInputValue('');
+                      setInputValue(null);
                     },
                   },
                 ],

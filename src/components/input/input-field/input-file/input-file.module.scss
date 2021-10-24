@@ -15,11 +15,13 @@
 .label {
   @include text-subtitle-2;
 
+  align-self: middle;
   color: var(--input-secondary-color);
   cursor: pointer;
-  display: flex;
-  flex-wrap: nowrap;
+  flex-grow: 1;
+  flex-shrink: 1;
   justify-content: flex-start;
+  margin: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -27,11 +29,6 @@
 
 .label.disabled {
   cursor: default;
-}
-
-.text {
-  align-self: middle;
-  margin: 4px 0 4px 12px;
 }
 
 .icon {
