@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './table-pagination.module.scss';
+import cn from 'classnames';
 
 import { Button, Input } from '../../../../index';
 import ArrowLeft from '../../../../resources/icons/arrow-left.svg';
@@ -27,19 +28,22 @@ export const TablePagination = ({
 
   return (
     <div className={styles.paginationWrapper}>
-      <p className={styles.caption}>Rows per page</p>
-      <Input
-        type="select"
-        id="table-rows-select"
-        value={rowsPerPage.toString()}
-        setValue={(value: string | null) => {
-          if (value !== null) {
-            setRowsPerPage(+value);
-          }
-        }}
-        selectableValues={selectableAmountOfRows || ['5', '10']}
-      />
-      <p className={styles.caption}>{`${selectedPage * rowsPerPage + 1}-${
+      <div className={styles.inputContainer}>
+        <p className={styles.text}>Rows per page</p>
+        <Input
+          className={styles.input}
+          type="select"
+          id="table-rows-select"
+          value={rowsPerPage.toString()}
+          setValue={(value: string | null) => {
+            if (value !== null) {
+              setRowsPerPage(+value);
+            }
+          }}
+          selectableValues={selectableAmountOfRows || ['5', '10']}
+        />
+      </div>
+      <p className={cn(styles.text, styles.caption)}>{`${selectedPage * rowsPerPage + 1}-${
         selectedPage * rowsPerPage + rowsPerPage < amountOfRows
           ? selectedPage * rowsPerPage + rowsPerPage
           : amountOfRows

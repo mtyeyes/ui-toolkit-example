@@ -1,0 +1,10 @@
+@import '../../styles/mixins.scss';
+
+.list {
+  @include list-style-reset;
+
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}

@@ -1,0 +1,23 @@
+@import '../../styles/mixins.scss';
+
+.list {
+  @include list-style-reset;
+
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  justify-content: flex-start;
+  position: relative;
+  width: min-content;
+}
+
+.list::after {
+  background-color: var(--color-black-12);
+  bottom: 0;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}

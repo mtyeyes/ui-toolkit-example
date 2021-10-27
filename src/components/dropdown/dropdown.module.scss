@@ -4,7 +4,6 @@
   background-color: var(--color-white-100);
   border-radius: 8px;
   box-shadow: var(--elevation-middle-4);
-  min-width: 240px;
   overflow: hidden;
   padding: 0;
   position: absolute;
@@ -12,6 +11,10 @@
   transition: var(--transition-speed) var(--transition-timing);
   width: 100%;
   z-index: 1;
+}
+
+.wrapper:not(.shrinkable) {
+  min-width: 240px;
 }
 
 .wrapper.left {

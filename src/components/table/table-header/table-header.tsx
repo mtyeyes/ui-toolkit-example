@@ -2,8 +2,7 @@ import React, { ReactNode } from 'react';
 import styles from './table-header.module.scss';
 import cn from 'classnames';
 
-import { Button, Input } from '../../../index';
-import DownloadIcon from '../../../resources/icons/download.svg';
+import { Input } from '../../../index';
 
 export interface TableHeaderProps {
   searchQuery: string;
@@ -13,13 +12,7 @@ export interface TableHeaderProps {
   isCondensed?: boolean;
 }
 
-export const TableHeader = ({
-  searchQuery,
-  setSearchQuery,
-  isCondensed = false,
-  headerSlot,
-  handleDownload,
-}: TableHeaderProps) => {
+export const TableHeader = ({ searchQuery, setSearchQuery, isCondensed = false, headerSlot }: TableHeaderProps) => {
   const headerClassName = cn({ [styles.condensed]: isCondensed }, styles.header);
 
   return (
@@ -32,7 +25,6 @@ export const TableHeader = ({
         setValue={setSearchQuery}
         isCondensed
       />
-      <Button onClick={handleDownload} theme="onLight" impact="none" size="medium" icon="only" iconSrc={DownloadIcon} />
       {headerSlot}
     </header>
   );

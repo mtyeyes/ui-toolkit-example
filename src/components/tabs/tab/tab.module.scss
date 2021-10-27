@@ -1,0 +1,63 @@
+@import '../../../styles/mixins.scss';
+
+.tab {
+  position: relative;
+}
+
+.tab::after {
+  background-color: transparent;
+  bottom: 0;
+  content: '';
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 0;
+}
+
+.tab.checked::after {
+  background-color: var(--color-primary-60);
+  height: 2px;
+  left: 0;
+  width: 100%;
+}
+
+.input {
+  @include hide-input;
+}
+
+.label {
+  @include text-subtitle-2;
+
+  align-items: center;
+  color: var(--color-gray-60);
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  justify-content: center;
+  overflow: hidden;
+  stroke: var(--color-gray-60);
+  text-overflow: ellipsis;
+  transition: var(--transition-speed) var(--transition-timing);
+  white-space: nowrap;
+}
+
+.icon.left {
+  order: 1;
+}
+
+.text {
+  order: 2;
+}
+
+.icon.right {
+  order: 3;
+}
+
+.checked .label,
+.tab:hover .label,
+.tab:focus-within .label {
+  color: var(--color-primary-60);
+  stroke: var(--color-primary-60);
+}

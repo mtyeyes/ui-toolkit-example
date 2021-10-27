@@ -1,0 +1,44 @@
+@import '../../styles/mixins.scss';
+
+.list {
+  @include list-style-reset;
+
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.item {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.link {
+  @include text-subtitle-2;
+
+  color: var(--color-gray-60);
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.icon {
+  stroke: var(--color-gray-60);
+}
+
+.link.home {
+  display: grid;
+  height: 36px;
+  padding: 0;
+  place-items: center;
+  width: 36px;
+}
+
+.separator {
+  background-clip: content-box;
+  background-color: var(--color-gray-60);
+  border-radius: 50%;
+  height: 4px;
+  padding: 16px;
+  width: 4px;
+}

@@ -1,0 +1,69 @@
+@import '../../../styles/mixins.scss';
+
+.btn {
+  @include btn-style-reset;
+
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 6px 18px;
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.btn:hover,
+.item.current:hover .btn {
+  background-color: var(--color-black-12);
+}
+
+.btn:focus-within {
+  border: 2px solid var(--color-black-100);
+}
+
+.item .icon {
+  stroke: var(--color-gray-100);
+  transition: inherit;
+}
+
+.item .text {
+  @include text-button;
+
+  color: var(--color-gray-100);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: inherit;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.item.current .btn {
+  background-color: var(--color-primary-10);
+}
+
+.item.current .icon {
+  stroke: var(--color-primary-80);
+}
+
+.item.current .text {
+  color: var(--color-primary-80);
+}
+
+.onlyIcon .btn,
+.labeledIcon .btn {
+  display: grid;
+  place-items: center;
+}
+
+.onlyIcon .btn {
+  height: 80px;
+  padding: 0;
+  width: 80px;
+}
+
+.labeledIcon .btn {
+  gap: 6px;
+  padding: 9px 20px;
+}
+
+.labeledIcon .text {
+  @include text-caption;
+}

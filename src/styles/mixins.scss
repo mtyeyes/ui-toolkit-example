@@ -15,7 +15,7 @@
 
 @mixin text-secondary-font {
   color: var(--color-gray-100);
-  font-family: 'inter', sans-serif;
+  font-family: inter, sans-serif;
 }
 
 @mixin style-hero-1 {
@@ -247,6 +247,7 @@
   @include text-secondary-font;
 
   font-size: 12px;
+  font-variant-numeric: tabular-nums;
   font-weight: 400;
   letter-spacing: 0.5px;
   line-height: 16px;
@@ -300,4 +301,11 @@
   &::-webkit-search-results-decoration {
     display: none;
   }
+}
+
+@mixin hide-input {
+  appearance: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
 }

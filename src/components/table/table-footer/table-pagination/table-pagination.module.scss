@@ -9,13 +9,30 @@
   margin-left: auto;
 }
 
+.inputContainer {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.input {
+  width: 96px;
+}
+
 .btnWrapper {
   display: flex;
   gap: 4px;
 }
 
-.caption {
+.text {
   @include text-caption;
-  flex-shrink: 0;
+
   flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.caption {
+  min-width: 80px;
+  text-align: center;
 }

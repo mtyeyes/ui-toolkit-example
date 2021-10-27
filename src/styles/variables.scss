@@ -1,12 +1,12 @@
 :root {
-  // colour variables
-  --color-black-12: rgba(0, 0, 0, 0.12);
-  --color-black-32: rgba(0, 0, 0, 0.32);
-  --color-black-56: rgba(0, 0, 0, 0.56);
+  /* colour variables */
+  --color-black-12: rgb(0 0 0 / 12%);
+  --color-black-32: rgb(0 0 0 / 32%);
+  --color-black-56: rgb(0 0 0 / 56%);
   --color-black-100: #000;
-  --color-white-16: rgba(1, 1, 1, 0.16);
-  --color-white-28: rgba(1, 1, 1, 0.28);
-  --color-white-48: rgba(1, 1, 1, 0.48);
+  --color-white-16: rgb(1 1 1 / 16%);
+  --color-white-28: rgb(1 1 1 / 28%);
+  --color-white-48: rgb(1 1 1 / 48%);
   --color-white-100: #FFF;
   --color-gray-10: #F2F4F8;
   --color-gray-20: #DDE1E6;
@@ -21,7 +21,7 @@
   --color-primary-10: #F6F2FF;
   --color-primary-20: #E8DAFF;
   --color-primary-30: #D4BBFF;
-  --color-primary-30-opacity-0: rgba(212, 187, 255, 0);
+  --color-primary-30-opacity-0: rgb(212 187 255 / 0%);
   --color-primary-40: #BE95FF;
   --color-primary-50: #A56EFF;
   --color-primary-60: #8A3FFC;
@@ -53,25 +53,27 @@
   --color-online: #42BE65;
   --color-attention: #CE2670;
   --color-attention-substrate: #FFF0F7;
-  --color-overlay: rgba(0, 0, 0, 0.28);
-  --gradient-no-data: repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0.1) 10px, rgba(0, 0, 0, 0.1) 20px);
-  // shadows variables
-  --elevation-top-1: 0 0.66px 1px rgba(0, 0, 0, 0.1), 0 1.33px 2px rgba(0, 0, 0, 0.08), 0 2.66px 4px rgba(0, 0, 0, 0.06);
-  --elevation-top-2: 0 2px 3px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 8px 12px -1px rgba(0, 0, 0, 0.06);
-  --elevation-top-3: 0 4px 6px -2px rgba(0, 0, 0, 0.1), 0 8px 12px -2px rgba(0, 0, 0, 0.08), 0 16px 24px -2px rgba(0, 0, 0, 0.06);
-  --elevation-top-4: 0 8px 12px -3px rgba(0, 0, 0, 0.1), 0 16px 24px -3px rgba(0, 0, 0, 0.08), 0 32px 48px -3px rgba(0, 0, 0, 0.06);
-  --elevation-top-5: 0 16px 24px -4px rgba(0, 0, 0, 0.1), 0 32px 48px -4px rgba(0, 0, 0, 0.08), 0 64px 96px -4px rgba(0, 0, 0, 0.06);
-  --elevation-middle-1: 0 0.25px 1px rgba(0, 0, 0, 0.16), 0 0.66px 2px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
-  --elevation-middle-2: 0 0.75px 3px -1px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.08), 0 6px 12px 1px rgba(0, 0, 0, 0.04);
-  --elevation-middle-3: 0 1.5px 6px -2px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.08), 0 12px 24px 2px rgba(0, 0, 0, 0.04);
-  --elevation-middle-4: 0 3px 12px -3px rgba(0, 0, 0, 0.16), 0 8px 24px rgba(0, 0, 0, 0.08), 0 24px 48px 3px rgba(0, 0, 0, 0.04);
-  --elevation-middle-5: 0 6px 24px -4px rgba(0, 0, 0, 0.16), 0 16px 48px rgba(0, 0, 0, 0.08), 0 48px 96px 4px rgba(0, 0, 0, 0.04);
-  --elevation-bottom-1: 0 -0.66px 1px rgba(0, 0, 0, 0.1), 0 -1.33px 2px rgba(0, 0, 0, 0.08), 0 -2.66px 4px rgba(0, 0, 0, 0.06);
-  --elevation-bottom-2: 0 -2px 3px -1px rgba(0, 0, 0, 0.1), 0 -4px 6px -1px rgba(0, 0, 0, 0.08), 0 -8px 12px -1px rgba(0, 0, 0, 0.06);
-  --elevation-bottom-3: 0 -4px 6px -2px rgba(0, 0, 0, 0.1), 0 -8px 12px -2px rgba(0, 0, 0, 0.08), 0 -16px 24px -2px rgba(0, 0, 0, 0.06);
-  --elevation-bottom-4: 0 -8px 12px -3px rgba(0, 0, 0, 0.1), 0 -16px 24px -3px rgba(0, 0, 0, 0.08), 0 -32px 48px -3px rgba(0, 0, 0, 0.06);
-  --elevation-bottom-5: 0 -16px 24px -4px rgba(0, 0, 0, 0.1), 0 -32px 48px -4px rgba(0, 0, 0, 0.08), 0 -64px 96px -4px rgba(0, 0, 0, 0.06);
-  // animation variables
+  --color-overlay: rgb(0 0 0 / 28%);
+  --gradient-no-data: repeating-linear-gradient(-45deg, rgb(0 0 0 / 0%), rgb(0 0 0 / 0%) 10px, rgb(0 0 0 / 10%) 10px, rgb(0 0 0 / 10%) 20px);
+
+  /* shadows variables */
+  --elevation-top-1: 0 0.66px 1px rgb(0 0 0 / 10%), 0 1.33px 2px rgb(0 0 0 / 8%), 0 2.66px 4px rgb(0 0 0 / 6%);
+  --elevation-top-2: 0 2px 3px -1px rgb(0 0 0 / 10%), 0 4px 6px -1px rgb(0 0 0 / 8%), 0 8px 12px -1px rgb(0 0 0 / 6%);
+  --elevation-top-3: 0 4px 6px -2px rgb(0 0 0 / 10%), 0 8px 12px -2px rgb(0 0 0 / 8%), 0 16px 24px -2px rgb(0 0 0 / 6%);
+  --elevation-top-4: 0 8px 12px -3px rgb(0 0 0 / 10%), 0 16px 24px -3px rgb(0 0 0 / 8%), 0 32px 48px -3px rgb(0 0 0 / 6%);
+  --elevation-top-5: 0 16px 24px -4px rgb(0 0 0 / 10%), 0 32px 48px -4px rgb(0 0 0 / 8%), 0 64px 96px -4px rgb(0 0 0 / 6%);
+  --elevation-middle-1: 0 0.25px 1px rgb(0 0 0 / 16%), 0 0.66px 2px rgb(0 0 0 / 8%), 0 2px 4px rgb(0 0 0 / 4%);
+  --elevation-middle-2: 0 0.75px 3px -1px rgb(0 0 0 / 16%), 0 2px 6px rgb(0 0 0 / 8%), 0 6px 12px 1px rgb(0 0 0 / 4%);
+  --elevation-middle-3: 0 1.5px 6px -2px rgb(0 0 0 / 16%), 0 4px 12px rgb(0 0 0 / 8%), 0 12px 24px 2px rgb(0 0 0 / 4%);
+  --elevation-middle-4: 0 3px 12px -3px rgb(0 0 0 / 16%), 0 8px 24px rgb(0 0 0 / 8%), 0 24px 48px 3px rgb(0 0 0 / 4%);
+  --elevation-middle-5: 0 6px 24px -4px rgb(0 0 0 / 16%), 0 16px 48px rgb(0 0 0 / 8%), 0 48px 96px 4px rgb(0 0 0 / 4%);
+  --elevation-bottom-1: 0 -0.66px 1px rgb(0 0 0 / 10%), 0 -1.33px 2px rgb(0 0 0 / 8%), 0 -2.66px 4px rgb(0 0 0 / 6%);
+  --elevation-bottom-2: 0 -2px 3px -1px rgb(0 0 0 / 10%), 0 -4px 6px -1px rgb(0 0 0 / 8%), 0 -8px 12px -1px rgb(0 0 0 / 6%);
+  --elevation-bottom-3: 0 -4px 6px -2px rgb(0 0 0 / 10%), 0 -8px 12px -2px rgb(0 0 0 / 8%), 0 -16px 24px -2px rgb(0 0 0 / 6%);
+  --elevation-bottom-4: 0 -8px 12px -3px rgb(0 0 0 / 10%), 0 -16px 24px -3px rgb(0 0 0 / 8%), 0 -32px 48px -3px rgb(0 0 0 / 6%);
+  --elevation-bottom-5: 0 -16px 24px -4px rgb(0 0 0 / 10%), 0 -32px 48px -4px rgb(0 0 0 / 8%), 0 -64px 96px -4px rgb(0 0 0 / 6%);
+
+  /* animation variables */
   --transition-speed: 0.12s;
   --transition-timing: ease-in-out;
 }

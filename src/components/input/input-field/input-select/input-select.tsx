@@ -75,7 +75,18 @@ export const InputSelect = ({
   }, [dropdownExpanded]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!dropdownExpanded) {
+      setDropdownExpanded(true);
+    }
+
     setInputValue(e.currentTarget.value);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!dropdownExpanded && (e.key === 'Enter' || e.code === 'Space')) {
+      setDropdownExpanded(true);
+      e.preventDefault();
+    }
   };
 
   const filteredValuesMapCallback = (valueName: string): DropdownItemProps => {
@@ -106,8 +117,11 @@ export const InputSelect = ({
         id={`${id}-input`}
         value={displayedValue || ''}
         onChange={handleChange}
-        onFocus={() => {
-          setDropdownExpanded(true);
+        onKeyDown={handleKeyDown}
+        onClick={() => {
+          if (dropdownExpanded === false) {
+            setDropdownExpanded(true);
+          }
         }}
         autoComplete="off"
         placeholder={placeholder}
@@ -115,7 +129,7 @@ export const InputSelect = ({
         ref={inputRef}
       />
       <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>{DropdownIcon}</InputIcon>
-      <Dropdown isExpanded={dropdownExpanded} id={`${id}-dropdown`}>
+      <Dropdown isExpanded={dropdownExpanded} isShrinkable id={`${id}-dropdown`}>
         {{
           menu:
             filteredSelectableValues.length !== 0

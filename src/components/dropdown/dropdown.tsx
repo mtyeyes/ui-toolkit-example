@@ -22,12 +22,14 @@ interface NotSearchableDropdownProps extends BasicDropdownProps {
 interface BasicDropdownProps {
   isExpanded: boolean;
   alignToSide?: 'left' | 'right';
+  isShrinkable?: boolean;
   children: { [key: string]: DropdownItemProps[] };
 }
 
 export const Dropdown = ({
   isExpanded,
   isSearchable = false,
+  isShrinkable = false,
   alignToSide = 'left',
   children,
   ...props
@@ -44,7 +46,7 @@ export const Dropdown = ({
   }, [JSON.stringify(children)]);
 
   const wrapperClassName = cn(
-    { [styles.expanded]: isExpanded, [styles.scrollable]: isScrollable },
+    { [styles.expanded]: isExpanded, [styles.scrollable]: isScrollable, [styles.shrinkable]: isShrinkable },
     styles[alignToSide],
     styles.wrapper,
   );

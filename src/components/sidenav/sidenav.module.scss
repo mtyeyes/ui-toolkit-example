@@ -1,0 +1,14 @@
+@import '../../styles/mixins.scss';
+
+.list {
+  @include list-style-reset;
+
+  background-color: var(--color-white-100);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 16px 0;
+  width: 100%;
+}

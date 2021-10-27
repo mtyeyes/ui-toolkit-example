@@ -62,7 +62,7 @@ export const InputMultiselect = ({
 
   useEffect(() => {
     const handleNewSelectableValue = (e: KeyboardEvent) => {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' && inputValue && !selectableValues.includes(inputValue)) {
         setSelectableValues([...selectableValues, inputValue]);
         setSelectedValues([...selectedValues, inputValue]);
       }
@@ -77,7 +77,18 @@ export const InputMultiselect = ({
     };
   }, [selectableValues, selectedValues, filteredSelectableValues, inputValue]);
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!dropdownExpanded && (e.key === 'Enter' || e.code === 'Space')) {
+      setDropdownExpanded(true);
+      e.preventDefault();
+    }
+  };
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!dropdownExpanded) {
+      setDropdownExpanded(true);
+    }
+
     setInputValue(e.currentTarget.value);
   };
 
@@ -114,8 +125,11 @@ export const InputMultiselect = ({
         id={`${id}-input`}
         value={inputValue}
         onChange={handleInputChange}
-        onFocus={() => {
-          setDropdownExpanded(true);
+        onKeyDown={handleKeyDown}
+        onClick={() => {
+          if (dropdownExpanded === false) {
+            setDropdownExpanded(true);
+          }
         }}
         autoComplete="off"
         placeholder={selectedValues.length > 0 ? undefined : placeholder}
@@ -130,7 +144,7 @@ export const InputMultiselect = ({
         <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>{DropdownIcon}</InputIcon>
       )}
 
-      <Dropdown isExpanded={dropdownExpanded} id={`${id}-dropdown`}>
+      <Dropdown isExpanded={dropdownExpanded} isShrinkable id={`${id}-dropdown`}>
         {{
           menu:
             filteredSelectableValues.length !== 0 || inputValue === ''
