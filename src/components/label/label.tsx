@@ -2,7 +2,7 @@ import React, { LabelHTMLAttributes, DetailedHTMLProps } from 'react';
 import styles from './label.module.scss';
 import cn from 'classnames';
 
-import FlagRequired from '../../resources/icons/required.svg';
+import { FlagRequired } from '../../index';
 
 export type LabelProps = LabelAsLabelProps | LabelAsLegendProps;
 

@@ -3,7 +3,7 @@ import styles from './avatar.module.scss';
 import cn from 'classnames';
 
 import { AvatarControls } from './avatar-controls/avatar-controls';
-import AvatarIcon from '../../resources/icons/avatar-placeholder.svg';
+import { User } from 'phosphor-react';
 
 export type AvatarProps = AvatarIconProps | AvatarInitialsProps | AvatarPhotoProps;
 
@@ -40,20 +40,20 @@ export const Avatar = (props: AvatarProps) => {
 
     const svgSize = (() => {
       if (size === 'tiny') {
-        return { width: '16px', height: '16px' };
+        return '16px';
       }
       if (size === 'small' || size === 'medium') {
-        return { width: '24px', height: '24px' };
+        return '24px';
       }
       if (size === 'large') {
-        return { width: '48px', height: '48px' };
+        return '48px';
       }
       if (size === 'huge') {
-        return { width: '80px', height: '80px' };
+        return '80px';
       }
     })();
 
-    return <AvatarIcon className={styles.icon} {...svgSize} />;
+    return <User className={styles.icon} weight="fill" size={svgSize} />;
   };
 
   return (

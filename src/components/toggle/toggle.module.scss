@@ -22,18 +22,15 @@
 .text {
   @include text-subtitle-2;
 
-  flex-grow: 1;
+  display: inline-block;
+  flex-grow: 0;
   flex-shrink: 1;
   font-weight: 400;
-  overflow: hidden;
   padding-left: 16px;
   position: relative;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .icon {
-  fill: var(--color-attention);
   height: 8px;
   position: absolute;
   right: -12px;

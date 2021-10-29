@@ -11,23 +11,23 @@
   border: 2px solid transparent;
   border-left: 2px solid transparent;
   box-sizing: border-box;
+  color: var(--color-gray-100);
   display: flex;
   flex-wrap: nowrap;
   gap: 24px;
   justify-content: flex-start;
   padding: 14px 22px;
-  stroke: var(--color-gray-100);
   text-decoration: none;
   transition: var(--transition-speed) var(--transition-timing);
 }
 
 .item.current:focus-within::before,
 .item::before {
-  position: absolute;
   background-color: transparent;
   content: '';
   height: 0;
   left: 0;
+  position: absolute;
   top: 50%;
   transition: inherit;
   width: 0;
@@ -41,9 +41,8 @@
 }
 
 .current .link {
-  // border-left: 2px solid var(--color-primary-60);
   color: var(--color-primary-60);
-  stroke: var(--color-primary-60);
+  cursor: default;
 }
 
 .item:hover .link {

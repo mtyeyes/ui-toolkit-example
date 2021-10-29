@@ -6,13 +6,13 @@ export type TabProps = (TabWithIconProps & TabStateProps) | (TabWithoutIconProps
 
 export interface TabWithIconProps {
   icon: 'left' | 'right' | 'only';
-  iconSrc: FC<SVGAttributes<SVGAElement>>;
+  iconComponent: FC<SVGAttributes<SVGAElement>>;
   name: string;
 }
 
 export interface TabWithoutIconProps {
   icon?: 'none';
-  iconSrc?: undefined;
+  iconComponent?: undefined;
   name: string;
 }
 
@@ -22,10 +22,9 @@ interface TabStateProps {
   groupName: string;
 }
 
-export const Tab = ({ icon = 'none', isChecked, setIsChecked, groupName, name, iconSrc }: TabProps) => {
+export const Tab = ({ icon = 'none', isChecked, setIsChecked, groupName, name, iconComponent }: TabProps) => {
   const handleChange = () => setIsChecked(name);
   const tabNameWithoutWhitespaces = name.replaceAll(' ', '');
-  const Icon = icon !== 'none' && iconSrc;
 
   return (
     <li className={cn({ [styles.checked]: isChecked }, styles.tab)}>
@@ -38,7 +37,9 @@ export const Tab = ({ icon = 'none', isChecked, setIsChecked, groupName, name, i
         name={groupName}
       />
       <label className={styles.label} htmlFor={`${tabNameWithoutWhitespaces}-tab`}>
-        {Icon && <Icon className={cn(styles[icon], styles.icon)} />}
+        {icon !== 'none' && iconComponent !== undefined && (
+          <div className={cn(styles[icon], styles.iconWrapper)}>{iconComponent}</div>
+        )}
         {icon !== 'only' && <span className={styles.text}>{name}</span>}
       </label>
     </li>

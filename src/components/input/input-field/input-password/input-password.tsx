@@ -3,8 +3,7 @@ import React, { ChangeEvent, useState } from 'react';
 import { InputIcon } from '../input-icon/input-icon';
 import { InputELement, InputELementProps } from '../input-element/input-element';
 
-import PasswordVisibleIcon from '../../../../resources/icons/password-visible.svg';
-import PasswordHiddenIcon from '../../../../resources/icons/password-hidden.svg';
+import { Eye, EyeClosed } from 'phosphor-react';
 
 export interface InputPasswordProps extends Omit<InputELementProps, 'onChange' | 'disabled' | 'name'> {
   id: string;
@@ -32,7 +31,7 @@ export const InputPassword = ({ id, value, setValue, isDisabled, ...props }: Inp
         {...props}
       />
       <InputIcon onClick={() => setPasswordVisibility((prevState) => !prevState)}>
-        {passwordVisibility ? PasswordVisibleIcon : PasswordHiddenIcon}
+        {passwordVisibility ? <Eye size="24px" /> : <EyeClosed size="24px" />}
       </InputIcon>
     </>
   );

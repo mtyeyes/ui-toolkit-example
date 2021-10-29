@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof ToggleGroup> = ({ amountOfToggles, typeOfT
 
   return (
     <ToggleGroup {...args}>
-      {new Array(amountOfToggles).fill('').map((blank, i) => (
+      {[...Array(amountOfToggles)].map((blank, i) => (
         <Toggle
           key={`${typeOfToggles}-${i}`}
           type={typeOfToggles}

@@ -1,4 +1,4 @@
-import React, { FC, SVGAttributes, ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 import styles from './button.module.scss';
 import cn from 'classnames';
 import capitalize from '../../utils/capitalizeFirstLetter';
@@ -8,8 +8,7 @@ export type ButtonProps = ButtonPropsWithIcon | ButtonPropsWithoutIcon;
 
 interface ButtonPropsWithIcon extends GenericButtonProps {
   icon: 'left' | 'right' | 'only';
-  iconSrc: FC<SVGAttributes<SVGAElement>>;
-  iconFillColored?: boolean;
+  iconComponent: ReactNode;
 }
 
 interface ButtonPropsWithoutIcon extends GenericButtonProps {
@@ -43,7 +42,6 @@ export const Button = ({
     {
       [styles.btnLoading]: isLoading,
       [styles.btnDisabled]: isDisabled,
-      [styles.fill]: 'iconFillColored' in props && props.iconFillColored,
     },
     styles[`${size}Size`],
     styles[`btnIcon${capitalize(icon)}`],
@@ -55,7 +53,7 @@ export const Button = ({
   const isBtnWithIcon = icon !== 'none';
   const isTextDisplayed = !isLoading && icon !== 'only';
   const isIconDisplayed = isLoading || isBtnWithIcon;
-  const IconComponent = isBtnWithIcon && !isLoading ? (props as ButtonPropsWithIcon)['iconSrc'] : Spinner;
+  const IconComponent = isBtnWithIcon && !isLoading ? (props as ButtonPropsWithIcon)['iconComponent'] : <Spinner />;
 
   return (
     <button
@@ -65,11 +63,7 @@ export const Button = ({
       type="button"
       {...props}
     >
-      {isIconDisplayed && (
-        <div className={styles.iconWrapper}>
-          <IconComponent className={styles.icon} />
-        </div>
-      )}
+      {isIconDisplayed && <div className={styles.iconWrapper}>{IconComponent}</div>}
       {isTextDisplayed && <span className={styles.text}>{children}</span>}
     </button>
   );

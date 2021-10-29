@@ -19,9 +19,8 @@
   border: 2px solid var(--color-black-100);
 }
 
-.item .icon {
-  stroke: var(--color-gray-100);
-  transition: inherit;
+.item {
+  color: var(--color-gray-100);
 }
 
 .item .text {
@@ -39,8 +38,8 @@
   background-color: var(--color-primary-10);
 }
 
-.item.current .icon {
-  stroke: var(--color-primary-80);
+.item.current {
+  color: var(--color-primary-80);
 }
 
 .item.current .text {

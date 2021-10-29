@@ -1,0 +1,50 @@
+@import '../../styles/mixins.scss';
+
+.list {
+  @include list-style-reset;
+
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  justify-content: flex-start;
+}
+
+.input {
+  @include hide-input;
+}
+
+.line {
+  border-bottom: 2px dashed var(--color-black-12);
+  height: 0;
+  width: 20px;
+}
+
+.label {
+  @include text-numeric-large;
+
+  border: 2px solid transparent;
+  border-radius: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: 36px;
+  padding: 4px 0;
+  text-align: center;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 36px;
+}
+
+.label.previous {
+  border: 2px solid var(--color-black-12);
+}
+
+.label.selected {
+  background-color: var(--color-primary-80);
+  color: var(--color-primary-10);
+  cursor: default;
+}
+
+.label.next {
+  color: var(--color-gray-60);
+}

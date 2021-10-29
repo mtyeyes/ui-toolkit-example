@@ -6,6 +6,7 @@ import { InputELement, InputELementProps } from '../input-element/input-element'
 import { InputIcon } from '../input-icon/input-icon';
 import { Units } from '../units/units';
 
+import { Plus, Minus } from 'phosphor-react';
 import PlusIcon from '../../../../resources/icons/plus.svg';
 import MinusIcon from '../../../../resources/icons/minus.svg';
 
@@ -49,8 +50,12 @@ export const InputCounter = ({
         className={cn(styles.input, className)}
         {...props}
       />
-      <InputIcon onClick={decrement}>{MinusIcon}</InputIcon>
-      <InputIcon onClick={increment}>{PlusIcon}</InputIcon>
+      <InputIcon onClick={decrement}>
+        <Minus size="24px" />
+      </InputIcon>
+      <InputIcon onClick={increment}>
+        <Plus size="24px" />
+      </InputIcon>
     </>
   );
 };

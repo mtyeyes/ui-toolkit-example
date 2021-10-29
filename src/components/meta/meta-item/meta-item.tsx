@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './meta-item.module.scss';
 
-import ViewsIcon from '../../../resources/icons/views.svg';
-import CommentsIcon from '../../../resources/icons/comments.svg';
+import { Eye, ChatDots } from 'phosphor-react';
 
 export interface MetaItemProps {
   type?: 'default' | 'comments' | 'views';
@@ -12,8 +11,8 @@ export interface MetaItemProps {
 export const MetaItem = ({ type = 'default', children }: MetaItemProps) => {
   const renderIcon = () => {
     const iconClassName = styles.icon;
-    if (type === 'comments') return <CommentsIcon className={iconClassName} />;
-    if (type === 'views') return <ViewsIcon className={iconClassName} />;
+    if (type === 'comments') return <ChatDots weight="regular" size="16px" className={iconClassName} />;
+    if (type === 'views') return <Eye weight="regular" size="16px" className={iconClassName} />;
     return null;
   };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './switch.module.scss';
 import cn from 'classnames';
 
-import Checkmark from '../../../resources/icons/checkmark-small.svg';
+import { Check } from 'phosphor-react';
 
 export interface SwitchProps {
   isChecked: boolean;
@@ -25,7 +25,7 @@ export const Switch = ({ isChecked, isDisabled = false, isInvalid = false, isFil
   return (
     <span className={fieldClassname}>
       <span className={styles.shapeWrapper}>
-        <Checkmark className={styles.shape} />
+        <Check size="12px" className={styles.shape} />
       </span>
     </span>
   );

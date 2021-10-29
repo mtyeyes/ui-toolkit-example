@@ -1,0 +1,61 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  justify-content: flex-start;
+}
+
+.btn {
+  @include btn-style-reset;
+
+  border-radius: 8px;
+  color: var(--color-gray-100);
+  cursor: pointer;
+  display: grid;
+  height: 36px;
+  place-items: center;
+  width: 36px;
+}
+
+.btn:disabled {
+  cursor: default;
+}
+
+.btn.used {
+  background-color: var(--color-gray-10);
+}
+
+.btn:hover,
+.btn.used:hover {
+  background-color: var(--color-black-12);
+}
+
+.btn:focus-within {
+  outline: 2px solid var(--color-gray-100);
+}
+
+.counter {
+  @include text-numeric-large;
+
+  background-color: var(--color-gray-10);
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: var(--color-gray-60);
+  height: 36px;
+  min-width: 48px;
+  padding: 5px;
+  text-align: center;
+}
+
+.counter.positive {
+  background-color: var(--color-accent-10);
+  color: var(--color-accent-60);
+}
+
+.counter.negative {
+  background-color: var(--color-attention-substrate);
+  color: var(--color-attention);
+}

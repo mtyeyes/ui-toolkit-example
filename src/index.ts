@@ -6,6 +6,9 @@ export { Avatar } from './components/avatar/avatar';
 export type { BadgeProps } from './components/badge/badge';
 export { Badge } from './components/badge/badge';
 
+export type { BlockqouteProps } from './components/blockquote/blockqoute';
+export { Blockqoute } from './components/blockquote/blockqoute';
+
 export type { BreadcrumbsProps } from './components/breadcrumbs/breadcrumbs';
 export { Breadcrumbs } from './components/breadcrumbs/breadcrumbs';
 
@@ -14,6 +17,9 @@ export { Button } from './components/button/button';
 
 export type { ChipProps } from './components/chip/chip';
 export { Chip } from './components/chip/chip';
+
+export type { CommentsRatingProps, UserRating } from './components/comments-rating/comments-rating';
+export { CommentsRating } from './components/comments-rating/comments-rating';
 
 export type { CounterProps } from './components/counter/counter';
 export { Counter } from './components/counter/counter';
@@ -28,6 +34,9 @@ export type { DropdownItemProps } from './components/dropdown/dropdown-item/drop
 
 export type { FabProps } from './components/fab/fab';
 export { Fab } from './components/fab/fab';
+
+export type { FlagRequiredProps } from './components/flag-required/flag-required';
+export { FlagRequired } from './components/flag-required/flag-required';
 
 export type { FormWrapperProps } from './components/form-wrapper/form-wrapper';
 export { FormWrapper } from './components/form-wrapper/form-wrapper';
@@ -44,6 +53,9 @@ export { Menu } from './components/menu/menu';
 export type { MetaProps } from './components/meta/meta';
 export { Meta } from './components/meta/meta';
 
+export type { PaginationProps } from './components/pagination/pagination';
+export { Pagination } from './components/pagination/pagination';
+
 export type { RatingProps } from './components/rating/rating';
 export { Rating } from './components/rating/rating';
 
@@ -55,6 +67,9 @@ export { Sidenav } from './components/sidenav/sidenav';
 
 export type { SpinnerProps } from './components/spinner/spinner';
 export { Spinner } from './components/spinner/spinner';
+
+export type { StepperProps } from './components/stepper/stepper';
+export { Stepper } from './components/stepper/stepper';
 
 export type { TableProps } from './components/table/table';
 export { Table } from './components/table/table';

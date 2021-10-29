@@ -23,7 +23,7 @@ const Link = ({ ...props }) => {
 export const breadcrumbs = Template.bind({});
 breadcrumbs.args = {
   basepath: 'https://cronmedia.gitlab.io/***REMOVED***club/ds',
-  paths: ['?path=/story/breadcrumbs--breadcrumbs', 'somewhere', 'else'],
-  pathsNames: ['Breadcrumbs story', 'Not working', 'Placeholder'],
+  paths: ['?path=/story/breadcrumbs--breadcrumbs', 'somewhere', 'curent'],
+  pathsNames: ['Breadcrumbs story', 'Random link', 'Current page'],
   Link,
 };

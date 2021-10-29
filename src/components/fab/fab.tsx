@@ -3,7 +3,7 @@ import styles from './fab.module.scss';
 import cn from 'classnames';
 
 import { Spinner } from '../../index';
-import FabIcon from '../../resources/icons/fab-icon.svg';
+import { Plus } from 'phosphor-react';
 
 export interface FabProps {
   size?: 'medium' | 'small';
@@ -24,7 +24,7 @@ export const Fab = ({ size = 'medium', impact = 'high', isLoading = false, onCli
 
   return (
     <button className={btnClassName} type="button" onClick={onClick}>
-      {isLoading ? <Spinner /> : <FabIcon />}
+      {isLoading ? <Spinner /> : <Plus />}
     </button>
   );
 };

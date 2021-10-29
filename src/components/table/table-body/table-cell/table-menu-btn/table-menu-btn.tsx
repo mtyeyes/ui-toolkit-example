@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from 'react';
 import styles from './table-menu-btn.module.scss';
 
 import { Button } from '../../../../../index';
-import MenuIcon from '../../../../../resources/icons/menu-dots.svg';
+import { DotsThreeVertical } from 'phosphor-react';
 
 export interface TableMenuBtnProps {
   children: ReactNode;
@@ -22,8 +22,7 @@ export const TableMenuBtn = ({ children }: TableMenuBtnProps) => {
         theme="onLight"
         impact="low"
         icon="only"
-        iconSrc={MenuIcon}
-        iconFillColored={true}
+        iconComponent={<DotsThreeVertical size="24px" />}
         size="small"
       />
       {isToggled && children}

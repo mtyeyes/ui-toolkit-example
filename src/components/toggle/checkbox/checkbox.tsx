@@ -1,19 +1,18 @@
 import React from 'react';
 import styles from './checkbox.module.scss';
 
-import Checkmark from '../../../resources/icons/checkmark.svg';
-import Dash from '../../../resources/icons/dash.svg';
+import { Check, Minus } from 'phosphor-react';
 
 export interface CheckboxProps {
   isIntermidiate?: boolean;
 }
 
 export const Checkbox = ({ isIntermidiate = false }: CheckboxProps) => {
-  const IconToDisplay = isIntermidiate ? Dash : Checkmark;
+  const IconToDisplay = isIntermidiate ? Minus : Check;
 
   return (
     <span className={styles.field}>
-      <IconToDisplay className={styles.icon} />
+      <IconToDisplay size="24px" className={styles.icon} />
     </span>
   );
 };

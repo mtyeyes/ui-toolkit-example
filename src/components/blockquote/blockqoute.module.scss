@@ -1,0 +1,13 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  border-left: 2px solid var(--color-accent-40);
+  margin: 0;
+  padding: 0 0 0 22px;
+}
+
+.text {
+  @include text-paragraph-1;
+
+  margin: 0;
+}

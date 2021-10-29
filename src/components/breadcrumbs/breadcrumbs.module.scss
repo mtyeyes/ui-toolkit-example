@@ -23,7 +23,7 @@
 }
 
 .icon {
-  stroke: var(--color-gray-60);
+  color: var(--color-gray-60);
 }
 
 .link.home {
@@ -32,6 +32,10 @@
   padding: 0;
   place-items: center;
   width: 36px;
+}
+
+.link.current {
+  cursor: default;
 }
 
 .separator {

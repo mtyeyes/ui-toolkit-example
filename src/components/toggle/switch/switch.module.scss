@@ -1,5 +1,4 @@
 // css variables comes from the parent component
-
 .field {
   border: var(--toggle-border);
   border-radius: 80px;
@@ -15,9 +14,10 @@
 .shapeWrapper {
   background-color: var(--color-gray-60);
   border-radius: 50%;
-  display: block;
+  display: grid;
   height: 16px;
   left: 2px;
+  place-items: center;
   position: absolute;
   top: calc(50% - 8px);
   transition: var(--transition-speed) var(--transition-timing);
@@ -25,10 +25,7 @@
 }
 
 .shape {
-  left: 3.3px;
-  position: absolute;
-  stroke: transparent;
-  top: 4px;
+  color: transparent;
   transition: var(--transition-speed) var(--transition-timing);
 }
 
@@ -39,7 +36,7 @@
   }
 
   .shape {
-    stroke: var(--color-primary-10);
+    color: var(--color-primary-10);
   }
 }
 
@@ -57,7 +54,7 @@
   }
 
   .shape {
-    stroke: transparent;
+    color: transparent;
   }
 }
 
@@ -70,10 +67,10 @@
   }
 
   &.invalid .shape {
-    stroke: transparent;
+    color: transparent;
   }
 
   &.checked .shape {
-    stroke: var(--toggle-background-color);
+    color: var(--toggle-background-color);
   }
 }

@@ -1,4 +1,4 @@
-import React, { FC, SVGAttributes } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './dropdown-item.module.scss';
 import cn from 'classnames';
 
@@ -17,7 +17,7 @@ interface DropDownLabelItem extends LabelWithoutIcon, ItemWithKey {
 }
 
 interface LabelWithIcon extends LabelWithoutIcon {
-  icon: FC<SVGAttributes<SVGAElement>>;
+  iconComponent: ReactNode;
   iconAlignment?: 'left' | 'right';
 }
 
@@ -47,7 +47,9 @@ export const DropdownItem = (props: DropdownItemProps) => {
         <Toggle {...props} />
       ) : (
         <button type="button" tabIndex={props.tabIndex} className={styles.btn} onClick={props.onClick}>
-          {props.type === 'icon' && <props.icon className={cn(styles[`${props.iconAlignment}`], styles.icon)} />}
+          {props.type === 'icon' && (
+            <div className={cn(styles.iconWrapper, cn(styles[`${props.iconAlignment}`]))}>{props.iconComponent}</div>
+          )}
           <span className={styles.text}>{props.children}</span>
         </button>
       )}

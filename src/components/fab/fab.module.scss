@@ -21,7 +21,7 @@
 
 .highImpact.btn {
   background-color: var(--color-primary-80);
-  stroke: var(--color-primary-10);
+  color: var(--color-primary-10);
 
   &:hover {
     background-color: var(--color-primary-70);
@@ -37,14 +37,14 @@
   &.loading:focus,
   &.loading:active {
     background-color: var(--color-primary-80);
+    color: var(--color-white-48);
     outline: none;
-    stroke: var(--color-white-48);
   }
 }
 
 .mediumImpact.btn {
   background-color: var(--color-primary-20);
-  stroke: var(--color-primary-80);
+  color: var(--color-primary-80);
 
   &:hover {
     background-color: var(--color-primary-30);
@@ -60,17 +60,17 @@
   &.loading:focus,
   &.loading:active {
     background-color: var(--color-primary-20);
+    color: var(--color-black-56);
     outline: none;
-    stroke: var(--color-black-56);
   }
 }
 
 .lowImpact.btn {
   background-color: var(--color-white-100);
-  stroke: var(--color-gray-100);
+  color: var(--color-gray-100);
 
   &:hover {
-    stroke: var(--color-primary-80);
+    color: var(--color-primary-80);
   }
 
   &:focus {
@@ -82,7 +82,7 @@
   &.loading:hover,
   &.loading:focus,
   &.loading:active {
+    color: var(--color-black-56);
     outline: none;
-    stroke: var(--color-black-56);
   }
 }

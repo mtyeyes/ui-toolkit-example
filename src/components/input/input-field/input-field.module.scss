@@ -65,14 +65,14 @@
 }
 
 .iconLocked {
-  fill: var(--color-gray-60);
+  color: var(--color-gray-60);
   position: absolute;
-  right: 5px;
-  top: -12px;
+  right: 7px;
+  top: -8px;
 }
 
 .container.disabled .iconLocked {
-  fill: var(--color-gray-40);
+  color: var(--color-gray-40);
 }
 
 .container.filled {

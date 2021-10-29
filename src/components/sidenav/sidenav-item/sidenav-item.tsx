@@ -1,20 +1,19 @@
-import React, { FC, SVGAttributes } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './sidenav-item.module.scss';
 import cn from 'classnames';
 
 export interface SidenavItemProps {
   isCurrent: boolean;
-  iconSrc?: FC<SVGAttributes<SVGAElement>>;
+  iconComponent?: ReactNode;
   href: string;
   name: string;
 }
 
-export const SidenavItem = ({ isCurrent, iconSrc, href, name }: SidenavItemProps) => {
-  const Icon = iconSrc || false;
+export const SidenavItem = ({ isCurrent, iconComponent, href, name }: SidenavItemProps) => {
   return (
     <li className={cn({ [styles.current]: isCurrent }, styles.item)}>
       <a href={isCurrent ? undefined : href} className={styles.link}>
-        {Icon && <Icon />}
+        {iconComponent}
         <span>{name}</span>
       </a>
     </li>

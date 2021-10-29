@@ -3,9 +3,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Sidenav } from '../index';
 
 const PlaceholderIcon = ({ ...props }) => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path d="M3.75 12H20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M12 3.75V20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  <svg {...props} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path stroke="currentColor" d="M3.75 12H20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path stroke="currentColor" d="M12 3.75V20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -28,9 +28,9 @@ sidenav.args = {
   children: [
     { name: 'Cupcake', href: '#' },
     { name: 'Donut', href: '#' },
-    { name: 'Eclair', href: '#', iconSrc: PlaceholderIcon, isCurrent: true },
+    { name: 'Eclair', href: '#', iconComponent: <PlaceholderIcon />, isCurrent: true },
     { name: 'Jelly Bean', href: '#' },
-    { name: 'Lollipop', href: '#', iconSrc: PlaceholderIcon },
+    { name: 'Lollipop', href: '#', iconComponent: <PlaceholderIcon /> },
     { name: 'Marshmallow', href: '#', isCurrent: true },
   ],
 };

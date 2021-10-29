@@ -3,8 +3,9 @@ import styles from './table-pagination.module.scss';
 import cn from 'classnames';
 
 import { Button, Input } from '../../../../index';
-import ArrowLeft from '../../../../resources/icons/arrow-left.svg';
-import ArrowRight from '../../../../resources/icons/arrow-right.svg';
+import { ArrowRight, ArrowLeft } from 'phosphor-react';
+// import ArrowLeft from '../../../../resources/icons/arrow-left.svg';
+// import ArrowRight from '../../../../resources/icons/arrow-right.svg';
 
 export interface TablePaginationProps {
   rowsPerPage: number;
@@ -57,7 +58,7 @@ export const TablePagination = ({
           theme="onLight"
           impact="none"
           icon="only"
-          iconSrc={ArrowLeft}
+          iconComponent={<ArrowLeft size="24px" />}
           size="medium"
         />
         <Button
@@ -68,7 +69,7 @@ export const TablePagination = ({
           theme="onLight"
           impact="none"
           icon="only"
-          iconSrc={ArrowRight}
+          iconComponent={<ArrowRight size="24px" />}
           size="medium"
         />
       </div>

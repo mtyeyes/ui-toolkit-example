@@ -7,7 +7,7 @@ import { InputELement } from '../input-element/input-element';
 import { Dropdown, DropdownItemProps } from '../../../../index';
 import useCloseModal from '../../../../utils/hooks/use-close-modal';
 
-import DropdownIcon from '../../../../resources/icons/dropdown.svg';
+import { CaretDown } from 'phosphor-react';
 
 export interface InputSelectProps {
   id: string;
@@ -128,7 +128,9 @@ export const InputSelect = ({
         className={className}
         ref={inputRef}
       />
-      <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>{DropdownIcon}</InputIcon>
+      <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>
+        <CaretDown size="24px" />
+      </InputIcon>
       <Dropdown isExpanded={dropdownExpanded} isShrinkable id={`${id}-dropdown`}>
         {{
           menu:

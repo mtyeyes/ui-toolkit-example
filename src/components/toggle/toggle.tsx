@@ -2,11 +2,10 @@ import React, { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import styles from './toggle.module.scss';
 import cn from 'classnames';
 
+import { FlagRequired } from '../../index';
 import { Checkbox } from './checkbox/checkbox';
 import { Radiobutton } from './radiobutton/radiobutton';
 import { Switch } from './switch/switch';
-
-import FlagRequired from '../../resources/icons/required.svg';
 
 export interface ToggleProps {
   type: 'checkbox' | 'radiobutton' | 'switch';

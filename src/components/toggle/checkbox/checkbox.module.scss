@@ -1,19 +1,20 @@
 // css variables comes from the parent component
-
 .field {
   background-color: var(--toggle-background-color);
   border: var(--toggle-border);
   border-radius: 4px;
   box-sizing: border-box;
-  display: grid;
   flex-shrink: 0;
   height: 24px;
-  place-items: center;
+  position: relative;
   transition: var(--transition-speed) var(--transition-timing);
   width: 24px;
 }
 
 .field .icon {
-  stroke: var(--toggle-icon-color);
+  color: var(--toggle-icon-color);
+  left: -2px;
+  position: absolute;
+  top: -2px;
   transition: var(--transition-speed) var(--transition-timing);
 }

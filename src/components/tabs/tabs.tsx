@@ -21,7 +21,7 @@ export const Tabs = ({ selectedTab, setSelectedTab, children }: TabsProps) => {
           setSelectedTab((props as TabWithIconProps).name);
         }}
         icon={(props as TabWithIconProps).icon}
-        iconSrc={(props as TabWithIconProps).iconSrc}
+        iconComponent={(props as TabWithIconProps).iconComponent}
       />
     );
   };

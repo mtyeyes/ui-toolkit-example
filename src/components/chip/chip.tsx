@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './chip.module.scss';
 import cn from 'classnames';
 
-import CloseIcon from '../../resources/icons/x-circle.svg';
+import { XCircle } from 'phosphor-react';
 
 export interface ChipProps {
   theme?: 'light' | 'dark' | 'accent';
@@ -18,7 +18,7 @@ export const Chip = ({ theme = 'light', onClick, withIcon = false, isDisabled = 
   return (
     <button type="button" disabled={isDisabled} onClick={onClick} className={wrapperClassName}>
       <span className={styles.text}>{children}</span>
-      {withIcon && <CloseIcon className={styles.icon} />}
+      {withIcon && <XCircle size="24px" className={styles.icon} />}
     </button>
   );
 };

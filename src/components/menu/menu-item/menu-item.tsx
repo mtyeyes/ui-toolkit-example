@@ -1,4 +1,4 @@
-import React, { FC, SVGAttributes } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './menu-item.module.scss';
 import cn from 'classnames';
 
@@ -6,13 +6,13 @@ export type MenuItemProps = MenuItemWithIconProps | MenuItemWithLabelAndIconProp
 
 interface MenuItemWithIconProps extends CommonMenuItemProps {
   type: 'onlyIcon';
-  iconSrc: FC<SVGAttributes<SVGAElement>>;
+  iconComponent: ReactNode;
 }
 
 interface MenuItemWithLabelAndIconProps extends CommonMenuItemProps {
   type: 'labeledIcon';
   children: string;
-  iconSrc: FC<SVGAttributes<SVGAElement>>;
+  iconComponent: ReactNode;
 }
 
 interface DefaultMenuItemProps extends CommonMenuItemProps {
@@ -27,12 +27,12 @@ interface CommonMenuItemProps {
 
 export const MenuItem = (props: MenuItemProps) => {
   const itemClassName = cn({ [styles.current]: props.isCurrent }, styles[props.type || 'default'], styles.item);
-  const Icon = props.type === 'onlyIcon' || props.type === 'labeledIcon' ? props.iconSrc : null;
+  const Icon = 'iconComponent' in props && props.iconComponent;
 
   return (
     <li className={itemClassName}>
       <button className={styles.btn} type="button">
-        {Icon !== null && <Icon className={styles.icon} />}
+        {Icon}
         {'children' in props && <span className={styles.text}>{props.children}</span>}
       </button>
     </li>

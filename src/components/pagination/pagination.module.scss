@@ -1,0 +1,61 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.list {
+  @include list-style-reset;
+
+  align-items: flex-end;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+}
+
+.btn {
+  @include btn-style-reset;
+  @include text-numeric-large;
+
+  border-radius: 8px;
+  cursor: pointer;
+  height: 36px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  transition: var(--transition-speed) var(--transition-timing);
+  white-space: nowrap;
+  width: 36px;
+}
+
+.ellipsis {
+  @include text-subtitle-2;
+
+  box-sizing: border-box;
+  cursor: default;
+  height: 36px;
+  margin: 0;
+  padding: 6px 0;
+  text-align: center;
+  width: 36px;
+}
+
+.btn:hover {
+  background-color: var(--color-black-12);
+}
+
+.btn:focus-within {
+  outline: 2px solid var(--color-gray-100);
+}
+
+.btn.current,
+.btn.current:hover,
+.btn.current:focus-within {
+  background-color: var(--color-primary-80);
+  color: var(--color-primary-10);
+  cursor: default;
+  outline: 2px solid transparent;
+}

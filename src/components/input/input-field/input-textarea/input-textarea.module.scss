@@ -18,11 +18,3 @@
 .input::placeholder {
   color: var(--input-secondary-color);
 }
-
-.icon {
-  bottom: 0;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  stroke: var(--input-secondary-color);
-}

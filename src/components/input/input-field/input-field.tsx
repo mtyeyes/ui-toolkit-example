@@ -13,7 +13,7 @@ import { InputFile, InputFileProps } from './input-file/input-file';
 import { InputSelect, InputSelectProps } from './input-select/input-select';
 import { InputMultiselect, InputMultiselectProps } from './input-multiselect/input-multiselect';
 
-import IconLocked from '../../../resources/icons/locked.svg';
+import { LockSimple } from 'phosphor-react';
 
 export type InputFieldProps =
   | InputTextFieldProps
@@ -158,7 +158,7 @@ export const InputField = ({
   return (
     <div className={containerClassName}>
       {renderInput()}
-      {(isDisabled || isReadOnly) && <IconLocked className={styles.iconLocked} />}
+      {(isDisabled || isReadOnly) && <LockSimple size="12px" weight="fill" className={styles.iconLocked} />}
     </div>
   );
 };

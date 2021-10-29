@@ -8,8 +8,7 @@ import { Dropdown, DropdownItemProps } from '../../../../index';
 import { Chip } from '../../../../index';
 import useCloseModal from '../../../../utils/hooks/use-close-modal';
 
-import ResetIcon from '../../../../resources/icons/reset.svg';
-import DropdownIcon from '../../../../resources/icons/dropdown.svg';
+import { CaretDown, X } from 'phosphor-react';
 
 export interface InputMultiselectProps {
   id: string;
@@ -138,10 +137,12 @@ export const InputMultiselect = ({
       />
       {selectedValues.length > 0 ? (
         <InputIcon className={styles.icon} onClick={handleResetIconClick}>
-          {ResetIcon}
+          <X size="24px" />
         </InputIcon>
       ) : (
-        <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>{DropdownIcon}</InputIcon>
+        <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>
+          <CaretDown size="24px" />
+        </InputIcon>
       )}
 
       <Dropdown isExpanded={dropdownExpanded} isShrinkable id={`${id}-dropdown`}>

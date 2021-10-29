@@ -3,8 +3,7 @@ import React, { ChangeEvent } from 'react';
 import { InputIcon } from '../input-icon/input-icon';
 import { InputELement, InputELementProps } from '../input-element/input-element';
 
-import SearchIcon from '../../../../resources/icons/search.svg';
-import ResetIcon from '../../../../resources/icons/reset.svg';
+import { MagnifyingGlass, X } from 'phosphor-react';
 
 export interface InputSearchProps extends Omit<InputELementProps, 'onChange' | 'disabled' | 'name'> {
   id: string;
@@ -24,7 +23,9 @@ export const InputSearch = ({ id, value, setValue, isDisabled, ...props }: Input
 
   return (
     <>
-      <InputIcon>{SearchIcon}</InputIcon>
+      <InputIcon>
+        <MagnifyingGlass size="24px" />
+      </InputIcon>
       <InputELement
         disabled={isDisabled}
         type="search"
@@ -34,7 +35,11 @@ export const InputSearch = ({ id, value, setValue, isDisabled, ...props }: Input
         onChange={handleChange}
         {...props}
       />
-      {value !== '' && <InputIcon onClick={clearSearchField}>{ResetIcon}</InputIcon>}
+      {value !== '' && (
+        <InputIcon onClick={clearSearchField}>
+          <X size="24px" />
+        </InputIcon>
+      )}
     </>
   );
 };

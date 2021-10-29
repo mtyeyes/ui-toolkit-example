@@ -2,10 +2,10 @@ import React, { useState, CSSProperties } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Dropdown } from '../index';
 
-const ExampleIcon = ({ ...props }) => (
+const PlaceholderIcon = ({ ...props }) => (
   <svg {...props} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3.75 12H20.25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-    <path d="M12 3.75V20.25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path stroke="currentColor" d="M3.75 12H20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path stroke="currentColor" d="M12 3.75V20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -82,7 +82,7 @@ dropdown.args = {
       {
         type: 'icon',
         key: 'unique5',
-        icon: ExampleIcon,
+        iconComponent: <PlaceholderIcon />,
         onClick: () => {},
         isCurrent: true,
         children: 'Current label with icon',
@@ -92,7 +92,7 @@ dropdown.args = {
       {
         type: 'icon',
         key: 'unique6',
-        icon: ExampleIcon,
+        iconComponent: <PlaceholderIcon />,
         onClick: () => {},
         iconAlignment: 'left',
         children: 'Label with icon on the left',
@@ -100,7 +100,7 @@ dropdown.args = {
       {
         type: 'icon',
         key: 'unique7',
-        icon: ExampleIcon,
+        iconComponent: <PlaceholderIcon />,
         onClick: () => {},
         iconAlignment: 'right',
         children: 'Label with icon on the right',

@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './toggler.module.scss';
 import cn from 'classnames';
 
-import HeartFilled from '../../resources/icons/heart-filled.svg';
-import HeartStroke from '../../resources/icons/heart-stroke.svg';
+import { Heart } from 'phosphor-react';
 
 export interface TogglerProps {
   isToggled: boolean;
@@ -21,8 +20,11 @@ export const Toggler = ({ isToggled, setIsToggled }: TogglerProps) => {
         setIsToggled(!isToggled);
       }}
     >
-      <HeartStroke className={cn({ [styles.toggled]: isToggled }, styles.icon, styles.stroke)} />
-      <HeartFilled className={cn({ [styles.toggled]: isToggled }, styles.icon, styles.fill)} />
+      <Heart
+        size="24px"
+        weight={isToggled ? 'fill' : 'regular'}
+        className={cn({ [styles.toggled]: isToggled }, styles.icon)}
+      />
     </button>
   );
 };

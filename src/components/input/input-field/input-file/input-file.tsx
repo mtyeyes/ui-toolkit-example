@@ -4,8 +4,7 @@ import cn from 'classnames';
 
 import { Chip } from '../../../../index';
 import { InputIcon } from '../input-icon/input-icon';
-
-import BrowseIcon from '../../../../resources/icons/browse.svg';
+import { FolderOpen } from 'phosphor-react';
 
 export interface InputFileProps {
   id: string;
@@ -58,7 +57,9 @@ export const InputFile = ({ id, placeholder, setValue, isDisabled }: InputFilePr
         onChange={handleChange}
         className={styles.input}
       />
-      <InputIcon>{BrowseIcon}</InputIcon>
+      <InputIcon>
+        <FolderOpen size="24px" />
+      </InputIcon>
       {filesNames.length === 0 && (
         <label className={cn(labelClassName, styles.text)} htmlFor={id}>
           {placeholder}

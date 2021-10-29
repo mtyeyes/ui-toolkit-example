@@ -3,9 +3,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Table, Button } from '../index';
 
 const PlaceholderIcon = ({ ...props }) => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path d="M3.75 12H20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M12 3.75V20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  <svg {...props} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path stroke="currentColor" d="M3.75 12H20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path stroke="currentColor" d="M12 3.75V20.25" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -66,7 +66,7 @@ const Template: ComponentStory<typeof Table> = (args) => {
       setSearchQuery={setSearchQuery}
       {...args}
     >
-      {new Array(19).fill('').map((blank, i) => {
+      {[...Array(19)].map((blank, i) => {
         return {
           isRowSelected: isChecked,
           rowData: [
@@ -118,12 +118,12 @@ export const table = Template.bind({});
 table.args = {
   headerSlot: (
     <>
-      <Button theme="onLight" impact="none" size="medium" icon="only" iconSrc={DownloadIcon} />
-      <Button icon="only" iconSrc={PlaceholderIcon} />
+      <Button theme="onLight" impact="none" size="medium" icon="only" iconComponent={<DownloadIcon />} />
+      <Button icon="only" iconComponent={<PlaceholderIcon />} />
     </>
   ),
   footerSlot: (
-    <Button icon="left" iconSrc={PlaceholderIcon}>
+    <Button icon="left" iconComponent={<PlaceholderIcon />}>
       Footer slot
     </Button>
   ),

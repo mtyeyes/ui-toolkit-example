@@ -3,6 +3,7 @@ import React, { ChangeEvent } from 'react';
 import { InputIcon } from '../input-icon/input-icon';
 import { InputELement, InputELementProps } from '../input-element/input-element';
 
+import { At } from 'phosphor-react';
 import EmailIcon from '../../../../resources/icons/email.svg';
 
 export interface InputEmailProps extends Omit<InputELementProps, 'onChange' | 'disabled' | 'name'> {
@@ -28,7 +29,9 @@ export const InputEmail = ({ id, value, setValue, isDisabled, ...props }: InputE
         onChange={handleChange}
         {...props}
       />
-      <InputIcon>{EmailIcon}</InputIcon>
+      <InputIcon>
+        <At size="24px" />
+      </InputIcon>
     </>
   );
 };

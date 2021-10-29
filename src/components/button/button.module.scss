@@ -86,12 +86,8 @@
     color: var(--color-primary-10);
   }
 
-  & .icon {
-    stroke: var(--color-primary-10);
-  }
-
-  &.fill .icon {
-    fill: var(--color-primary-10);
+  & .iconWrapper {
+    color: var(--color-primary-10);
   }
 
   &:active {
@@ -103,12 +99,8 @@
     color: var(--color-white-48);
   }
 
-  &:active .icon {
-    stroke: var(--color-white-48);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-white-48);
+  &:active .iconWrapper {
+    color: var(--color-white-48);
   }
 
   &.btnLoading {
@@ -125,20 +117,12 @@
     color: var(--color-gray-70);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-gray-70);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-gray-70);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-gray-70);
-  }
-
-  &.btnLoading .icon {
-    stroke: var(--color-white-48);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-white-48);
+  &.btnLoading .iconWrapper {
+    color: var(--color-white-48);
   }
 }
 
@@ -158,12 +142,8 @@
     color: var(--color-primary-80);
   }
 
-  & .icon {
-    stroke: var(--color-primary-80);
-  }
-
-  &.fill .icon {
-    fill: var(--color-primary-80);
+  & .iconWrapper {
+    color: var(--color-primary-80);
   }
 
   &:active {
@@ -175,12 +155,8 @@
     color: var(--color-black-56);
   }
 
-  &:active .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-black-56);
+  &:active .iconWrapper {
+    color: var(--color-black-56);
   }
 
   &.btnLoading {
@@ -197,20 +173,12 @@
     color: var(--color-black-56);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-black-56);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-black-56);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-black-56);
-  }
-
-  &.btnLoading .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-black-56);
+  &.btnLoading .iconWrapper {
+    color: var(--color-black-56);
   }
 }
 
@@ -231,12 +199,8 @@
     color: var(--color-gray-100);
   }
 
-  & .icon {
-    stroke: var(--color-gray-100);
-  }
-
-  &.fill .icon {
-    fill: var(--color-gray-100);
+  & .iconWrapper {
+    color: var(--color-gray-100);
   }
 
   &:active {
@@ -248,12 +212,8 @@
     color: var(--color-black-56);
   }
 
-  &:active .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-black-56);
+  &:active .iconWrapper {
+    color: var(--color-black-56);
   }
 
   &.btnLoading {
@@ -272,20 +232,16 @@
     color: var(--color-black-56);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-black-56);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-black-56);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-black-56);
+  &.btnLoading .iconWrapper {
+    color: var(--color-black-56);
   }
 
-  &.btnLoading .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-black-56);
+  &.fill.btnLoading .iconWrapper {
+    color: var(--color-black-56);
   }
 }
 
@@ -305,12 +261,8 @@
     color: var(--color-gray-100);
   }
 
-  & .icon {
-    stroke: var(--color-gray-100);
-  }
-
-  &.fill .icon {
-    fill: var(--color-gray-100);
+  & .iconWrapper {
+    color: var(--color-gray-100);
   }
 
   &:active {
@@ -322,12 +274,8 @@
     color: var(--color-black-56);
   }
 
-  &:active .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-black-56);
+  &:active .iconWrapper {
+    color: var(--color-black-56);
   }
 
   &.btnDisabled,
@@ -344,20 +292,12 @@
     color: var(--color-black-56);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-black-56);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-black-56);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-black-56);
-  }
-
-  &.btnLoading .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-black-56);
+  &.btnLoading .iconWrapper {
+    color: var(--color-black-56);
   }
 }
 
@@ -377,24 +317,16 @@
     color: var(--color-attention-substrate);
   }
 
-  & .icon {
-    stroke: var(--color-attention-substrate);
-  }
-
-  &.fill .icon {
-    fill: var(--color-attention-substrate);
+  & .iconWrapper {
+    color: var(--color-attention-substrate);
   }
 
   &:hover:not(.btnDisabled):not(.btnLoading) .text {
     color: var(--color-attention);
   }
 
-  &:hover:not(.btnDisabled):not(.btnLoading) .icon {
-    stroke: var(--color-attention);
-  }
-
-  &.fill:hover:not(.btnDisabled):not(.btnLoading) .icon {
-    fill: var(--color-attention);
+  &:hover:not(.btnDisabled):not(.btnLoading) .iconWrapper {
+    color: var(--color-attention);
   }
 
   &:active {
@@ -406,12 +338,8 @@
     color: var(--color-white-48);
   }
 
-  &:active .icon {
-    stroke: var(--color-white-48);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-white-48);
+  &:active .iconWrapper {
+    color: var(--color-white-48);
   }
 
   &.btnLoading {
@@ -429,20 +357,12 @@
     color: var(--color-gray-70);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-gray-70);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-gray-70);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-gray-70);
-  }
-
-  &.btnLoading .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-black-56);
+  &.btnLoading .iconWrapper {
+    color: var(--color-black-56);
   }
 }
 
@@ -462,12 +382,8 @@
     color: var(--color-accent-90);
   }
 
-  & .icon {
-    stroke: var(--color-accent-90);
-  }
-
-  &.fill .icon {
-    fill: var(--color-accent-90);
+  & .iconWrapper {
+    color: var(--color-accent-90);
   }
 
   &:active {
@@ -479,12 +395,8 @@
     color: var(--color-black-56);
   }
 
-  &:active .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-black-56);
+  &:active .iconWrapper {
+    color: var(--color-black-56);
   }
 
   &.btnLoading {
@@ -501,20 +413,12 @@
     color: var(--color-gray-70);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-gray-70);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-gray-70);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-gray-70);
-  }
-
-  &.btnLoading .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-black-56);
+  &.btnLoading .iconWrapper {
+    color: var(--color-black-56);
   }
 }
 
@@ -534,12 +438,8 @@
     color: var(--color-accent-10);
   }
 
-  & .icon {
-    stroke: var(--color-accent-10);
-  }
-
-  &.fill .icon {
-    fill: var(--color-accent-10);
+  & .iconWrapper {
+    color: var(--color-accent-10);
   }
 
   &:active {
@@ -551,12 +451,8 @@
     color: var(--color-white-48);
   }
 
-  &:active .icon {
-    stroke: var(--color-white-48);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-white-48);
+  &:active .iconWrapper {
+    color: var(--color-white-48);
   }
 
   &.btnLoading {
@@ -573,20 +469,12 @@
     color: var(--color-gray-70);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-gray-70);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-gray-70);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-gray-70);
-  }
-
-  &.btnLoading .icon {
-    stroke: var(--color-white-48);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-white-48);
+  &.btnLoading .iconWrapper {
+    color: var(--color-white-48);
   }
 }
 
@@ -607,12 +495,8 @@
     color: var(--color-white-100);
   }
 
-  & .icon {
-    stroke: var(--color-white-100);
-  }
-
-  &.fill .icon {
-    fill: var(--color-white-100);
+  & .iconWrapper {
+    color: var(--color-white-100);
   }
 
   &:active {
@@ -624,12 +508,8 @@
     color: var(--color-black-56);
   }
 
-  &:active .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-black-56);
+  &:active .iconWrapper {
+    color: var(--color-black-56);
   }
 
   &.btnLoading {
@@ -648,20 +528,12 @@
     color: var(--color-white-48);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-white-48);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-white-48);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-white-48);
-  }
-
-  &.btnLoading .icon {
-    stroke: var(--color-white-48);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-white-48);
+  &.btnLoading .iconWrapper {
+    color: var(--color-white-48);
   }
 }
 
@@ -681,12 +553,8 @@
     color: var(--color-white-100);
   }
 
-  & .icon {
-    stroke: var(--color-white-100);
-  }
-
-  &.fill .icon {
-    fill: var(--color-white-100);
+  & .iconWrapper {
+    color: var(--color-white-100);
   }
 
   &:active {
@@ -698,12 +566,8 @@
     color: var(--color-black-56);
   }
 
-  &:active .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-black-56);
+  &:active .iconWrapper {
+    color: var(--color-black-56);
   }
 
   &.btnDisabled,
@@ -720,20 +584,12 @@
     color: var(--color-white-48);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-white-48);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-white-48);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-white-48);
-  }
-
-  &.btnLoading .icon {
-    stroke: var(--color-white-48);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-white-48);
+  &.btnLoading .iconWrapper {
+    color: var(--color-white-48);
   }
 }
 
@@ -753,24 +609,16 @@
     color: var(--color-attention);
   }
 
-  & .icon {
-    stroke: var(--color-attention);
-  }
-
-  &.fill .icon {
-    fill: var(--color-attention);
+  & .iconWrapper {
+    color: var(--color-attention);
   }
 
   &:hover:not(.btnDisabled):not(.btnLoading) .text {
     color: var(--color-attention-substrate);
   }
 
-  &:hover:not(.btnDisabled):not(.btnLoading) .icon {
-    stroke: var(--color-attention-substrate);
-  }
-
-  &.fill:hover:not(.btnDisabled):not(.btnLoading) .icon {
-    fill: var(--color-attention-substrate);
+  &:hover:not(.btnDisabled):not(.btnLoading) .iconWrapper {
+    color: var(--color-attention-substrate);
   }
 
   &:active {
@@ -782,12 +630,8 @@
     color: var(--color-white-48);
   }
 
-  &:active .icon {
-    stroke: var(--color-white-48);
-  }
-
-  &.fill:active .icon {
-    fill: var(--color-white-48);
+  &:active .iconWrapper {
+    color: var(--color-white-48);
   }
 
   &.btnLoading {
@@ -805,19 +649,11 @@
     color: var(--color-gray-70);
   }
 
-  &.btnDisabled .icon {
-    stroke: var(--color-gray-70);
+  &.btnDisabled .iconWrapper {
+    color: var(--color-gray-70);
   }
 
-  &.fill.btnDisabled .icon {
-    fill: var(--color-gray-70);
-  }
-
-  &.btnLoading .icon {
-    stroke: var(--color-black-56);
-  }
-
-  &.fill.btnLoading .icon {
-    fill: var(--color-black-56);
+  &.btnLoading .iconWrapper {
+    color: var(--color-black-56);
   }
 }

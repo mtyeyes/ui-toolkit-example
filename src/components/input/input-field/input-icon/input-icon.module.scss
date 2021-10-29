@@ -12,17 +12,14 @@
   place-items: center;
   transition: var(--transition-speed) var(--transition-timing);
   width: 32px;
-}
-
-.icon {
-  stroke: var(--input-secondary-color);
+  color: var(--input-secondary-color);
 }
 
 .iconWrapper.clickable {
   cursor: pointer;
 }
 
-.iconWrapper.clickable:hover .icon,
-.iconWrapper.clickable:focus-within .icon {
-  stroke: var(--input-text-color);
+.iconWrapper.clickable:hover,
+.iconWrapper.clickable:focus-within {
+  color: var(--input-text-color);
 }

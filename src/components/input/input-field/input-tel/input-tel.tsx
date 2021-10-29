@@ -4,7 +4,7 @@ import { InputIcon } from '../input-icon/input-icon';
 import { Units } from '../units/units';
 import { InputELement, InputELementProps } from '../input-element/input-element';
 
-import PhoneIcon from '../../../../resources/icons/phone.svg';
+import { Phone } from 'phosphor-react';
 
 export interface InputTelProps extends Omit<InputELementProps, 'onChange' | 'disabled' | 'name' | 'placeholder'> {
   id: string;
@@ -49,7 +49,9 @@ export const InputTel = ({ id, value, setValue, isDisabled, ...props }: InputTel
         placeholder="• (•••) ••• •• ••"
         {...props}
       />
-      <InputIcon>{PhoneIcon}</InputIcon>
+      <InputIcon>
+        <Phone size="24px" />
+      </InputIcon>
     </>
   );
 };
