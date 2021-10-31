@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: var(--color-black-12);
+  border-radius: 8888px;
+  height: 4px;
+  width: 100%;
+}
+
+.bar {
+  background-color: var(--color-primary-60);
+  border-radius: 8888px;
+  height: 100%;
+  max-width: 100%;
+  transition: var(--transition-speed) var(--transition-timing);
+}

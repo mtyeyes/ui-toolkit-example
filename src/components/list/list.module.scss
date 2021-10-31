@@ -1,0 +1,51 @@
+@import '../../styles/mixins.scss';
+
+.list {
+  @include list-style-reset;
+  @include text-paragraph-2;
+}
+
+.list .item {
+  padding: 8px 0;
+}
+
+.list.ordered {
+  counter-reset: list-counter;
+}
+
+.list.ordered .item {
+  counter-increment: list-counter;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.list.ordered .item::before {
+  content: counter(list-counter) '.';
+  min-width: 48px;
+}
+
+.list.condensed {
+  @include text-subtitle-2;
+}
+
+.list.condensed .item {
+  padding: 4px 0;
+}
+
+.list.unordered .item,
+.list.condensed.unordered .item {
+  padding-left: 56px;
+  position: relative;
+}
+
+.list.unordered .item::before {
+  background-color: var(--color-gray-100);
+  border-radius: 50%;
+  content: '';
+  height: 8px;
+  left: 0;
+  position: absolute;
+  top: calc(50% - 4px);
+  width: 8px;
+}

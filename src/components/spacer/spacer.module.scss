@@ -1,0 +1,47 @@
+@import '../../styles/mixins.scss';
+
+.spacer {
+  width: 100%;
+}
+
+.spacer.micro {
+  height: 4px;
+}
+
+.spacer.small {
+  height: 12px;
+}
+
+.spacer.medium {
+  height: 24px;
+}
+
+.spacer.large {
+  height: 48px;
+}
+
+.spacer.huge {
+  height: 96px;
+}
+
+@include media-size(small-desktop) {
+  .spacer.micro {
+    height: 8px;
+  }
+
+  .spacer.small {
+    height: 24px;
+  }
+
+  .spacer.medium {
+    height: 48px;
+  }
+
+  .spacer.large {
+    height: 96px;
+  }
+
+  .spacer.huge {
+    height: 192px;
+  }
+}

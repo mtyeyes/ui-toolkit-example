@@ -47,14 +47,29 @@ export { Input } from './components/input/input';
 export type { LabelProps } from './components/label/label';
 export { Label } from './components/label/label';
 
+export type { ListProps } from './components/list/list';
+export { List } from './components/list/list';
+
+export type { LogoProps } from './components/logo/logo';
+export { Logo } from './components/logo/logo';
+
 export type { MenuProps } from './components/menu/menu';
 export { Menu } from './components/menu/menu';
 
 export type { MetaProps } from './components/meta/meta';
 export { Meta } from './components/meta/meta';
 
+export type { OverlayProps } from './components/overlay/overlay';
+export { Overlay } from './components/overlay/overlay';
+
 export type { PaginationProps } from './components/pagination/pagination';
 export { Pagination } from './components/pagination/pagination';
+
+export type { ProgressHorizontalProps } from './components/progress-horizontal/progress-horizontal';
+export { ProgressHorizontal } from './components/progress-horizontal/progress-horizontal';
+
+export type { ProgressRingProps } from './components/progress-ring/progress-ring';
+export { ProgressRing } from './components/progress-ring/progress-ring';
 
 export type { RatingProps } from './components/rating/rating';
 export { Rating } from './components/rating/rating';
@@ -64,6 +79,9 @@ export { Separator } from './components/separator/separator';
 
 export type { SidenavProps } from './components/sidenav/sidenav';
 export { Sidenav } from './components/sidenav/sidenav';
+
+export type { SpacerProps } from './components/spacer/spacer';
+export { Spacer } from './components/spacer/spacer';
 
 export type { SpinnerProps } from './components/spinner/spinner';
 export { Spinner } from './components/spinner/spinner';
@@ -87,3 +105,6 @@ export { Toggler } from './components/toggler/toggler';
 
 export type { UserCardProps } from './components/user-card/user-card';
 export { UserCard } from './components/user-card/user-card';
+
+export type { VisualizationProps } from './components/visualization/visualization';
+export { Visualization } from './components/visualization/visualization';
