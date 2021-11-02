@@ -5,7 +5,7 @@ import { Eye, ChatDots } from 'phosphor-react';
 
 export interface MetaItemProps {
   type?: 'default' | 'comments' | 'views';
-  children: string;
+  children: string | number;
 }
 
 export const MetaItem = ({ type = 'default', children }: MetaItemProps) => {

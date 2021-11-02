@@ -2,29 +2,33 @@ import React from 'react';
 import styles from './toggler.module.scss';
 import cn from 'classnames';
 
+import { Button } from '../../index';
 import { Heart } from 'phosphor-react';
 
 export interface TogglerProps {
   isToggled: boolean;
   setIsToggled: (val: boolean) => void;
+  className?: string;
 }
 
-export const Toggler = ({ isToggled, setIsToggled }: TogglerProps) => {
-  const btnClassName = cn(styles.btn);
-
+export const Toggler = ({ isToggled, setIsToggled, className }: TogglerProps) => {
   return (
-    <button
-      className={btnClassName}
-      type="button"
+    <Button
       onClick={() => {
         setIsToggled(!isToggled);
       }}
-    >
-      <Heart
-        size="24px"
-        weight={isToggled ? 'fill' : 'regular'}
-        className={cn({ [styles.toggled]: isToggled }, styles.icon)}
-      />
-    </button>
+      className={className}
+      size="small"
+      theme="onLight"
+      impact="none"
+      icon="only"
+      iconComponent={
+        <Heart
+          size="24px"
+          weight={isToggled ? 'fill' : 'regular'}
+          className={cn({ [styles.toggled]: isToggled }, styles.icon)}
+        />
+      }
+    />
   );
 };

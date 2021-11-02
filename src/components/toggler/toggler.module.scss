@@ -1,15 +1,15 @@
-@import '../../styles/mixins.scss';
+// @import '../../styles/mixins.scss';
 
-.btn {
-  @include btn-style-reset;
+// .btn {
+//   @include btn-style-reset;
 
-  cursor: pointer;
-  display: grid;
-  height: 36px;
-  place-items: center;
-  position: relative;
-  width: 36px;
-}
+//   cursor: pointer;
+//   display: grid;
+//   height: 36px;
+//   place-items: center;
+//   position: relative;
+//   width: 36px;
+// }
 
 .icon {
   color: var(--color-gray-100);

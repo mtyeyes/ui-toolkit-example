@@ -1,0 +1,63 @@
+@import '../../styles/mixins.scss';
+
+.container {
+  background-color: var(--color-white-100);
+  border-radius: 8px;
+  box-shadow: var(--elevation-middle-2);
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.container:hover {
+  box-shadow: var(--elevation-middle-1);
+}
+
+.headerWrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 12px 12px 12px 24px;
+}
+
+.label {
+  @include text-subtitle-1;
+
+  cursor: pointer;
+  flex-grow: 1;
+  flex-shrink: 1;
+  font-weight: 700;
+  margin: 0;
+}
+
+.btn {
+  @include btn-style-reset;
+
+  border-radius: 8px;
+  cursor: pointer;
+  display: grid;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 36px;
+  place-items: center;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 36px;
+}
+
+.headerWrapper:hover .btn,
+.headerWrapper:focus-within .btn {
+  background-color: var(--color-black-12);
+}
+
+.container .description {
+  box-sizing: border-box;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.container.expanded .description {
+  @include text-paragraph-2;
+
+  max-height: 9999px;
+  padding: 8px 24px 24px;
+}

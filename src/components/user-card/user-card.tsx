@@ -15,7 +15,7 @@ export interface CardProps {
 export const UserCard = ({ size = 'medium', userName, children, ...props }: UserCardProps) => {
   return (
     <div className={cn(styles[size], styles.wrapper)}>
-      <Avatar size={size} {...props} />
+      <Avatar size={size} className={styles.avatar} {...props} />
       <div className={cn({ [styles.withDescription]: children }, styles.textContainer)}>
         <p className={styles.name}>{userName}</p>
         {children && <p className={styles.description}>{children}</p>}

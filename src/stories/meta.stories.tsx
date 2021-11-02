@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof Meta> = (args) => <Meta {...args} />;
 
 export const meta = Template.bind({});
 meta.args = {
-  children: [
+  data: [
     { children: 'Default meta' },
     { children: 'Meta' },
     { children: 'Views meta', type: 'views' },

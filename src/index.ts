@@ -15,6 +15,9 @@ export { Breadcrumbs } from './components/breadcrumbs/breadcrumbs';
 export type { ButtonProps } from './components/button/button';
 export { Button } from './components/button/button';
 
+export type { CardProps } from './components/card/card';
+export { Card } from './components/card/card';
+
 export type { ChipProps } from './components/chip/chip';
 export { Chip } from './components/chip/chip';
 
@@ -24,6 +27,9 @@ export { CommentsRating } from './components/comments-rating/comments-rating';
 export type { CounterProps } from './components/counter/counter';
 export { Counter } from './components/counter/counter';
 
+export type { DescriptionListProps, DescriptionType } from './components/description-list/description-list';
+export { DescriptionList } from './components/description-list/description-list';
+
 export type { DotnavProps } from './components/dotnav/dotnav';
 export { Dotnav } from './components/dotnav/dotnav';
 
@@ -32,8 +38,14 @@ export { Dropdown } from './components/dropdown/dropdown';
 
 export type { DropdownItemProps } from './components/dropdown/dropdown-item/dropdown-item';
 
+export type { ExpanderProps } from './components/expander/expander';
+export { Expander } from './components/expander/expander';
+
 export type { FabProps } from './components/fab/fab';
 export { Fab } from './components/fab/fab';
+
+export type { FileUploaderProps } from './components/file-uploader/file-uploader';
+export { FileUploader } from './components/file-uploader/file-uploader';
 
 export type { FlagRequiredProps } from './components/flag-required/flag-required';
 export { FlagRequired } from './components/flag-required/flag-required';
@@ -102,6 +114,9 @@ export { ToggleGroup } from './components/toggle-group/toggle-group';
 
 export type { TogglerProps } from './components/toggler/toggler';
 export { Toggler } from './components/toggler/toggler';
+
+export type { TooltipProps } from './components/tooltip/tooltip';
+export { Tooltip } from './components/tooltip/tooltip';
 
 export type { UserCardProps } from './components/user-card/user-card';
 export { UserCard } from './components/user-card/user-card';

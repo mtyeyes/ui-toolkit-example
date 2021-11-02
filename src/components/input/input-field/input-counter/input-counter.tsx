@@ -7,8 +7,6 @@ import { InputIcon } from '../input-icon/input-icon';
 import { Units } from '../units/units';
 
 import { Plus, Minus } from 'phosphor-react';
-import PlusIcon from '../../../../resources/icons/plus.svg';
-import MinusIcon from '../../../../resources/icons/minus.svg';
 
 export interface InputCounterProps extends Omit<InputELementProps, 'onChange' | 'disabled' | 'name'> {
   id: string;

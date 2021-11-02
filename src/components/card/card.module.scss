@@ -1,0 +1,50 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  align-items: flex-start;
+  background-color: var(--color-white-100);
+  border-radius: 12px;
+  box-shadow: var(--elevation-middle-3);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 16px;
+  justify-content: flex-start;
+  padding: 16px 16px 24px;
+  position: relative;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 292px;
+}
+
+.wrapper:focus-within,
+.wrapper:hover {
+  box-shadow: var(--elevation-middle-2);
+}
+
+.link:focus-within {
+  outline: 2px solid var(--color-black-100);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.toggler {
+  z-index: 30;
+}
+
+.link {
+  border-radius: inherit;
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}

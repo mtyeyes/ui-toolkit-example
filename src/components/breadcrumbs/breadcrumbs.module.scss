@@ -17,6 +17,7 @@
 .link {
   @include text-subtitle-2;
 
+  border-radius: 8px;
   color: var(--color-gray-60);
   padding: 6px 12px;
   text-decoration: none;
@@ -36,6 +37,14 @@
 
 .link.current {
   cursor: default;
+}
+
+.link:hover:not(.current) {
+  background-color: var(--color-black-12);
+}
+
+.link:focus-within:not(.current) {
+  outline: 2px solid var(--color-gray-100);
 }
 
 .separator {

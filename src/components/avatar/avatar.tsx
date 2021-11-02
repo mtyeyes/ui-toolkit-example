@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactEventHandler } from 'react';
 import styles from './avatar.module.scss';
 import cn from 'classnames';
 
@@ -10,6 +10,7 @@ export type AvatarProps = AvatarIconProps | AvatarInitialsProps | AvatarPhotoPro
 interface AvatarPhotoProps extends CommonAvatarProps {
   type: 'photo';
   avatarSrc: string;
+  onError?: ReactEventHandler<HTMLImageElement>;
 }
 
 interface AvatarInitialsProps extends CommonAvatarProps {
@@ -24,6 +25,7 @@ interface AvatarIconProps extends CommonAvatarProps {
 export interface CommonAvatarProps {
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'huge';
   isOnline?: boolean;
+  className?: string;
 }
 
 export const Avatar = (props: AvatarProps) => {
@@ -36,7 +38,7 @@ export const Avatar = (props: AvatarProps) => {
           {(props.userInitials[0].toUpperCase() || '') + (props.userInitials[1].toUpperCase() || '')}
         </p>
       );
-    if (props.type === 'photo') return <img className={styles.img} src={props.avatarSrc} />;
+    if (props.type === 'photo') return <img className={styles.img} onError={props.onError} src={props.avatarSrc} />;
 
     const svgSize = (() => {
       if (size === 'tiny') {
@@ -57,7 +59,7 @@ export const Avatar = (props: AvatarProps) => {
   };
 
   return (
-    <div className={cn(styles[size], styles.wrapper)}>
+    <div className={cn(styles[size], styles.wrapper, props.className)}>
       <div className={cn(styles[size], styles[type], styles.overflowContainer)}>{renderImageLayer()}</div>
       {props.isOnline !== undefined && <AvatarControls isOnline={props.isOnline} size={size} />}
     </div>

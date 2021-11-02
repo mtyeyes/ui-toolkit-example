@@ -1,0 +1,88 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  align-items: center;
+  background-color: var(--color-gray-10);
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  min-width: 292px;
+  padding: 16px;
+}
+
+.wrapper.drag {
+  background-color: var(--color-gray-20);
+}
+
+.wrapper.drag * {
+  pointer-events: none;
+}
+
+.wrapper:focus-within {
+  outline: 2px solid var(--color-black-100);
+}
+
+.inputContainer {
+  display: grid;
+  grid-template-areas: 'label' 'caption';
+}
+
+.dragNote {
+  display: none;
+}
+
+.input {
+  height: 0.1px;
+  left: -9999px;
+  opacity: 0%;
+  overflow: hidden;
+  position: absolute;
+  top: -9999px;
+  width: 0.1px;
+  z-index: -1;
+}
+
+.label {
+  @include text-subtitle-2;
+
+  color: var(--color-link);
+  cursor: pointer;
+  grid-area: label;
+}
+
+.caption {
+  @include text-caption;
+
+  color: var(--color-gray-60);
+  grid-area: caption;
+  margin: 8px 0 6px;
+}
+
+@include media-size(tablet) {
+  .inputContainer {
+    display: grid;
+    grid-template-areas: 'note label' 'caption caption';
+  }
+
+  .wrapper {
+    gap: 24px;
+    min-width: 640px;
+    padding: 24px;
+  }
+
+  .dragNote {
+    @include text-subtitle-1;
+
+    display: inline-block;
+    grid-area: note;
+    margin-right: 4px;
+  }
+
+  .label {
+    @include text-subtitle-1;
+
+    color: var(--color-link);
+  }
+}
