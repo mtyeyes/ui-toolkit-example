@@ -16,7 +16,7 @@ export type DescriptionType = {
 export const DescriptionList = ({ children, isCondensed = false, isVertical = false }: DescriptionListProps) => {
   const listClassName = cn({ [styles.vertical]: isVertical, [styles.condensed]: isCondensed }, styles.list);
 
-  const mapChildrenCallback = ({ title, description }: Description) => {
+  const mapChildrenCallback = ({ title, description }: DescriptionType) => {
     return (
       <div className={styles.descriptionItemWrapper} key={title}>
         <div className={styles.titleWrapper}>

@@ -5,32 +5,60 @@
 
   align-items: center;
   border: 2px solid transparent;
+  box-shadow: var(--outline-transparent-2px);
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  transition: var(--animation-speed) var(--animation-timing);
+  padding: var(--padding-vertical) var(--padding-horizontal);
+  transition: var(--transition-speed) var(--transition-timing);
 }
 
 .mediumSize {
+  --padding-vertical: 14px;
+  --padding-horizontal: 22px;
+  --padding-vertical-with-icon: 10px;
+  --padding-horizontal-with-icon: 14px;
+
   border-radius: 12px;
-  padding: 10px 14px;
 }
 
 .smallSize {
+  --padding-vertical: 8px;
+  --padding-horizontal: 14px;
+  --padding-vertical-with-icon: 4px;
+  --padding-horizontal-with-icon: 6px;
+
   border-radius: 8px;
-  padding: 4px 6px;
 }
 
-.btnIconOnly.mediumSize,
-.btnLoading.mediumSize {
-  padding: 10px;
+.btnIconLeft {
+  padding: var(--padding-vertical-with-icon) var(--padding-horizontal) var(--padding-vertical-with-icon) var(--padding-horizontal-with-icon);
 }
 
-.btnIconOnly.smallSize,
-.btnLoading.smallSize {
-  padding: 4px;
+.btnIconRight {
+  padding: var(--padding-vertical-with-icon) var(--padding-horizontal-with-icon) var(--padding-vertical-with-icon) var(--padding-horizontal);
+}
+
+.btnIconOnly,
+.btnLoading {
+  padding: var(--padding-vertical-with-icon);
+}
+
+.btnIconLeft .iconWrapper {
+  margin: 0 8px 0 0;
+  order: 1;
+}
+
+.btnIconRight .iconWrapper {
+  margin: 0 0 0 8px;
+  order: 3;
+}
+
+.btnLoading.btnIconLeft .iconWrapper,
+.btnLoading.btnIconRight .iconWrapper {
+  margin: 0;
 }
 
 .iconWrapper {
@@ -50,21 +78,6 @@
   user-select: none;
 }
 
-.btnIconLeft .iconWrapper {
-  margin: 0 8px 0 0;
-  order: 1;
-}
-
-.btnIconRight .iconWrapper {
-  margin: 0 0 0 8px;
-  order: 3;
-}
-
-.btnLoading.btnIconLeft .iconWrapper,
-.btnLoading.btnIconRight .iconWrapper {
-  margin: 0;
-}
-
 .btn.btnLoading,
 .btn.btnDisabled {
   cursor: default;
@@ -75,7 +88,7 @@
 
   &:focus {
     background-color: var(--color-primary-80);
-    border: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:hover {
@@ -92,7 +105,7 @@
 
   &:active {
     background-color: var(--color-primary-80);
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &:active .text {
@@ -131,7 +144,7 @@
 
   &:focus {
     background-color: var(--color-primary-20);
-    border: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:hover {
@@ -148,7 +161,7 @@
 
   &:active {
     background-color: var(--color-primary-20);
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &:active .text {
@@ -188,7 +201,8 @@
 
   &:focus {
     background: none;
-    border: 2px solid var(--color-black-100);
+    border: 2px solid transparent;
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:hover {
@@ -204,8 +218,9 @@
   }
 
   &:active {
-    background-color: none;
-    border: 2px solid --color-black-12;
+    background-color: transparent;
+    border: 2px solid transparent;
+    box-shadow: var(--outline-black-12-2px);
   }
 
   &:active .text {
@@ -219,6 +234,7 @@
   &.btnLoading {
     background: none;
     border: 2px solid var(--color-black-12);
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &.btnDisabled,
@@ -226,6 +242,7 @@
   &.btnDisabled:focus {
     background: none;
     border: 2px solid var(--color-black-12);
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &.btnDisabled .text {
@@ -250,7 +267,7 @@
 
   &:focus {
     background: none;
-    border: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:hover {
@@ -266,8 +283,8 @@
   }
 
   &:active {
-    background-color: none;
-    border: 2px solid transparent;
+    background-color: transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &:active .text {
@@ -285,7 +302,7 @@
   &.btnLoading:hover,
   &.btnLoading:focus {
     background: none;
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &.btnDisabled .text {
@@ -306,7 +323,7 @@
 
   &:focus {
     background-color: var(--color-attention);
-    border: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:hover {
@@ -331,14 +348,16 @@
 
   &:active {
     background-color: var(--color-primary-80);
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
-  &:active .text {
+  &:active .text,
+  &:active:not(.btnDisabled):not(.btnLoading) .text {
     color: var(--color-white-48);
   }
 
-  &:active .iconWrapper {
+  &:active .iconWrapper,
+  &:active:not(.btnDisabled):not(.btnLoading) .iconWrapper {
     color: var(--color-white-48);
   }
 
@@ -350,7 +369,7 @@
   &.btnDisabled:hover,
   &.btnDisabled:focus {
     background-color: 2px solid var(--color-gray-20);
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &.btnDisabled .text {
@@ -371,7 +390,7 @@
 
   &:focus {
     background-color: var(--color-accent-30);
-    border: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:hover {
@@ -388,7 +407,7 @@
 
   &:active {
     background-color: var(--color-primary-20);
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &:active .text {
@@ -427,7 +446,7 @@
 
   &:focus {
     background-color: var(--color-accent-80);
-    border: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:hover {
@@ -444,7 +463,7 @@
 
   &:active {
     background-color: var(--color-primary-80);
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &:active .text {
@@ -484,7 +503,8 @@
 
   &:focus {
     background: none;
-    border: 2px solid var(--color-white-100);
+    border: 2px solid transparent;
+    box-shadow: var(--outline-white-100-2px);
   }
 
   &:hover {
@@ -500,8 +520,9 @@
   }
 
   &:active {
-    background-color: none;
-    border: 2px solid var(--color-black-12);
+    background-color: transparent;
+    border: 2px solid transparent;
+    box-shadow: var(--outline-black-12-2px);
   }
 
   &:active .text {
@@ -515,6 +536,7 @@
   &.btnLoading {
     background: none;
     border: 2px solid var(--color-white-16);
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &.btnDisabled,
@@ -522,6 +544,7 @@
   &.btnDisabled:focus {
     background: none;
     border: 2px solid var(--color-white-16);
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &.btnDisabled .text {
@@ -542,7 +565,7 @@
 
   &:focus {
     background: none;
-    border: 2px solid var(--color-white-100);
+    box-shadow: var(--outline-white-100-2px);
   }
 
   &:hover {
@@ -558,8 +581,8 @@
   }
 
   &:active {
-    background-color: none;
-    border: 2px solid transparent;
+    background-color: transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &:active .text {
@@ -577,7 +600,7 @@
   &.btnLoading:hover,
   &.btnLoading:focus {
     background: none;
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &.btnDisabled .text {
@@ -598,7 +621,7 @@
 
   &:focus {
     background-color: var(--color-attention-substrate);
-    border: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:hover {
@@ -623,13 +646,15 @@
 
   &:active {
     background-color: var(--color-primary-80);
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
+  &:active:not(.btnDisabled):not(.btnLoading) .text,
   &:active .text {
     color: var(--color-white-48);
   }
 
+  &:active .iconWrapper:not(.btnDisabled):not(.btnLoading),
   &:active .iconWrapper {
     color: var(--color-white-48);
   }
@@ -642,7 +667,7 @@
   &.btnDisabled:hover,
   &.btnDisabled:focus {
     background-color: var(--color-gray-30);
-    border: 2px solid transparent;
+    box-shadow: var(--outline-transparent-2px);
   }
 
   &.btnDisabled .text {

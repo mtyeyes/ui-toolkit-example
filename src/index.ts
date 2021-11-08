@@ -71,9 +71,6 @@ export { Menu } from './components/menu/menu';
 export type { MetaProps } from './components/meta/meta';
 export { Meta } from './components/meta/meta';
 
-export type { OverlayProps } from './components/overlay/overlay';
-export { Overlay } from './components/overlay/overlay';
-
 export type { PaginationProps } from './components/pagination/pagination';
 export { Pagination } from './components/pagination/pagination';
 
@@ -98,6 +95,9 @@ export { Spacer } from './components/spacer/spacer';
 export type { SpinnerProps } from './components/spinner/spinner';
 export { Spinner } from './components/spinner/spinner';
 
+export type { SnackbarProps } from './components/snackbar/snackbar';
+export { Snackbar } from './components/snackbar/snackbar';
+
 export type { StepperProps } from './components/stepper/stepper';
 export { Stepper } from './components/stepper/stepper';
 
@@ -115,11 +115,11 @@ export { ToggleGroup } from './components/toggle-group/toggle-group';
 export type { TogglerProps } from './components/toggler/toggler';
 export { Toggler } from './components/toggler/toggler';
 
-export type { TooltipProps } from './components/tooltip/tooltip';
-export { Tooltip } from './components/tooltip/tooltip';
-
 export type { UserCardProps } from './components/user-card/user-card';
 export { UserCard } from './components/user-card/user-card';
+
+export type { VideoPreviewProps } from './components/video-preview/video-preview';
+export { VideoPreview } from './components/video-preview/video-preview';
 
 export type { VisualizationProps } from './components/visualization/visualization';
 export { Visualization } from './components/visualization/visualization';

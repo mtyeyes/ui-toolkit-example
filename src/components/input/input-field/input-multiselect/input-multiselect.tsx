@@ -6,7 +6,7 @@ import { InputIcon } from '../input-icon/input-icon';
 import { InputELement } from '../input-element/input-element';
 import { Dropdown, DropdownItemProps } from '../../../../index';
 import { Chip } from '../../../../index';
-import useCloseModal from '../../../../utils/hooks/use-close-modal';
+import useCloseExpandable from '../../../../utils/hooks/use-close-expandable';
 
 import { CaretDown, X } from 'phosphor-react';
 
@@ -37,7 +37,7 @@ export const InputMultiselect = ({
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  useCloseModal(
+  useCloseExpandable(
     dropdownExpanded,
     () => {
       setDropdownExpanded(false);

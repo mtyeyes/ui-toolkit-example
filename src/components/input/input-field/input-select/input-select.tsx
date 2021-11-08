@@ -5,7 +5,7 @@ import cn from 'classnames';
 import { InputIcon } from '../input-icon/input-icon';
 import { InputELement } from '../input-element/input-element';
 import { Dropdown, DropdownItemProps } from '../../../../index';
-import useCloseModal from '../../../../utils/hooks/use-close-modal';
+import useCloseExpandable from '../../../../utils/hooks/use-close-expandable';
 
 import { CaretDown } from 'phosphor-react';
 
@@ -35,7 +35,7 @@ export const InputSelect = ({
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  useCloseModal(
+  useCloseExpandable(
     dropdownExpanded,
     () => {
       setDropdownExpanded(false);

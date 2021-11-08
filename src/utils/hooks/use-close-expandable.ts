@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
 
-const useCloseModal = (isModalOpen: boolean, setIsModalOpen: () => void, container: Node | null) => {
+const useCloseExpandable = (isExpanded: boolean, closeExpanded: () => void, container: Node | null) => {
   useEffect(() => {
     const closeOnClickOutside = (e: MouseEvent) => {
-      if (container && !container.contains(e.target as Node)) closeDropdownMenu();
+      if (container && !container.contains(e.target as Node)) shrinkExpanded();
     };
 
     const closeOnEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        closeDropdownMenu();
+        shrinkExpanded();
       }
       if (e.key === 'Tab' && container && !container.contains(e.target as Node)) {
-        closeDropdownMenu();
+        shrinkExpanded();
       }
     };
 
@@ -20,17 +20,17 @@ const useCloseModal = (isModalOpen: boolean, setIsModalOpen: () => void, contain
       document.removeEventListener('keydown', closeOnEscape);
     };
 
-    const closeDropdownMenu = () => {
-      setIsModalOpen();
+    const shrinkExpanded = () => {
+      closeExpanded();
       clearEventListeners();
     };
 
-    if (isModalOpen) {
+    if (isExpanded) {
       document.addEventListener('click', closeOnClickOutside);
       document.addEventListener('keydown', closeOnEscape);
     }
     return clearEventListeners;
-  }, [isModalOpen]);
+  }, [isExpanded]);
 };
 
-export default useCloseModal;
+export default useCloseExpandable;

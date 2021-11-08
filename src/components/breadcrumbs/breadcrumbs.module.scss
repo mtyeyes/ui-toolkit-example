@@ -18,9 +18,11 @@
   @include text-subtitle-2;
 
   border-radius: 8px;
+  box-shadow: var(--outline-transparent-2px);
   color: var(--color-gray-60);
   padding: 6px 12px;
   text-decoration: none;
+  transition: var(--transition-speed) var(--transition-timing);
 }
 
 .icon {
@@ -44,7 +46,8 @@
 }
 
 .link:focus-within:not(.current) {
-  outline: 2px solid var(--color-gray-100);
+  box-shadow: var(--outline-black-100-2px);
+  outline: none;
 }
 
 .separator {

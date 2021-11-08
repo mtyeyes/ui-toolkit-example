@@ -21,6 +21,7 @@
   @include text-numeric-large;
 
   border-radius: 8px;
+  box-shadow: var(--outline-transparent-2px);
   cursor: pointer;
   height: 36px;
   overflow: hidden;
@@ -48,14 +49,14 @@
 }
 
 .btn:focus-within {
-  outline: 2px solid var(--color-gray-100);
+  box-shadow: var(--outline-black-100-2px);
 }
 
 .btn.current,
 .btn.current:hover,
 .btn.current:focus-within {
   background-color: var(--color-primary-80);
+  box-shadow: var(--outline-transparent-2px);
   color: var(--color-primary-10);
   cursor: default;
-  outline: 2px solid transparent;
 }

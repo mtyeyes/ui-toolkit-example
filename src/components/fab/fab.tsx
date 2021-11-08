@@ -24,7 +24,7 @@ export const Fab = ({ size = 'medium', impact = 'high', isLoading = false, onCli
 
   return (
     <button className={btnClassName} type="button" onClick={onClick}>
-      {isLoading ? <Spinner /> : <Plus />}
+      {isLoading ? <Spinner /> : <Plus size="24px" />}
     </button>
   );
 };

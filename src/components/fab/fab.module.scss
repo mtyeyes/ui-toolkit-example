@@ -28,7 +28,7 @@
   }
 
   &:focus {
-    outline: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:active,
@@ -37,8 +37,8 @@
   &.loading:focus,
   &.loading:active {
     background-color: var(--color-primary-80);
+    box-shadow: var(--outline-transparent-2px);
     color: var(--color-white-48);
-    outline: none;
   }
 }
 
@@ -51,7 +51,7 @@
   }
 
   &:focus {
-    outline: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:active,
@@ -60,8 +60,8 @@
   &.loading:focus,
   &.loading:active {
     background-color: var(--color-primary-20);
+    box-shadow: var(--outline-transparent-2px);
     color: var(--color-black-56);
-    outline: none;
   }
 }
 
@@ -74,7 +74,7 @@
   }
 
   &:focus {
-    outline: 2px solid var(--color-black-100);
+    box-shadow: var(--outline-black-100-2px);
   }
 
   &:active,
@@ -82,7 +82,7 @@
   &.loading:hover,
   &.loading:focus,
   &.loading:active {
+    box-shadow: var(--outline-transparent-2px);
     color: var(--color-black-56);
-    outline: none;
   }
 }

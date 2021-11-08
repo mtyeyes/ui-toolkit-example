@@ -15,6 +15,7 @@
 }
 
 .wrapper.clickable {
+  box-shadow: var(--outline-transparent-2px);
   cursor: pointer;
 }
 
@@ -34,7 +35,7 @@
 }
 
 .wrapper.clickable:focus-within {
-  outline: 2px solid var(--color-gray-100);
+  box-shadow: var(--outline-black-100-2px);
 }
 
 .wrapper.clickable:active {

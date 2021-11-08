@@ -13,10 +13,8 @@ export interface CommentsRatingProps {
 export type UserRating = 'upvote' | 'downvote' | null;
 
 export const CommentsRating = ({ rating, changeRating, userRating }: CommentsRatingProps) => {
-  const [upvoteIsHovered, setUpvoteIsHovered] = useState(false);
-  const [upvoteInFocus, setUpvoteInFocus] = useState(false);
-  const [downvoteIsHovered, setDownvoteIsHovered] = useState(false);
-  const [downvoteInFocus, setDownvoteInFocus] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [inFocus, setInFocus] = useState(false);
 
   const handleUpvote = () => {
     userRating === null ? changeRating('upvote') : changeRating(null);
@@ -30,50 +28,46 @@ export const CommentsRating = ({ rating, changeRating, userRating }: CommentsRat
     <div className={styles.wrapper}>
       <button
         onMouseEnter={() => {
-          setDownvoteIsHovered(true);
+          setIsHovered(true);
         }}
         onMouseLeave={() => {
-          setDownvoteIsHovered(false);
+          setIsHovered(false);
         }}
         onFocus={() => {
-          setDownvoteInFocus(true);
+          setInFocus(true);
         }}
         onBlur={() => {
-          setDownvoteInFocus(false);
+          setInFocus(false);
         }}
         className={cn({ [styles.used]: userRating !== null }, styles.btn, styles.downvote)}
         onClick={handleDownvote}
         disabled={userRating === 'upvote'}
         type="button"
       >
-        {(downvoteInFocus || downvoteIsHovered) && userRating === 'downvote' ? (
-          <X size="24px" />
-        ) : (
-          <CaretDown size="24px" />
-        )}
+        {(inFocus || isHovered) && userRating === 'downvote' ? <X size="24px" /> : <CaretDown size="24px" />}
       </button>
       <div className={cn({ [styles.positive]: rating > 0, [styles.negative]: rating < 0 }, styles.counter)}>
         {rating}
       </div>
       <button
         onMouseEnter={() => {
-          setUpvoteIsHovered(true);
+          setIsHovered(true);
         }}
         onMouseLeave={() => {
-          setUpvoteIsHovered(false);
+          setIsHovered(false);
         }}
         onFocus={() => {
-          setUpvoteInFocus(true);
+          setInFocus(true);
         }}
         onBlur={() => {
-          setUpvoteInFocus(false);
+          setInFocus(false);
         }}
         className={cn({ [styles.used]: userRating !== null }, styles.btn, styles.upvote)}
         onClick={handleUpvote}
         disabled={userRating === 'downvote'}
         type="button"
       >
-        {(upvoteInFocus || upvoteIsHovered) && userRating === 'upvote' ? <X size="24px" /> : <CaretUp size="24px" />}
+        {(inFocus || isHovered) && userRating === 'upvote' ? <X size="24px" /> : <CaretUp size="24px" />}
       </button>
     </div>
   );

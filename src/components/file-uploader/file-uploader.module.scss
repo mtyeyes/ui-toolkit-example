@@ -4,12 +4,14 @@
   align-items: center;
   background-color: var(--color-gray-10);
   border-radius: 8px;
+  box-shadow: var(--outline-transparent-2px);
   box-sizing: border-box;
   display: flex;
   gap: 16px;
   justify-content: center;
   min-width: 292px;
   padding: 16px;
+  transition: var(--transition-speed) var(--transition-timing);
 }
 
 .wrapper.drag {
@@ -21,7 +23,7 @@
 }
 
 .wrapper:focus-within {
-  outline: 2px solid var(--color-black-100);
+  box-shadow: var(--outline-black-100-2px);
 }
 
 .inputContainer {

@@ -22,8 +22,14 @@
   box-shadow: var(--elevation-middle-2);
 }
 
+.link {
+  box-shadow: var(--outline-transparent-2px);
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
 .link:focus-within {
-  outline: 2px solid var(--color-black-100);
+  box-shadow: var(--outline-black-100-2px);
+  outline: none;
 }
 
 .footer {
