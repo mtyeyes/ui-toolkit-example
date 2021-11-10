@@ -1,0 +1,38 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  background-color: var(--color-white-100);
+  border-radius: 12px;
+  box-shadow: var(--elevation-top-5);
+  min-width: min-content;
+  width: 640px;
+}
+
+.title {
+  @include text-subtitle-1;
+
+  font-weight: 700;
+  margin: 24px 64px 24px 24px;
+  overflow-wrap: break-word;
+}
+
+.description {
+  @include text-subtitle-2;
+
+  color: var(--color-gray-60);
+  margin: 0 24px 24px;
+  overflow-wrap: break-word;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.controlsContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+  margin: 16px;
+}

@@ -1,0 +1,135 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  background-color: var(--color-white-100);
+  border: 2px solid var(--color-gray-40);
+  border-radius: 12px;
+  box-sizing: border-box;
+  min-width: min-content;
+  padding: 14px;
+  width: 292px;
+}
+
+.wrapper.fill {
+  background-color: var(--color-gray-20);
+  border: 2px solid var(--color-gray-20);
+}
+
+.wrapper.info {
+  background-color: var(--color-white-100);
+  border: 2px solid var(--color-secondary-40);
+}
+
+.wrapper.info.fill {
+  background-color: var(--color-secondary-20);
+  border: 2px solid var(--color-secondary-20);
+}
+
+.wrapper.success {
+  background-color: var(--color-white-100);
+  border: 2px solid var(--color-accent-40);
+}
+
+.wrapper.success.fill {
+  background-color: var(--color-accent-20);
+  border: 2px solid var(--color-accent-20);
+}
+
+.contentContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.icon {
+  color: var(--color-gray-60);
+  flex-shrink: 0;
+  height: 24px;
+  width: 24px;
+}
+
+.icon.info {
+  color: var(--color-secondary-60);
+}
+
+.icon.success {
+  color: var(--color-accent-60);
+}
+
+.icon.big {
+  height: 48px;
+  width: 48px;
+}
+
+.textContainer {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.title {
+  @include text-subtitle-2;
+
+  font-weight: 700;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.description {
+  @include text-caption;
+
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.actionsWrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+  margin: 8px 0 0;
+}
+
+@include media-size(tablet) {
+  .wrapper {
+    padding: 22px;
+    width: 640px;
+  }
+
+  .contentContainer {
+    gap: 16px;
+  }
+
+  .icon {
+    height: 32px;
+    width: 32px;
+  }
+
+  .icon.big {
+    height: 64px;
+    width: 64px;
+  }
+
+  .title {
+    @include text-subtitle-1;
+
+    font-weight: 700;
+  }
+
+  .description {
+    @include text-subtitle-2;
+  }
+}
+
+.wrapper.info.fill .title,
+.wrapper.info.fill .description {
+  color: var(--color-secondary-80);
+}
+
+.wrapper.success.fill .title,
+.wrapper.success.fill .description {
+  color: var(--color-accent-80);
+}

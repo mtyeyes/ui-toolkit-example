@@ -1,0 +1,93 @@
+@import '../../styles/mixins.scss';
+
+.wrapper {
+  background-color: var(--color-white-100);
+  border-radius: 8px;
+  box-shadow: var(--elevation-top-5);
+  min-width: min-content;
+  width: 280px;
+}
+
+.closeWrapper {
+  display: grid;
+  height: 36px;
+  place-items: center;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 36px;
+}
+
+.progressRing {
+  color: var(--color-black-32);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: rotate(-90deg);
+}
+
+.closeBtn {
+  @include btn-style-reset;
+
+  border-radius: 50%;
+  box-shadow: var(--outline-transparent-2px);
+  color: var(--color-gray-100);
+  cursor: pointer;
+  display: grid;
+  height: 100%;
+  place-items: center;
+  transition: var(--transition-speed) var(--transition-timing);
+  width: 100%;
+}
+
+.closeBtn:hover {
+  background-color: var(--color-black-12);
+}
+
+.closeBtn:focus {
+  box-shadow: var(--outline-black-100-2px);
+}
+
+.closeBtn:active {
+  box-shadow: var(--outline-transparent-2px);
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 46px 12px 16px;
+}
+
+.title {
+  @include text-subtitle-2;
+
+  font-weight: 700;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.title.big {
+  @include text-subtitle-1;
+
+  font-weight: 700;
+}
+
+.title.error {
+  color: var(--color-attention);
+}
+
+.description {
+  @include text-caption;
+
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.controlsContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+  margin: 0 6px 6px;
+}

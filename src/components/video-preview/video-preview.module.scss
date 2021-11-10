@@ -71,6 +71,7 @@
 .wrapper:hover .previewWrapper::after {
   backdrop-filter: blur(4px);
   background-color: var(--color-overlay);
+  border-radius: inherit;
 }
 
 .wrapper:hover .playIcon {

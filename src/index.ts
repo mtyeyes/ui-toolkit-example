@@ -1,5 +1,8 @@
 import './styles/index.scss';
 
+export type { AlertProps } from './components/alert/alert';
+export { Alert } from './components/alert/alert';
+
 export type { AvatarProps } from './components/avatar/avatar';
 export { Avatar } from './components/avatar/avatar';
 
@@ -26,6 +29,9 @@ export { CommentsRating } from './components/comments-rating/comments-rating';
 
 export type { CounterProps } from './components/counter/counter';
 export { Counter } from './components/counter/counter';
+
+export type { DialogProps } from './components/dialog/dialog';
+export { Dialog } from './components/dialog/dialog';
 
 export type { DescriptionListProps, DescriptionType } from './components/description-list/description-list';
 export { DescriptionList } from './components/description-list/description-list';
@@ -70,6 +76,12 @@ export { Menu } from './components/menu/menu';
 
 export type { MetaProps } from './components/meta/meta';
 export { Meta } from './components/meta/meta';
+
+export type { ModalProps } from './components/modal/modal';
+export { Modal } from './components/modal/modal';
+
+export type { NotificationProps } from './components/notification/notification';
+export { Notification } from './components/notification/notification';
 
 export type { PaginationProps } from './components/pagination/pagination';
 export { Pagination } from './components/pagination/pagination';
