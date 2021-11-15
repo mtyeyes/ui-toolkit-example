@@ -86,6 +86,12 @@ export { Notification } from './components/notification/notification';
 export type { PaginationProps } from './components/pagination/pagination';
 export { Pagination } from './components/pagination/pagination';
 
+export type { PopperProps } from './components/popper/popper';
+export { Popper } from './components/popper/popper';
+
+export type { PopoverProps } from './components/popover/popover';
+export { Popover } from './components/popover/popover';
+
 export type { ProgressHorizontalProps } from './components/progress-horizontal/progress-horizontal';
 export { ProgressHorizontal } from './components/progress-horizontal/progress-horizontal';
 
@@ -126,6 +132,9 @@ export { ToggleGroup } from './components/toggle-group/toggle-group';
 
 export type { TogglerProps } from './components/toggler/toggler';
 export { Toggler } from './components/toggler/toggler';
+
+export type { TooltipProps } from './components/tooltip/tooltip';
+export { Tooltip } from './components/tooltip/tooltip';
 
 export type { UserCardProps } from './components/user-card/user-card';
 export { UserCard } from './components/user-card/user-card';

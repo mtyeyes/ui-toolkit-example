@@ -5,15 +5,24 @@ export interface InputTextareaProps {
   id: string;
   value: string;
   setValue: (value: string) => void;
+  placeholder?: string;
   isDisabled?: boolean;
 }
 
-export const InputTextarea = ({ id, value, setValue, isDisabled }: InputTextareaProps) => {
+export const InputTextarea = ({ id, value, setValue, placeholder, isDisabled }: InputTextareaProps) => {
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.currentTarget.value);
   };
 
   return (
-    <textarea id={id} name={id} value={value} onChange={handleChange} disabled={isDisabled} className={styles.input} />
+    <textarea
+      id={id}
+      name={id}
+      value={value}
+      onChange={handleChange}
+      placeholder={placeholder}
+      disabled={isDisabled}
+      className={styles.input}
+    />
   );
 };

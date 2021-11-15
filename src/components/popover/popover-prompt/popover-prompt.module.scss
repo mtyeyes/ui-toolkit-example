@@ -1,0 +1,27 @@
+@import '../../../styles/mixins.scss';
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.title {
+  @include text-subtitle-2;
+
+  margin: 0;
+}
+
+.text {
+  @include text-caption;
+
+  color: var(--color-gray-60);
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+}

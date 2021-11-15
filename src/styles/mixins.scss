@@ -277,7 +277,7 @@
   border: 0;
   color: inherit;
   font: inherit;
-  outline: none;
+  outline: transparent;
   padding: 0;
 }
 
@@ -292,7 +292,7 @@
   background-image: none;
   border: 0;
   box-shadow: none;
-  outline: none;
+  outline: transparent;
   padding: 0;
 
   &::-webkit-search-decoration,
@@ -306,6 +306,6 @@
 @mixin hide-input {
   appearance: none;
   margin: 0;
-  outline: none;
+  outline: transparent;
   padding: 0;
 }

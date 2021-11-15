@@ -31,7 +31,7 @@
 
 .wrapper:focus-within {
   box-shadow: var(--outline-black-100-2px);
-  outline: none;
+  outline: transparent;
 }
 
 .previewWrapper {

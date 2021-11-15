@@ -1,0 +1,102 @@
+.popper {
+  border-radius: var(--border-radius);
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.popper:not(.visible) {
+  opacity: 0%;
+  pointer-events: none;
+}
+
+.arrow {
+  background: inherit;
+  box-shadow: inherit;
+  height: calc(var(--arrow-height) + 1px);
+  width: var(--arrow-width);
+}
+
+.popper[data-popper-placement^='left'] .arrow,
+.popper[data-popper-placement^='right'] .arrow {
+  height: var(--arrow-width);
+  width: calc(var(--arrow-height) + 1px);
+}
+
+.popper[data-popper-placement^='top'] {
+  box-shadow: var(--elevation-top-3);
+}
+
+.popper[data-popper-placement^='top'] .arrow {
+  bottom: calc(-1 * var(--arrow-height));
+}
+
+.popper[data-popper-placement^='bottom'] {
+  box-shadow: var(--elevation-bottom-3);
+}
+
+.popper[data-popper-placement^='bottom'] .arrow {
+  top: calc(-1 * var(--arrow-height));
+}
+
+.popper[data-popper-placement^='left'] {
+  box-shadow: var(--elevation-middle-3);
+}
+
+.popper[data-popper-placement^='left'] .arrow {
+  right: calc(-1 * var(--arrow-height));
+}
+
+.popper[data-popper-placement^='right'] {
+  box-shadow: var(--elevation-middle-3);
+}
+
+.popper[data-popper-placement^='right'] .arrow {
+  left: calc(-1 * var(--arrow-height));
+}
+
+.popper[data-popper-placement^='top'] .arrow {
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.popper[data-popper-placement^='top'][data-popper-placement*='start'] .arrow {
+  clip-path: polygon(0 100%, 0 0, 100% 0);
+}
+
+.popper[data-popper-placement^='top'][data-popper-placement*='end'] .arrow {
+  clip-path: polygon(100% 100%, 0 0, 100% 0);
+}
+
+.popper[data-popper-placement^='bottom'] .arrow {
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+}
+
+.popper[data-popper-placement^='bottom'][data-popper-placement*='start'] .arrow {
+  clip-path: polygon(100% 100%, 0 100%, 0 0);
+}
+
+.popper[data-popper-placement^='bottom'][data-popper-placement*='end'] .arrow {
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.popper[data-popper-placement^='right'] .arrow {
+  clip-path: polygon(100% 100%, 0 50%, 100% 0);
+}
+
+.popper[data-popper-placement^='right'][data-popper-placement*='start'] .arrow {
+  clip-path: polygon(100% 100%, 0 0, 100% 0);
+}
+
+.popper[data-popper-placement^='right'][data-popper-placement*='end'] .arrow {
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.popper[data-popper-placement^='left'] .arrow {
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+
+.popper[data-popper-placement^='left'][data-popper-placement*='start'] .arrow {
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+
+.popper[data-popper-placement^='left'][data-popper-placement*='end'] .arrow {
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}

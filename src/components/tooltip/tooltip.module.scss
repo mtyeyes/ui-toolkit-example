@@ -1,0 +1,43 @@
+@import '../../styles/mixins.scss';
+
+.tooltip.small {
+  --border-radius: 6px;
+  --arrow-width: 8px;
+  --arrow-height: 4px;
+
+  @include text-caption;
+
+  padding: 4px 8px;
+
+  &::before {
+    --border-radius: 6px;
+    --arrow-width: 8px;
+    --arrow-height: 4px;
+  }
+}
+
+.tooltip.large {
+  --border-radius: 8px;
+  --arrow-width: 12px;
+  --arrow-height: 6px;
+
+  @include text-subtitle-2;
+
+  padding: 6px 12px;
+
+  &::before {
+    --border-radius: 8px;
+    --arrow-width: 12px;
+    --arrow-height: 6px;
+  }
+}
+
+.tooltip.light {
+  background-color: var(--color-white-100);
+  color: var(--color-gray-100);
+}
+
+.tooltip.dark {
+  background-color: var(--color-gray-80);
+  color: var(--color-white-100);
+}
