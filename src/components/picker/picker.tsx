@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './picker.module.scss';
 import cn from 'classnames';
+import { eachDayOfInterval, isBefore, isAfter } from 'date-fns';
 
 import { PickerSelectTime, PickerSelectTimeProps } from './picker-select-time/picker-select-time';
 import { PickerSelectDay, PickerSelectDayProps } from './picker-select-day/picker-select-day';
@@ -99,41 +100,51 @@ export const Picker = (props: PickerProps) => {
     if (props.valueType === 'date range') {
       const { valueType, isVisible, value, setValue, eventsInfo, onMonthChange, minDate, maxDate, ...pickerProps } =
         props;
+
+      const getSelectedDates = () => {
+        if (value?.startDate && value?.endDate) {
+          return eachDayOfInterval({ start: value.startDate, end: value.endDate });
+        }
+        if (value?.startDate) return value.startDate;
+        if (value?.endDate) return value.endDate;
+        return undefined;
+      };
+
       return (
         <>
           <div>
             <PickerSelectDay
-              selectedDate={value?.startDate}
+              selectedDate={getSelectedDates()}
               setSelectedDate={(selectedDate) => {
+                if (value?.endDate && isAfter(selectedDate, value.endDate)) {
+                  return setValue({ startDate: value.endDate, endDate: selectedDate });
+                }
                 setValue({ startDate: selectedDate, endDate: value?.endDate });
               }}
-              selectedInterval={
-                value?.startDate && value?.endDate ? { start: value.startDate, end: value.endDate } : undefined
-              }
               monthEventsInfo={eventsInfo.startMonthEvents}
               handleMonthChange={(month, year) => {
                 onMonthChange({ month, year }, 'start');
               }}
               minDate={minDate}
-              maxDate={value?.endDate < maxDate ? value.endDate : maxDate}
+              maxDate={maxDate}
               {...pickerProps}
             />
           </div>
           <div className={styles.separator} />
           <div>
             <PickerSelectDay
-              selectedDate={value?.endDate}
+              selectedDate={getSelectedDates()}
               setSelectedDate={(selectedDate) => {
+                if (value?.startDate && isBefore(selectedDate, value.startDate)) {
+                  return setValue({ startDate: selectedDate, endDate: value.startDate });
+                }
                 setValue({ startDate: value?.startDate, endDate: selectedDate });
               }}
-              selectedInterval={
-                value?.startDate && value?.endDate ? { start: value.startDate, end: value.endDate } : undefined
-              }
               monthEventsInfo={eventsInfo.endMonthEvents}
               handleMonthChange={(month, year) => {
                 onMonthChange({ month, year }, 'end');
               }}
-              minDate={value?.startDate > minDate ? value.startDate : minDate}
+              minDate={minDate}
               maxDate={maxDate}
               {...pickerProps}
             />

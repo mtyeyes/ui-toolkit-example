@@ -23,7 +23,7 @@ datePicker.args = {
   isVisible: true,
   valueType: 'date',
   maxDate: new Date(2022, 8, 13),
-  minDate: new Date(2021, 1, 13),
+  minDate: new Date(2021, 0, 13),
   handleMonthChange: (month, year) => {},
   monthEventsInfo: [
     { current: true },
@@ -41,7 +41,7 @@ dateAndTimePicker.args = {
   isVisible: true,
   valueType: 'date and time',
   maxDate: new Date(2022, 8, 13),
-  minDate: new Date(2021, 1, 13),
+  minDate: new Date(2021, 0, 13),
   handleMonthChange: (month, year) => {},
   monthEventsInfo: [
     { current: true },
@@ -60,7 +60,8 @@ dateRange.args = {
   isVisible: true,
   valueType: 'date range',
   maxDate: new Date(2022, 8, 13),
-  minDate: new Date(2021, 1, 13),
+  minDate: new Date(2021, 0, 13),
+  currentDate: new Date(2021, 10, 2),
   eventsInfo: {
     startMonthEvents: [
       { current: true },

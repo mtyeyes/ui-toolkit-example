@@ -10,10 +10,9 @@
   @include list-style-reset;
 
   box-sizing: content-box;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 0;
-  justify-content: flex-start;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 0 16px 16px;
   width: 276px;
 }

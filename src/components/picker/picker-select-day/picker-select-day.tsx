@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import styles from './picker-select-day.module.scss';
-import { getDate, isWithinInterval, Interval } from 'date-fns';
+import { getDate, add, isSameDay, isWithinInterval } from 'date-fns';
 
 import { PickerControls, PickerControlsType, EventsInfo } from '../picker-controls/picker-controls';
 import { PickerDayHeaderRow } from './picker-day-header-row/picker-day-header-row';
@@ -11,14 +11,13 @@ export interface PickerSelectDayProps {
   minDate: Date;
   maxDate: Date;
   currentDate?: Date;
-  selectedDate: Date | undefined;
+  selectedDate: Date | Date[] | undefined;
   setSelectedDate: (newDate: Date) => void;
   monthEventsInfo: EventsInfo[];
   handleMonthChange: (month: number, year: number) => void;
   monthNames?: string[];
   weekdayNames?: string[];
   firstDayOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-  selectedInterval?: Interval;
 }
 
 const monthNamesShort = [
@@ -48,7 +47,6 @@ export const PickerSelectDay = ({
   monthNames = monthNamesShort,
   weekdayNames = weekdayNamesShort,
   firstDayOfWeek = 1,
-  selectedInterval,
 }: PickerSelectDayProps) => {
   const dayzedSettings = {
     firstDayOfWeek,
@@ -68,6 +66,37 @@ export const PickerSelectDay = ({
     handleMonthChange(calendars[0].month, calendars[0].year);
   }, [calendars]);
 
+  const fillCalendarToNWeeks = (weeks: DateObj[][], total: number): DateObj[][] => {
+    const weeksTotal = weeks.length;
+    if (weeksTotal === total) return weeks;
+    const weeksToGenerate = total - weeksTotal;
+
+    const generatedWeeks = [...weeks];
+
+    for (let i = 0; i < weeksToGenerate; i++) {
+      const generateWeek = () => {
+        const lastWeek = generatedWeeks[generatedWeeks.length - 1];
+        const lastDayOfTheLastWeek = lastWeek[lastWeek.length - 1];
+
+        return [...Array(7)].map((blank: any, dayIndex: number): DateObj => {
+          const generatedDate = add(lastDayOfTheLastWeek.date, { days: dayIndex + 1 });
+          return {
+            date: generatedDate,
+            nextMonth: true,
+            prevMonth: false,
+            selectable: false,
+            selected: false,
+            today: isSameDay(generatedDate, currentDate),
+          };
+        });
+      };
+
+      generatedWeeks.push(generateWeek());
+    }
+
+    return generatedWeeks;
+  };
+
   if (!calendars.length) return null;
   return (
     <div className={styles.wrapper}>
@@ -83,7 +112,7 @@ export const PickerSelectDay = ({
             <table className={styles.table}>
               <PickerDayHeaderRow weekdayShorthands={weekdayNames} />
               <tbody>
-                {calendar.weeks.map((week, weekIndex) => {
+                {fillCalendarToNWeeks(calendar.weeks as DateObj[][], 6).map((week, weekIndex) => {
                   const weekKey = `${calendar.month}${calendar.year}${weekIndex}`;
 
                   const weekdaysMapCallback = (dateObj: '' | DateObj, dayIndex: number) => {
@@ -91,18 +120,14 @@ export const PickerSelectDay = ({
                       return <td className={styles.cell} />;
                     }
 
-                    const { date, selected, today, prevMonth, nextMonth } = dateObj;
+                    const { date, selected, prevMonth, nextMonth } = dateObj;
                     const currentMonth = prevMonth === false && nextMonth === false;
                     const day = getDate(date);
                     const insideMinMaxRange = isWithinInterval(date, { start: minDate, end: maxDate });
 
                     const controlsType = ((): PickerControlsType => {
-                      if (
-                        selected ||
-                        (selectedInterval !== undefined && currentMonth && isWithinInterval(date, selectedInterval))
-                      )
-                        return 'selected';
-                      if (today) return 'today';
+                      if (selected) return 'selected';
+                      if (isSameDay(currentDate, date)) return 'today';
                       return 'default';
                     })();
 
