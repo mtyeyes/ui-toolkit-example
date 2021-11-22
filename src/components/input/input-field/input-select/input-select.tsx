@@ -83,7 +83,7 @@ export const InputSelect = ({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!dropdownExpanded && (e.key === 'Enter' || e.code === 'Space')) {
+    if (!dropdownExpanded && (e.key === 'Enter' || e.key === ' ')) {
       setDropdownExpanded(true);
       e.preventDefault();
     }
@@ -128,7 +128,7 @@ export const InputSelect = ({
         className={className}
         ref={inputRef}
       />
-      <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>
+      <InputIcon isDisabled={isDisabled} className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>
         <CaretDown size="24px" />
       </InputIcon>
       <Dropdown isExpanded={dropdownExpanded} isShrinkable id={`${id}-dropdown`}>

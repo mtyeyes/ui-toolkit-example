@@ -49,7 +49,7 @@ export const InputTel = ({ id, value, setValue, isDisabled, ...props }: InputTel
         placeholder="• (•••) ••• •• ••"
         {...props}
       />
-      <InputIcon>
+      <InputIcon isDisabled={isDisabled}>
         <Phone size="24px" />
       </InputIcon>
     </>

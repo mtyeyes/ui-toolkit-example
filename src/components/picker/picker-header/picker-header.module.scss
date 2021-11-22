@@ -1,0 +1,26 @@
+@import '../../../styles/mixins.scss';
+
+.wrapper {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 16px 0;
+  width: 100%;
+}
+
+.header {
+  @include text-subtitle-1;
+
+  color: var(--color-gray-60);
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 0;
+  text-align: center;
+}
+
+.btn {
+  flex-grow: 0;
+  flex-shrink: 0;
+}

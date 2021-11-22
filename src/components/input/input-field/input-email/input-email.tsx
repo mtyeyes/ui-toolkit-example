@@ -28,7 +28,7 @@ export const InputEmail = ({ id, value, setValue, isDisabled, ...props }: InputE
         onChange={handleChange}
         {...props}
       />
-      <InputIcon>
+      <InputIcon isDisabled={isDisabled}>
         <At size="24px" />
       </InputIcon>
     </>

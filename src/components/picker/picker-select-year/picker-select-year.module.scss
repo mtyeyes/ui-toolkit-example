@@ -1,0 +1,19 @@
+@import '../../../styles/mixins.scss';
+
+.headerWrapper {
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.controlsList {
+  @include list-style-reset;
+
+  box-sizing: content-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  justify-content: flex-start;
+  padding: 0 16px 16px;
+  width: 276px;
+}

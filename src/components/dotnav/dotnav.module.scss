@@ -26,8 +26,18 @@
   border-radius: 50%;
   cursor: pointer;
   height: 100%;
+  position: relative;
   transition: var(--transition-speed) var(--transition-timing);
   width: 100%;
+}
+
+.label::before {
+  content: '';
+  height: calc(100% + 8px);
+  left: -4px;
+  position: absolute;
+  top: -4px;
+  width: calc(100% + 8px);
 }
 
 .label:hover {

@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { InputELement, InputELementProps } from '../input-element/input-element';
 import { InputIcon } from '../input-icon/input-icon';
 import { Units } from '../units/units';
+import useHandleLongPress from '../../../../utils/hooks/use-handle-long-press';
 
 import { Plus, Minus } from 'phosphor-react';
 
@@ -16,6 +17,7 @@ export interface InputCounterProps extends Omit<InputELementProps, 'onChange' | 
   units?: string;
   increment: () => void;
   decrement: () => void;
+  longPressDelay?: number;
 }
 
 export const InputCounter = ({
@@ -27,8 +29,12 @@ export const InputCounter = ({
   decrement,
   units,
   className,
+  longPressDelay = 200,
   ...props
 }: InputCounterProps) => {
+  const { ...decrementBtnProps } = useHandleLongPress(decrement, longPressDelay, [' ']);
+  const { ...incrementBtnProps } = useHandleLongPress(increment, longPressDelay, [' ']);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = parseFloat(e.currentTarget.value.replaceAll(/\D/g, ''));
     if (!isNaN(newValue)) return setValue(newValue);
@@ -48,10 +54,10 @@ export const InputCounter = ({
         className={cn(styles.input, className)}
         {...props}
       />
-      <InputIcon onClick={decrement}>
+      <InputIcon isDisabled={isDisabled} {...decrementBtnProps}>
         <Minus size="24px" />
       </InputIcon>
-      <InputIcon onClick={increment}>
+      <InputIcon isDisabled={isDisabled} {...incrementBtnProps}>
         <Plus size="24px" />
       </InputIcon>
     </>

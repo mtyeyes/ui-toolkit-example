@@ -30,7 +30,7 @@ export const InputPassword = ({ id, value, setValue, isDisabled, ...props }: Inp
         onChange={handleChange}
         {...props}
       />
-      <InputIcon onClick={() => setPasswordVisibility((prevState) => !prevState)}>
+      <InputIcon isDisabled={isDisabled} onClick={() => setPasswordVisibility((prevState) => !prevState)}>
         {passwordVisibility ? <Eye size="24px" /> : <EyeClosed size="24px" />}
       </InputIcon>
     </>

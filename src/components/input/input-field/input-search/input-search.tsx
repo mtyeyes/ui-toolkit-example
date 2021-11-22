@@ -23,7 +23,7 @@ export const InputSearch = ({ id, value, setValue, isDisabled, ...props }: Input
 
   return (
     <>
-      <InputIcon>
+      <InputIcon isDisabled={isDisabled}>
         <MagnifyingGlass size="24px" />
       </InputIcon>
       <InputELement
@@ -36,7 +36,7 @@ export const InputSearch = ({ id, value, setValue, isDisabled, ...props }: Input
         {...props}
       />
       {value !== '' && (
-        <InputIcon onClick={clearSearchField}>
+        <InputIcon isDisabled={isDisabled} onClick={clearSearchField}>
           <X size="24px" />
         </InputIcon>
       )}

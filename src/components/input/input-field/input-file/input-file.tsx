@@ -57,7 +57,7 @@ export const InputFile = ({ id, placeholder, setValue, isDisabled }: InputFilePr
         onChange={handleChange}
         className={styles.input}
       />
-      <InputIcon>
+      <InputIcon isDisabled={isDisabled}>
         <FolderOpen size="24px" />
       </InputIcon>
       {filesNames.length === 0 && (

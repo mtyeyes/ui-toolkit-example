@@ -17,5 +17,4 @@ fab.args = {
   size: 'medium',
   impact: 'high',
   isLoading: false,
-  onClick: () => {},
 };

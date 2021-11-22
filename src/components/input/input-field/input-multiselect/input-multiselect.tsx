@@ -77,7 +77,7 @@ export const InputMultiselect = ({
   }, [selectableValues, selectedValues, filteredSelectableValues, inputValue]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!dropdownExpanded && (e.key === 'Enter' || e.code === 'Space')) {
+    if (!dropdownExpanded && (e.key === 'Enter' || e.key === ' ')) {
       setDropdownExpanded(true);
       e.preventDefault();
     }
@@ -136,11 +136,11 @@ export const InputMultiselect = ({
         ref={inputRef}
       />
       {selectedValues.length > 0 ? (
-        <InputIcon className={styles.icon} onClick={handleResetIconClick}>
+        <InputIcon isDisabled={isDisabled} className={styles.icon} onClick={handleResetIconClick}>
           <X size="24px" />
         </InputIcon>
       ) : (
-        <InputIcon className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>
+        <InputIcon isDisabled={isDisabled} className={cn({ [styles.toggled]: dropdownExpanded }, styles.icon)}>
           <CaretDown size="24px" />
         </InputIcon>
       )}

@@ -1,0 +1,29 @@
+@import '../../../styles//mixins.scss';
+
+.container {
+  align-items: flex-start;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+  justify-content: space-between;
+  padding: 16px 16px 12px;
+  width: 276px;
+}
+
+.inputWrapper {
+  width: 134px;
+}
+
+.label {
+  @include text-caption;
+
+  color: var(--color-gray-60);
+  display: inline-block;
+  margin-bottom: 0;
+  margin-top: 4px;
+  padding-bottom: 0;
+  text-align: center;
+  width: 100%;
+}

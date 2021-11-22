@@ -86,6 +86,9 @@ export { Notification } from './components/notification/notification';
 export type { PaginationProps } from './components/pagination/pagination';
 export { Pagination } from './components/pagination/pagination';
 
+export type { PickerProps } from './components/picker/picker';
+export { Picker } from './components/picker/picker';
+
 export type { PopperProps } from './components/popper/popper';
 export { Popper } from './components/popper/popper';
 

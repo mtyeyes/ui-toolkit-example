@@ -15,11 +15,11 @@
   color: var(--input-secondary-color);
 }
 
-.iconWrapper.clickable {
+.iconWrapper.clickable:not(:disabled) {
   cursor: pointer;
 }
 
-.iconWrapper.clickable:hover,
-.iconWrapper.clickable:focus-within {
+.iconWrapper.clickable:hover:not(:disabled),
+.iconWrapper.clickable:focus-within:not(:disabled) {
   color: var(--input-text-color);
 }

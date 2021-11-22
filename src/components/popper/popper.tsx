@@ -6,7 +6,7 @@ import { usePopper } from 'react-popper';
 
 export interface PopperProps {
   isVisible: boolean;
-  referenceElement?: Element | null;
+  referenceElement: Element | null;
   position?: 'top' | 'bottom' | 'left' | 'right';
   align?: 'start' | 'center' | 'end';
   arrowDimensions: arrowDimensions;
@@ -57,7 +57,7 @@ export const Popper = ({
     <div
       ref={setPopperElement}
       style={{ ...customProperties, ...popperStyles.popper }}
-      className={cn({ [styles.visible]: isVisible }, styles.popper, className)}
+      className={cn({ [styles.visible]: isVisible && referenceElement !== null }, styles.popper, className)}
       {...attributes.popper}
     >
       {children}

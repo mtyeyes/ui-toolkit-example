@@ -1,0 +1,108 @@
+@import '../../../styles/mixins.scss';
+
+.btn {
+  @include btn-style-reset;
+
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  box-shadow: var(--outline-transparent-2px);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 5px 6px;
+  place-items: center;
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.btn.year {
+  padding: 4px 22.5px;
+}
+
+.date {
+  @include text-subtitle-2;
+
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.btn.year .date {
+  @include text-numeric-large;
+
+  transition: var(--transition-speed) var(--transition-timing);
+}
+
+.indicatorsWrapper {
+  align-items: center;
+  display: flex;
+  gap: 2px;
+  height: 6px;
+  justify-content: center;
+  width: 22px;
+}
+
+.indicator {
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+}
+
+.indicator.past {
+  background-color: var(--color-black-12);
+}
+
+.indicator.current {
+  background-color: var(--color-accent-40);
+}
+
+.indicator.future {
+  background-color: var(--color-primary-60);
+}
+
+.btn:hover {
+  background-color: var(--color-black-12);
+}
+
+.btn.today {
+  background-color: transparent;
+  border: 2px solid var(--color-black-12);
+}
+
+.btn.today:focus,
+.btn:focus {
+  border: 2px solid transparent;
+  box-shadow: var(--outline-black-100-2px);
+  outline: 2px solid transparent;
+}
+
+.btn.selected {
+  background-color: var(--color-primary-20);
+  border: 2px solid transparent;
+}
+
+.btn.selected:hover {
+  background-color: var(--color-primary-20);
+}
+
+.btn.irrelevant,
+.btn.irrelevant:hover,
+.btn.irrelevant:focus {
+  background-color: transparent;
+  border: 2px solid transparent;
+  box-shadow: var(--outline-transparent-2px);
+  color: var(--color-gray-30);
+  cursor: default;
+  outline: 2px solid transparent;
+}
+
+.btn.irrelevant .date {
+  color: var(--color-gray-30);
+}
+
+.btn.irrelevant .indicatorsWrapper {
+  opacity: 0%;
+}
+
+.btn.irrelevant.today {
+  border: 2px solid var(--color-black-12);
+}
