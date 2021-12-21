@@ -1,0 +1,16 @@
+.wrapper {
+  overflow-x: visible;
+  overflow-y: auto;
+  position: relative;
+}
+
+.table {
+  border-collapse: collapse;
+  width: calc(100% - 20px);
+}
+
+.item {
+  border: 1px solid var(--color-gray-60);
+  max-width: 100%;
+  min-width: 60px;
+}

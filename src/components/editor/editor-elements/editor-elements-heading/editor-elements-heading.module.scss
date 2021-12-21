@@ -1,0 +1,25 @@
+@import '../../../../styles/mixins.scss';
+
+.heading {
+  margin: 0;
+}
+
+.headingLevel2 {
+  @include text-headline-2;
+}
+
+.headingLevel3 {
+  @include text-headline-3;
+}
+
+.headingLevel4 {
+  @include text-headline-4;
+}
+
+.headingLevel5 {
+  @include text-headline-5;
+}
+
+.headingLevel6 {
+  @include text-headline-6;
+}

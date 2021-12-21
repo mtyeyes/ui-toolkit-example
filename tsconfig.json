@@ -15,7 +15,8 @@
     "isolatedModules": true,
     "jsx": "react",
     "declaration": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "downlevelIteration": true
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist", "src/stories"]

@@ -1,0 +1,7 @@
+@import '../../../../styles/mixins.scss';
+
+.link {
+  @include text-link;
+
+  cursor: text;
+}

@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import styles from './popper.module.scss';
 import cn from 'classnames';
 
@@ -40,7 +40,11 @@ export const Popper = ({
     '--arrow-width': `${arrowDimensions.x}px`,
   };
 
-  const { styles: popperStyles, attributes } = usePopper(referenceElement, popperElement, {
+  const {
+    styles: popperStyles,
+    attributes,
+    forceUpdate,
+  } = usePopper(referenceElement, popperElement, {
     placement: align === 'center' ? position : `${position}-${align}`,
     modifiers: [
       { name: 'arrow', options: { padding: borderRadius, element: arrowElement } },
@@ -52,6 +56,10 @@ export const Popper = ({
       },
     ],
   });
+
+  useEffect(() => {
+    if (forceUpdate !== null) forceUpdate();
+  }, [isVisible, forceUpdate]);
 
   return (
     <div

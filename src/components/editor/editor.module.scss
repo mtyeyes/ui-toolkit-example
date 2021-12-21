@@ -1,0 +1,25 @@
+.wrapper {
+  border: 2px solid var(--color-black-12);
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 6px 6px 6px 50px;
+  position: relative;
+  width: 100%;
+}
+
+.resizableContainer {
+  min-height: 100px;
+  overflow: hidden;
+  padding: 6px;
+  resize: vertical;
+}
+
+.editor {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.label {
+  margin: 4px;
+}

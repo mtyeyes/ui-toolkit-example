@@ -1,0 +1,17 @@
+.toolbar {
+  align-items: center;
+  background-color: var(--color-white-100);
+  border-radius: 12px;
+  box-shadow: var(--elevation-middle-4);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 8px;
+  transition: var(--transition-speed) var(--transition-timing);
+  z-index: 2;
+}
+
+.toolbar:not(.visible) {
+  opacity: 0%;
+  pointer-events: none;
+}

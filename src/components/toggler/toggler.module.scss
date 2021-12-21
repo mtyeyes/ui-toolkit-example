@@ -1,16 +1,3 @@
-// @import '../../styles/mixins.scss';
-
-// .btn {
-//   @include btn-style-reset;
-
-//   cursor: pointer;
-//   display: grid;
-//   height: 36px;
-//   place-items: center;
-//   position: relative;
-//   width: 36px;
-// }
-
 .icon {
   color: var(--color-gray-100);
   transition: var(--transition-speed) var(--transition-timing);

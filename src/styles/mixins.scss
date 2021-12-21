@@ -272,6 +272,14 @@
   text-transform: uppercase;
 }
 
+@mixin text-link {
+  @include text-subtitle-2;
+
+  color: var(--color-link);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 @mixin btn-style-reset {
   background: none;
   border: 0;

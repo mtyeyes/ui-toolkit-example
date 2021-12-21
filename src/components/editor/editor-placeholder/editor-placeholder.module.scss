@@ -1,0 +1,9 @@
+@import '../../../styles/mixins.scss';
+
+.placeholder {
+  @include text-paragraph-2;
+
+  color: var(--color-gray-60);
+  margin: 0;
+  user-select: none;
+}

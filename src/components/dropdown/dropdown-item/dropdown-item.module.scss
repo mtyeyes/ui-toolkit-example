@@ -51,6 +51,10 @@
   border: 2px solid var(--color-black-100);
 }
 
+.item .toggle {
+  padding: 12px 12px 12px 16px;
+}
+
 .btn {
   @include btn-style-reset;
   @include text-subtitle-2;

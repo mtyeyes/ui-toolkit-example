@@ -1,0 +1,17 @@
+@import '../../../../styles/mixins.scss';
+
+.text {
+  margin: 0;
+}
+
+.foreword {
+  @include text-paragraph-1;
+}
+
+.main {
+  @include text-paragraph-2;
+}
+
+.caption {
+  @include text-caption;
+}

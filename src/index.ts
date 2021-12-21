@@ -44,6 +44,9 @@ export { Dropdown } from './components/dropdown/dropdown';
 
 export type { DropdownItemProps } from './components/dropdown/dropdown-item/dropdown-item';
 
+export type { EditorProps } from './components/editor/editor';
+export { Editor } from './components/editor/editor';
+
 export type { ExpanderProps } from './components/expander/expander';
 export { Expander } from './components/expander/expander';
 
@@ -65,8 +68,8 @@ export { Input } from './components/input/input';
 export type { LabelProps } from './components/label/label';
 export { Label } from './components/label/label';
 
-export type { ListProps } from './components/list/list';
-export { List } from './components/list/list';
+export type { ListProps, ListItemProps } from './components/list/list';
+export { List, ListItem } from './components/list/list';
 
 export type { LogoProps } from './components/logo/logo';
 export { Logo } from './components/logo/logo';

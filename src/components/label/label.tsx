@@ -24,8 +24,8 @@ export const Label = ({ isRequired = false, className, tag = 'label', children, 
   const Tag = tag as keyof JSX.IntrinsicElements;
 
   return (
-    <div className={styles.labelWrapper}>
-      <Tag className={cn(styles.label, className)} {...(props as any)}>
+    <div className={cn(styles.labelWrapper, className)}>
+      <Tag className={styles.label} {...(props as any)}>
         {children}
       </Tag>
       {isRequired && <FlagRequired className={styles.icon} />}

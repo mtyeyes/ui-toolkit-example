@@ -11,6 +11,10 @@ export interface PopoverInputProps {
   setInputTwoValue: (value: string | null) => void;
   handleCancel: () => void;
   handlePaste: () => void;
+  pasteButtonText?: string;
+  cancelButtonText?: string;
+  isPasteButtonDisabled?: boolean;
+  isCancelButtonDisabled?: boolean;
 }
 
 import { Input, Button } from '../../../index';
@@ -24,6 +28,10 @@ export const PopoverInput = ({
   setInputTwoValue,
   handleCancel,
   handlePaste,
+  pasteButtonText = 'Paste',
+  cancelButtonText = 'Cancel',
+  isPasteButtonDisabled = false,
+  isCancelButtonDisabled = false,
 }: PopoverInputProps) => {
   return (
     <>
@@ -46,11 +54,11 @@ export const PopoverInput = ({
         />
       </div>
       <div className={styles.actions}>
-        <Button theme="onLight" impact="high" size="small" onClick={handlePaste}>
-          Paste
+        <Button theme="onLight" impact="high" size="small" isDisabled={isPasteButtonDisabled} onClick={handlePaste}>
+          {pasteButtonText}
         </Button>
-        <Button theme="onLight" impact="none" size="small" onClick={handleCancel}>
-          Cancel
+        <Button theme="onLight" impact="none" size="small" isDisabled={isCancelButtonDisabled} onClick={handleCancel}>
+          {cancelButtonText}
         </Button>
       </div>
     </>

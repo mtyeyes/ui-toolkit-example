@@ -12,6 +12,7 @@ export interface ToggleProps {
   id: string;
   isChecked: IsChecked;
   setIsChecked: SetIsChecked;
+  className?: string;
   isIntermidiate?: boolean;
   isDisabled?: boolean;
   isInvalid?: boolean;
@@ -30,6 +31,7 @@ export const Toggle = ({
   id,
   isChecked,
   setIsChecked,
+  className,
   isDisabled = false,
   isInvalid = false,
   isIntermidiate = false,
@@ -50,6 +52,7 @@ export const Toggle = ({
       [styles.filled]: isFilled,
     },
     styles.label,
+    className,
   );
 
   const renderInputField = () => {

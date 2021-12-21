@@ -47,10 +47,8 @@
 }
 
 .label {
-  @include text-subtitle-2;
+  @include text-link;
 
-  color: var(--color-link);
-  cursor: pointer;
   grid-area: label;
 }
 

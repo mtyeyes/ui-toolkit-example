@@ -44,7 +44,7 @@ export const DropdownItem = (props: DropdownItemProps) => {
   return (
     <li className={itemClassName}>
       {props.type !== 'icon' && props.type !== 'label' ? (
-        <Toggle {...props} />
+        <Toggle className={cn(styles.toggle, props.className)} {...props} />
       ) : (
         <button type="button" tabIndex={props.tabIndex} className={styles.btn} onClick={props.onClick}>
           {props.type === 'icon' && (

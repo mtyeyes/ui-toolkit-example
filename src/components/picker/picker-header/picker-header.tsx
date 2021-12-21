@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './picker-header.module.scss';
 
-import { Button, ButtonProps } from '../../../index';
+import { Button } from '../../../index';
 import { CaretLeft, CaretRight } from 'phosphor-react';
 
 export interface PickerHeaderProps {
-  beforeSelectProps: ButtonProps | Record<string, any>;
-  afterSelectProps: ButtonProps | Record<string, any>;
+  beforeSelectProps: Record<string, any>;
+  afterSelectProps: Record<string, any>;
   children: string;
 }
 

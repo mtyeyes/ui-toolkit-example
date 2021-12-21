@@ -2,29 +2,22 @@ import React, { useState, ChangeEvent, DragEvent, useRef } from 'react';
 import styles from './file-uploader.module.scss';
 import cn from 'classnames';
 
-import { Avatar } from '../../index';
+import { Avatar, AvatarProps } from '../../index';
+import { readFile } from '../../utils/read-file';
 
 export interface FileUploaderProps {
   id: string;
-  file: any;
-  setFile: (file: any) => void;
+  file: string | null;
+  setFile: (file: string | null) => void;
 }
 
 export const FileUploader = ({ id, file, setFile }: FileUploaderProps) => {
   const [isDrag, setIsDrag] = useState(false);
   const wrapperRef = useRef(null);
 
-  const readFile = (file: File) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      setFile(e.target?.result);
-    };
-    reader.readAsDataURL(file);
-  };
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.files?.length !== 0) {
-      readFile(e.currentTarget.files?.[0]!);
+      readFile(e.currentTarget.files?.[0]!, setFile);
     }
   };
 
@@ -37,7 +30,7 @@ export const FileUploader = ({ id, file, setFile }: FileUploaderProps) => {
     const files = dt.files;
 
     if (files?.[0]) {
-      readFile(files?.[0]);
+      readFile(files?.[0], setFile);
     }
   };
 
@@ -58,6 +51,17 @@ export const FileUploader = ({ id, file, setFile }: FileUploaderProps) => {
     setIsDrag(false);
   };
 
+  const avatarProps: AvatarProps = file
+    ? {
+        type: 'photo',
+        avatarSrc: file,
+        size: 'large',
+        onError: () => {
+          setFile(null);
+        },
+      }
+    : { type: 'icon', size: 'large' };
+
   return (
     <form
       ref={wrapperRef}
@@ -68,14 +72,7 @@ export const FileUploader = ({ id, file, setFile }: FileUploaderProps) => {
       onDrop={handleDrop}
       className={cn({ [styles.drag]: isDrag }, styles.wrapper)}
     >
-      <Avatar
-        type={file ? 'photo' : 'icon'}
-        size="large"
-        onError={() => {
-          setFile(null);
-        }}
-        avatarSrc={file ? file : undefined}
-      />
+      <Avatar {...avatarProps} />
       <div className={styles.inputContainer}>
         <span className={styles.dragNote}>Drag here or</span>
         <label htmlFor={id} className={styles.label}>
