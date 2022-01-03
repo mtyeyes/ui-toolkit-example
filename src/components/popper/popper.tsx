@@ -58,7 +58,12 @@ export const Popper = ({
   });
 
   useEffect(() => {
-    if (forceUpdate !== null) forceUpdate();
+    if (forceUpdate !== null) {
+      forceUpdate();
+      setTimeout(() => {
+        if (isVisible) forceUpdate();
+      }, 200);
+    }
   }, [isVisible, forceUpdate]);
 
   return (

@@ -40,6 +40,7 @@ export const EditorControlsSidebar = () => {
   return (
     <div className={styles.wrapper}>
       <Button
+        className={styles.btn}
         size="small"
         theme="onLight"
         impact="none"

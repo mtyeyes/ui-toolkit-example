@@ -52,7 +52,12 @@ export const EditorControlsToolbar = ({ parentRef }: EditorControlsToolbarProps)
   });
 
   useEffect(() => {
-    if (forceUpdate !== null) forceUpdate();
+    if (forceUpdate !== null && isOpen) {
+      forceUpdate();
+      setTimeout(() => {
+        if (isOpen) forceUpdate();
+      }, 200);
+    }
   }, [isOpen, editor.selection, forceUpdate]);
 
   useEffect(() => {

@@ -1,12 +1,7 @@
-.wrapper {
-  overflow-x: visible;
-  overflow-y: auto;
-  position: relative;
-}
-
 .table {
   border-collapse: collapse;
-  width: calc(100% - 20px);
+  table-layout: fixed;
+  width: 100%;
 }
 
 .item {

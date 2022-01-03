@@ -2,22 +2,30 @@
   border: 2px solid var(--color-black-12);
   border-radius: 8px;
   box-sizing: border-box;
-  padding: 6px 6px 6px 50px;
+  overflow-x: hidden;
+  padding: 6px;
   position: relative;
   width: 100%;
 }
 
 .resizableContainer {
+  height: var(--editor-height);
   min-height: 100px;
   overflow: hidden;
-  padding: 6px;
+  padding: 4px;
   resize: vertical;
 }
 
-.editor {
+.scrollableContainer {
   height: 100%;
-  overflow-x: hidden;
   overflow-y: scroll;
+}
+
+.editorLayout {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 44px 1fr;
+  margin-right: 8px;
 }
 
 .label {

@@ -51,4 +51,5 @@ editor.args = {
   isRequired: true,
   placeholder: 'Placeholder',
   initialState: initialValue,
+  defaultHeight: '500px',
 } as EditorProps;

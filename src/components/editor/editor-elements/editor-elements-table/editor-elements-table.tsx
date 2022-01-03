@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './editor-elements-table.module.scss';
 import { RenderElementProps } from 'slate-react';
+import { EditorControlsRemoveNodeButton } from '../../editor-controls/editor-controls';
 
-export const EditorElementsTable = ({ children, attributes }: RenderElementProps) => {
+export const EditorElementsTable = ({ children, attributes, element }: RenderElementProps) => {
   return (
-    <div className={styles.wrapper} {...attributes}>
+    <div {...attributes}>
+      <EditorControlsRemoveNodeButton element={element} />
       <table className={styles.table}>
         <tbody>{children}</tbody>
       </table>

@@ -10,6 +10,9 @@ export { EditorControlsInsertLinkButton } from './editor-controls-insert-link-bu
 export type { EditorControlsInsertTableButtonProps } from './editor-controls-insert-table-button/editor-controls-insert-table-button';
 export { EditorControlsInsertTableButton } from './editor-controls-insert-table-button/editor-controls-insert-table-button';
 
+export type { EditorControlsRemoveNodeButtonProps } from './editor-controls-remove-node-button/editor-controls-remove-node-button';
+export { EditorControlsRemoveNodeButton } from './editor-controls-remove-node-button/editor-controls-remove-node-button';
+
 export { EditorControlsSeparator } from './editor-controls-separator/editor-controls-separator';
 
 export { EditorControlsSidebar } from './editor-controls-sidebar/editor-controls-sidebar';

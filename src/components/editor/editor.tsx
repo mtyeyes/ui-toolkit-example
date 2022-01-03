@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback, useEffect } from 'react';
+import React, { useMemo, useState, useCallback, useEffect, CSSProperties } from 'react';
 import styles from './editor.module.scss';
 import { createEditor, BaseEditor, Descendant } from 'slate';
 import { Slate, Editable, withReact, ReactEditor, RenderElementProps } from 'slate-react';
@@ -42,6 +42,7 @@ export interface EditorProps {
   isRequired?: boolean;
   placeholder: string;
   initialState?: CustomElement[];
+  defaultHeight?: string;
   synchronizeEditorStateOnUpdate: (newState: Descendant[]) => void;
 }
 
@@ -50,6 +51,7 @@ export const Editor = ({
   isRequired = false,
   placeholder,
   initialState,
+  defaultHeight = '824px',
   synchronizeEditorStateOnUpdate,
 }: EditorProps) => {
   const [editorState, setEditorState] = useState<Descendant[]>(initialState !== undefined ? initialState : []);
@@ -112,21 +114,23 @@ export const Editor = ({
       <Label className={styles.label} isRequired={isRequired}>
         {label}
       </Label>
-      <div ref={setWrapperRef} className={styles.wrapper}>
+      <div ref={setWrapperRef} className={styles.wrapper} style={{ '--editor-height': defaultHeight } as CSSProperties}>
         <div className={styles.resizableContainer}>
-          <div className={styles.editor}>
-            <Slate editor={editor} value={editorState} onChange={setEditorState}>
-              <EditorControlsSidebar />
-              <EditorControlsToolbar parentRef={wrapperRef} />
-              <Editable
-                renderElement={renderElement}
-                renderLeaf={renderLeaf}
-                placeholder={placeholder}
-                renderPlaceholder={({ children, attributes }) => (
-                  <EditorPlaceholder attributes={attributes}>{children}</EditorPlaceholder>
-                )}
-              />
-            </Slate>
+          <div className={styles.scrollableContainer}>
+            <div className={styles.editorLayout}>
+              <Slate editor={editor} value={editorState} onChange={setEditorState}>
+                <EditorControlsSidebar />
+                <EditorControlsToolbar parentRef={wrapperRef} />
+                <Editable
+                  renderElement={renderElement}
+                  renderLeaf={renderLeaf}
+                  placeholder={placeholder}
+                  renderPlaceholder={({ children, attributes }) => (
+                    <EditorPlaceholder attributes={attributes}>{children}</EditorPlaceholder>
+                  )}
+                />
+              </Slate>
+            </div>
           </div>
         </div>
       </div>

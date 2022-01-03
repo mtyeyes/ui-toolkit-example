@@ -1,7 +1,10 @@
 .wrapper {
-  left: 12px;
-  position: absolute;
-  top: 12px;
+  align-self: flex-end;
+  position: relative;
+}
+
+.btn {
+  margin: 4px;
 }
 
 .toolbar {

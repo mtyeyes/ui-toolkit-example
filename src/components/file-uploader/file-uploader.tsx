@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, DragEvent, useRef } from 'react';
+import React, { useState, ChangeEvent, DragEvent } from 'react';
 import styles from './file-uploader.module.scss';
 import cn from 'classnames';
 
@@ -13,7 +13,6 @@ export interface FileUploaderProps {
 
 export const FileUploader = ({ id, file, setFile }: FileUploaderProps) => {
   const [isDrag, setIsDrag] = useState(false);
-  const wrapperRef = useRef(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.files?.length !== 0) {
@@ -64,7 +63,6 @@ export const FileUploader = ({ id, file, setFile }: FileUploaderProps) => {
 
   return (
     <form
-      ref={wrapperRef}
       onSubmit={(e) => e.preventDefault()}
       onDragEnter={handleDragEnter}
       onDragLeave={handleDragLeave}
