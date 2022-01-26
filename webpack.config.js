@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'index.js',
-    library: 'Biotech design system',
+    library: 'Undisclosed design system',
     libraryTarget: 'umd',
     globalObject: 'this',
     umdNamedDefine: true,

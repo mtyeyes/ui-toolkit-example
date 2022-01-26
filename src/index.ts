@@ -71,9 +71,6 @@ export { Label } from './components/label/label';
 export type { ListProps, ListItemProps } from './components/list/list';
 export { List, ListItem } from './components/list/list';
 
-export type { LogoProps } from './components/logo/logo';
-export { Logo } from './components/logo/logo';
-
 export type { MenuProps } from './components/menu/menu';
 export { Menu } from './components/menu/menu';
 

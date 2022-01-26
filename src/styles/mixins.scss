@@ -10,7 +10,7 @@
 
 @mixin text-primary-font {
   color: var(--color-gray-100);
-  font-family: '***REMOVED*** display', 'Open Sans', sans-serif;
+  font-family: spline, 'Open Sans', sans-serif;
 }
 
 @mixin text-secondary-font {
